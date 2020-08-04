@@ -1,0 +1,11 @@
+{
+  "title": "Nuxt Cloudinary",
+  "url": "https://cloudinary.com",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
+  },
+  "github": "mayashavin/nuxt-cloudinary",
+  "twitter": "mayashavin",
+  "defaultBranch": "dev"
+}

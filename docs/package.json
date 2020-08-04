@@ -1,0 +1,18 @@
+{
+  "name": "nuxt-cloudinary-docs",
+  "version": "1.0.0",
+  "description": "Docs for Cloudinary plugin for Nuxt",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "author": "Maya Shavin",
+  "license": "MIT",
+  "dependencies": {
+    "@nuxt/content-theme-docs": "^0.3.1",
+    "nuxt": "^2.14.0"
+  }
+}
