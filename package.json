@@ -1,6 +1,6 @@
 {
-  "name": "nuxt-cloudinary",
-  "version": "0.0.0",
+  "name": "@nuxtjs/cloudinary",
+  "version": "0.0.1",
   "description": "Cloudinary module for Nuxt",
   "repository": "mayashavin/nuxt-cloudinary",
   "license": "MIT",
@@ -20,8 +20,8 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
-    "cloudinary": "^1.22.0",
     "cloudinary-core": "^2.11.1",
+    "cloudinary-vue": "^1.1.1",
     "consola": "^2.14.0"
   },
   "devDependencies": {
