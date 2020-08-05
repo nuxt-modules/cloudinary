@@ -1,9 +1,9 @@
 ---
 title: Basic Usage
 description: 'Optimize images in your Nuxt.js application with nuxt-cloudinary module'
-position: 3
+position: 8
 category: Examples
-categoryPosition: 1
+categoryPosition: 3
 ---
 
 Optimize images in your Nuxt.js application with nuxt-cloudinary module

@@ -32,6 +32,21 @@ yarn add nuxt-cloudinary # or npm install nuxt-cloudinary
 }
 ```
 
+Or a separate section `cloudinary` for module options:
+
+```js
+{
+  modules: [
+    // Simple usage
+    'nuxt-cloudinary',
+  ],
+  cloudinary: {
+    cloudName: '<your-cloudinary-cloudname',
+    /* all other options */
+  }
+}
+```
+
 ## Development
 
 1. Clone this repository
