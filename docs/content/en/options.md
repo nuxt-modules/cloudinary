@@ -1,7 +1,7 @@
 ---
 title: Options
 description: 'Configuration options for Cloudinary module'
-position: 2
+position: 3
 category: Guide
 ---
 
@@ -127,7 +127,7 @@ Only relevant for Advanced plan Cloudinary users. You can see [more details here
 * Type: `Boolean`
 * Default: `false`
 
-Enable it to switch to use [ready-made Vue components](/vue-components) for images and videos embedded with Cloudinary functionalities instead of [generating mode](/basic-usage).
+Enable it to switch to use [ready-made Vue components](/component) for images and videos embedded with Cloudinary functionalities instead of [generating mode](/basic-usage).
 
 ```js[nuxt.config.js]
 export default {
