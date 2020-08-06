@@ -1,11 +1,11 @@
 {
   "title": "Nuxt Cloudinary",
-  "url": "https://cloudinary.com",
+  "url": "https://cloudinary.nuxtjs.org",
   "logo": {
     "light": "https://res.cloudinary.com/mayashavin/image/upload/q_auto,f_auto,w_200,h_32/v1596609791/nuxt-cld/2",
     "dark": "https://res.cloudinary.com/mayashavin/image/upload/q_auto,f_auto,w_200,h_32/v1596609791/nuxt-cld/1"
   },
-  "github": "mayashavin/nuxt-cloudinary",
+  "github": "nuxt-community/cloudinary-module",
   "twitter": "mayashavin",
   "defaultBranch": "dev"
 }

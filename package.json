@@ -2,11 +2,11 @@
   "name": "@nuxtjs/cloudinary",
   "version": "0.0.4",
   "description": "Cloudinary module for Nuxt",
-  "repository": "mayashavin/nuxt-cloudinary",
+  "repository": "nuxt-community/cloudinary-module",
   "license": "MIT",
   "contributors": [
     {
-      "name": "Maya Shavin <maya@cloudinary.com>"
+      "name": "Maya Shavin <dpnminh@gmail.com>"
     }
   ],
   "files": [

@@ -16,31 +16,31 @@ You can set up the Cloudinary module easily in two following steps:
 
 ## Installation
 
-1. Add `nuxt-cloudinary` dependency to your Nuxt project:
+1. Add `@nuxtjs/cloudinary` dependency to your Nuxt project:
 
   <code-group>
     <code-block label="Yarn" active>
 
     ```bash
-    yarn add nuxt-cloudinary
+    yarn add @nuxtjs/cloudinary
     ```
 
     </code-block>
     <code-block label="NPM">
 
     ```bash
-    npm install nuxt-cloudinary
+    npm install @nuxtjs/cloudinary
     ```
 
     </code-block>
   </code-group>
 
-2. Add `nuxt-cloudinary` as a module in `modules` sections of `nuxt.config.js`:
+2. Add `@nuxtjs/cloudinary` as a module in `modules` sections of `nuxt.config.js`:
 
   ```js[nuxt.config.js]
   export default {
     modules: [
-      'nuxt-cloudinary'
+      '@nuxtjs/cloudinary'
     ]
   }
   ```

@@ -1,4 +1,4 @@
-# nuxt-cloudinary
+# @nuxtjs/cloudinary
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -12,22 +12,22 @@
 
 ## Setup
 
-1. Add `nuxt-cloudinary` dependency to your project
+1. Add `@nuxtjs/cloudinary` dependency to your project
 
 ```bash
-yarn add nuxt-cloudinary # or npm install nuxt-cloudinary
+yarn add @nuxtjs/cloudinary # or npm install @nuxtjs/cloudinary
 ```
 
-2. Add `nuxt-cloudinary` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/cloudinary` to the `modules` section of `nuxt.config.js`
 
 ```js
 {
   modules: [
     // Simple usage
-    'nuxt-cloudinary',
+    '@nuxtjs/cloudinary',
 
     // With options
-    ['nuxt-cloudinary', { /* module options */ }]
+    ['@nuxtjs/cloudinary', { /* module options */ }]
   ]
 }
 ```
@@ -38,7 +38,7 @@ Or a separate section `cloudinary` for module options:
 {
   modules: [
     // Simple usage
-    'nuxt-cloudinary',
+    '@nuxtjs/cloudinary',
   ],
   cloudinary: {
     cloudName: '<your-cloudinary-cloudname',
@@ -57,20 +57,20 @@ Or a separate section `cloudinary` for module options:
 
 [MIT License](./LICENSE)
 
-Copyright (c) [Maya Shavin](https://github.com/mayashavin)
+Created and maintained by [Maya Shavin](https://github.com/mayashavin)
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/nuxt-cloudinary/latest.svg
-[npm-version-href]: https://npmjs.com/package/nuxt-cloudinary
+[npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/cloudinary/latest.svg
+[npm-version-href]: https://npmjs.com/package/@nuxtjs/cloudinary
 
-[npm-downloads-src]: https://img.shields.io/npm/dt/nuxt-cloudinary.svg
-[npm-downloads-href]: https://npmjs.com/package/nuxt-cloudinary
+[npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/cloudinary.svg
+[npm-downloads-href]: https://npmjs.com/package/@nuxtjs/cloudinary
 
-[github-actions-ci-src]: https://github.com/mayashavin/nuxt-cloudinary/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/mayashavin/nuxt-cloudinary/actions?query=workflow%3Aci
+[github-actions-ci-src]: https://github.com/nuxt-community/cloudinary-module/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-community/cloudinary-module/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/github/mayashavin/nuxt-cloudinary.svg
-[codecov-href]: https://codecov.io/gh/mayashavin/nuxt-cloudinary
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/cloudinary-module.svg
+[codecov-href]: https://codecov.io/gh/nuxt-community/cloudinary-module
 
-[license-src]: https://img.shields.io/npm/l/nuxt-cloudinary.svg
-[license-href]: https://npmjs.com/package/nuxt-cloudinary
+[license-src]: https://img.shields.io/npm/l/@nuxtjs/cloudinary.svg
+[license-href]: https://npmjs.com/package/@nuxtjs/cloudinary
