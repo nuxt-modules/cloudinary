@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Cloudinary module for Nuxt",
   "repository": "nuxt-community/cloudinary-module",
   "license": "MIT",
@@ -40,7 +40,6 @@
     "standard-version": "latest"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   }
 }
