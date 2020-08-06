@@ -22,7 +22,7 @@
   "dependencies": {
     "cloudinary-core": "^2.11.1",
     "cloudinary-vue": "^1.1.1",
-    "consola": "^2.14.0"
+    "consola": "^2.15.0"
   },
   "devDependencies": {
     "@babel/core": "latest",
