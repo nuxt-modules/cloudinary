@@ -127,7 +127,7 @@ Only relevant for Advanced plan Cloudinary users. You can see [more details here
 * Type: `Boolean`
 * Default: `false`
 
-Enable it to switch to use [ready-made Vue components](/component) for images and videos embedded with Cloudinary functionalities instead of [generating mode](/basic-usage).
+Enable it to switch to use [ready-made Vue components](/component) for images and videos embedded with Cloudinary functionalities instead of [generating mode](/usage-build).
 
 ```js[nuxt.config.js]
 export default {

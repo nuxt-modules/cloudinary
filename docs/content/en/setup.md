@@ -69,4 +69,4 @@ export default {
 
 See [options](/options) section for all available options to initialize Cloudinary module.
 
-And that's it 🎉! Now you can start [optimizing your images and videos](/usage) with Cloudinary!
+And that's it 🎉! Now you can start [optimizing your images and videos](/usage-build) with Cloudinary!

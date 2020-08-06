@@ -57,7 +57,7 @@ Or a separate section `cloudinary` for module options:
 
 [MIT License](./LICENSE)
 
-Copyright (c) Maya Shavin <maya@cloudinary.com>
+Copyright (c) [Maya Shavin](https://github.com/mayashavin)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-cloudinary/latest.svg
