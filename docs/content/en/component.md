@@ -7,7 +7,7 @@ category: Usage
 
 <alert>
 
-This instance is only available when `useComponent` is set to `false` in `nuxt.config.js`.
+This instance is only available when `useComponent` is set to `true` in `nuxt.config.js`.
 
 </alert>
 
