@@ -3777,7 +3777,12 @@ clone-response@^1.0.2:
   dependencies:
     mimic-response "^1.0.0"
 
-cloudinary-core@^2.11.1, cloudinary-core@^2.6.3:
+cloudinary-core@^2.11.2:
+  version "2.11.2"
+  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.11.2.tgz#01950e7c1e7c373d7a8141c18b7ddfc54374b75d"
+  integrity sha512-Dl545+AzPRGjx58cXB9gznXtA1dol0pmDqTxHos1hRcdbUcpUcuVzPkBnJjNO3F4K6BfZ5kSda9kzD+Qu7Yhgg==
+
+cloudinary-core@^2.6.3:
   version "2.11.1"
   resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.11.1.tgz#d2fbe5d883928208ca1d010f1b9037b65720084e"
   integrity sha512-w1CmIOr2G3o1GLyw74GYszRF8RF87RvyD1N4bGAb/x+7/7SEGx36nFQQrKqJxGZkaoatBZBAtDaxKLvUZvZNWw==
