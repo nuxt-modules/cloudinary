@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/nuxt-community/cloudinary-module/compare/v0.0.8...v0.0.9) (2020-08-11)
+
+
+### Bug Fixes
+
+* [#5](https://github.com/nuxt-community/cloudinary-module/issues/5) privateCdn for client needs fallback value ([9f680bd](https://github.com/nuxt-community/cloudinary-module/commit/9f680bdaad501981665578b3424045986f0fa6bc))
+* **docs:** update README.md ([ad18a3e](https://github.com/nuxt-community/cloudinary-module/commit/ad18a3eeb90a47810f9db34b9a949dd7c5de4c8e))
+* **docs:** update routing and theme ([e4cc16c](https://github.com/nuxt-community/cloudinary-module/commit/e4cc16cc0eab761edfe772a13d42b7349f1162ca))
+* [#3](https://github.com/nuxt-community/cloudinary-module/issues/3) typo for useComponent value in Component ([5267e33](https://github.com/nuxt-community/cloudinary-module/commit/5267e33bb76a0941e9813752326ba7ee91ef4ce5))
+* add netlify config ([f04313e](https://github.com/nuxt-community/cloudinary-module/commit/f04313e1ca21d9224ec5bc50007aab2146aad8ed))
+
 ### [0.0.8](https://github.com/nuxt-community/cloudinary-module/compare/v0.0.7...v0.0.8) (2020-08-06)
 
 ### [0.0.7](https://github.com/nuxt-community/cloudinary-module/compare/v0.0.6...v0.0.7) (2020-08-06)
