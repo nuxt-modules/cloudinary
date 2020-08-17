@@ -13,6 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.4.1",
-    "nuxt": "^2.14.1"
+    "nuxt": "^2.14.3"
   }
 }
