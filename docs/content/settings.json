@@ -2,8 +2,8 @@
   "title": "Nuxt Cloudinary",
   "url": "https://cloudinary.nuxtjs.org",
   "logo": {
-    "light": "logo-light.svg",
-    "dark": "logo-dark.svg"
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg"
   },
   "github": "nuxt-community/cloudinary-module",
   "twitter": "mayashavin",
