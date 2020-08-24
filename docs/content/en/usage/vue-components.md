@@ -2,6 +2,7 @@
 title: Vue Components
 description: 'Configuration options for Cloudinary module'
 position: 6
+fullscreen: true
 category: Usage
 ---
 
@@ -175,4 +176,4 @@ Define additional transformations such as `width`, `crop` for cropping type, `ra
 
 </alert>
 
-You can explore [basic examples here](/examples-components), or refer the official documentation for [more advanced use cases](https://cloudinary.com/documentation/vue_image_manipulation).
+You can explore a [basic example](/examples/basic), or refer the official documentation for [more advanced use cases](https://cloudinary.com/documentation/vue_image_manipulation).

@@ -7,5 +7,5 @@ node_modules
 .DS_Store
 coverage
 dist
-docs/static/sw.js
 package-lock.json
+sw.*
