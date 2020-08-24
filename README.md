@@ -1,4 +1,4 @@
-[![@nuxtjs/cloudinary](https://res.cloudinary.com/mayashavin/image/upload/v1596914852/nuxt-cld/nuxt_cloudinary_1.png)](https://res.cloudinary.com/mayashavin/image/upload/v1596914852/nuxt-cld/nuxt_cloudinary_1.png)
+[![@nuxtjs/cloudinary](https://cloudinary.nuxtjs.org/preview.png)](https://cloudinary.nuxtjs.org)
 
 # @nuxtjs/cloudinary
 
