@@ -6,6 +6,5 @@
     "dark": "logo-dark.svg"
   },
   "github": "nuxt-community/cloudinary-module",
-  "twitter": "mayashavin",
-  "defaultBranch": "dev"
+  "twitter": "mayashavin"
 }
