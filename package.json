@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "cloudinary-core": "^2.11.2",
-    "cloudinary-vue": "^1.1.1",
+    "cloudinary-vue": "^1.1.2",
     "consola": "^2.15.0"
   },
   "devDependencies": {
