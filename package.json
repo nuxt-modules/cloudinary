@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Cloudinary module for Nuxt",
   "repository": "nuxt-community/cloudinary-module",
   "license": "MIT",
