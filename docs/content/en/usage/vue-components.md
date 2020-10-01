@@ -126,7 +126,7 @@ Result will be similar to the following:
 
 Below is how each placeholder type looks:
 
-![How each type of placeholder looks](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto,w_500,c_scale/v1601594454/nuxt-cld/placeholders)
+![How each type of placeholder looks](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto,w_500,c_scale/nuxt-cld/placeholders)
 
 ## CldPoster
 
