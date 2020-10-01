@@ -24,7 +24,7 @@ For `CldImage`, `CldVideo`, `CldPoster` and `CldContext`, you can set a differen
 
 </alert>
 
-## CLDImage
+## CldImage
 
 Props:
 
@@ -58,7 +58,7 @@ Any non-Cloudinary standard attributes are treated as normal HTML attributes. If
 
 You can refer more details on a [full list of image transformation options](https://cloudinary.com/documentation/image_transformations)
 
-## CLDVideo
+## CldVideo
 
 Props:
 
@@ -95,7 +95,40 @@ You can refer more details on a [full list of video transformation options](http
 
 ## Supportive components
 
-## CLDPoster
+## CldPlaceholder
+
+<alert>
+
+  This component can *only* be used as a **child component** for `CldImage` component
+
+</alert>
+
+Props:
+
+* `type`:
+  * Type: `String`
+  * Default: `blur`
+  * Accepted values: `blur`, `vectorize`, `pixelate`
+
+Provides a fast and lightweight image version of a target image (defined in its parent element - `CldImage`) and displays it as the placeholder untill the target image finishes downloading.
+
+Example: To set a `pixelate` placeholder for a `CldImage` component
+
+```html
+<cld-image public-id="my-pic-id">
+  <cld-placeholder type="vectorize" />
+</cld-image>
+```
+
+Result will be similar to the following:
+
+![Pixelate placeholder for an image](https://res.cloudinary.com/mayashavin/image/upload/q_auto,w_500,c_scale/v1601592688/nuxt-cld/cldplaceholder.gif)
+
+Below is how each placeholder type looks:
+
+![How each type of placeholder looks](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto,w_500,c_scale/v1601594454/nuxt-cld/placeholders)
+
+## CldPoster
 
 <alert>
 
@@ -115,7 +148,7 @@ Specify an image to use as `poster` for a `CldVideo` component.
 ```html
 <cld-video publicId="my-video-id" overlay="text:arial_60:watchme">
   <cld-poster
-    public-id="video-poster" 
+    public-id="video-poster"
     width="500"
     crop="scale"
     quality="auto"
@@ -131,7 +164,7 @@ Result
 </video>
 ```
 
-## CLDContext
+## CldContext
 
 <alert>
 
@@ -153,7 +186,7 @@ Define additional shared Cloudinary configuration and transformation options to 
 </cld-context>
 ```
 
-## CLDTransformation
+## CldTransformation
 
 <alert>
 
