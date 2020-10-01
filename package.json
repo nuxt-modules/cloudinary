@@ -20,6 +20,7 @@
     "test": "yarn lint && jest"
   },
   "dependencies": {
+    "cloudinary": "^1.23.0",
     "cloudinary-core": "^2.11.2",
     "cloudinary-vue": "^1.1.2",
     "consola": "^2.15.0"
