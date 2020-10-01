@@ -108,7 +108,7 @@ Props:
 * `type`:
   * Type: `String`
   * Default: `blur`
-  * Accepted values: `blur`, `vectorize`, `pixelate`
+  * Accepted values: `blur`, `vectorize`, `pixelate`, `predominant-color`
 
 Provides a fast and lightweight image version of a target image (defined in its parent element - `CldImage`) and displays it as the placeholder untill the target image finishes downloading.
 
@@ -122,7 +122,7 @@ Example: To set a `pixelate` placeholder for a `CldImage` component
 
 Result will be similar to the following:
 
-![Pixelate placeholder for an image](https://res.cloudinary.com/mayashavin/image/upload/q_auto,w_500,c_scale/v1601592688/nuxt-cld/cldplaceholder.gif)
+![Pixelate placeholder for an image](https://res.cloudinary.com/mayashavin/image/upload/q_auto,w_500,c_scale/v1601595959/nuxt-cld/cldplaceholder.gif)
 
 Below is how each placeholder type looks:
 
