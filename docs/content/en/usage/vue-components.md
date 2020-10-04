@@ -1,14 +1,13 @@
 ---
 title: Vue Components
 description: 'Configuration options for Cloudinary module'
-position: 6
-fullscreen: true
+position: 8
 category: Usage
 ---
 
 <alert>
 
-This instance is only available when `useComponent` is set to `true` in `nuxt.config.js`.
+The following components are only available when `useComponent` is set to `true` in `nuxt.config.js`.
 
 </alert>
 

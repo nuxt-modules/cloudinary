@@ -2,21 +2,31 @@
 title: Build URLs and Tags
 description: 'How to build dynamic urls with Cloudinary'
 position: 4
-category: Usage
+category: Before v1.0.0
 categoryPosition: 2
 ---
+
+<alert type="warning">
+
+This API is deprecated in v1.0.0+. Please refer to [Cloudinary instance API](/usage/cloudinary-instance) for the updated API instead.
+
+</alert>
 
 This module globally injects `$cloudinary` instance. You can access it anywhere using `this.$cloudinary` (within a component), or `context.$cloudinary` (for plugins, `asyncData`, `fetch`, `nuxtServerInit` and middleware).
 
 <alert>
 
-This instance is only available when `useComponent` is set to `false` in `nuxt.config.js`.
+From `<v1.0.0`, this instance is only available when `useComponent` is set to `false` in `nuxt.config.js`.
 
 </alert>
 
 ## Methods
 
 ## `$cloudinary(assetType?)`
+
+<alert type="warning">
+Deprecated in v1.0.0+
+</alert>
 
 * `assetType`
   * Type: `String`
@@ -27,6 +37,12 @@ This instance is only available when `useComponent` is set to `false` in `nuxt.c
 Below are the available methods of the returned object.
 
 ## `url(publicId, options?)`
+
+<alert type="warning">
+
+Deprecated in v1.0.0+. Please refer to `url` method designated for [Image](/usage/optimize-image#urlpublicid-options) and [Video](/usage/optimize-video#urlpublicid-options) separately.
+
+</alert>
 
 * `publicId`
   * Type: `String`
@@ -51,6 +67,12 @@ For example, if you uploaded an asset named `sample.jpg` to folder `examples` in
 
 ## `element(publicId, options?)`
 
+<alert type="warning">
+
+Deprecated in v1.0.0+. Please refer to `element` method designated for [Image](/usage/optimize-image#elementpublicid-options) and [Video](/usage/optimize-video#elementpublicid-options) separately.
+
+</alert>
+
 * `publicId`
   * Type: `String`
   * `required`
@@ -59,7 +81,7 @@ For example, if you uploaded an asset named `sample.jpg` to folder `examples` in
   * Type: `Object`
   * Additional effects/transformations to apply to the original asset on delivery
 
-Return an `Object` containing the following properties:
+Returns an `Object` containing the following properties:
 
 * `name`
   * Type: `String`
@@ -93,6 +115,12 @@ Check out [this example](/examples#generate-html-element) on how to dynamically 
 
 ## `fetchRemote(url, options?)`
 
+<alert type="warning">
+
+Deprecated in v1.0.0+. Please refer to `fetchRemote` method designated for [Image](/usage/optimize-image#fetchremoteurl-options).
+
+</alert>
+
 * `url`
   * Type: `String`
   * `required`
@@ -101,7 +129,7 @@ Check out [this example](/examples#generate-html-element) on how to dynamically 
   * Type: `Object`
   * Additional effects/transformations to apply to the original asset on delivery
 
-Return `String` as the Cloudinary delivery URL for the requested asset.
+Returns `String` as the Cloudinary delivery URL for the requested asset.
 
 ```js
 const url = this.$cloudinary()
@@ -111,6 +139,12 @@ const url = this.$cloudinary()
 ```
 
 ## `config(options)`
+
+<alert type="warning">
+
+Deprecated in v1.0.0+. Please refer to the new method signature in [Cloudinary instance](/usage/cloudinary-instance#configoptions).
+
+</alert>
 
 * `options`
   * Type: `Object`
