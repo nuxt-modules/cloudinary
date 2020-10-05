@@ -61,7 +61,88 @@ export default{
 
 <badge>v1.0.0+</badge>
 
-// TODO
+<alert type="warning">
+
+This feature is only for **server-side** .
+
+</alert>
+
+In general, Cloudinary will manipulate and optimize your media assets on-the-fly using "lazy transformation" approach - only when it **first** accessed by a site visitor. All the generated assets are stored persistently, cached and delivered through a fast CDN. 
+
+However, in certain scenarios, we would want to pre-generate multiple optimization or transformations during upload process for an asset, to save the loading time of the first access by site visitor. In that case, we can use **eager** property of `options` parameter.
+
+### Example 1 - Using `upload`
+
+```js
+const { $cloudinary } = require('@nuxtjs/cloudinary')
+
+const asset = await $cloudinary.upload(`/example.png`, {
+  public_id: 'example',
+  eager: [
+    {
+      width: 200,
+      crop: 'scale',
+    }, {
+      width: 400,
+      height: 400,
+      crop: 'thumb',
+    }
+  ],
+})
+```
+
+### Example 2 - Using `explicit`
+
+Instead of passing `public_id` as the desired identifier, you have to pass `type` for Cloudinary to look and return the matched asset.
+
+```js
+const { $cloudinary } = require('@nuxtjs/cloudinary')
+
+const asset = await $cloudinary.explicit('example', {
+  type: 'upload',
+  eager: [
+    {
+      width: 200,
+      crop: 'scale',
+    }, {
+      width: 400,
+      height: 400,
+      crop: 'thumb',
+    }
+  ],
+})
+```
+
+Both of the calls will return an [Asset](/upload#asset):
+
+```js
+{
+  public_id: 'example',
+  type: 'upload',
+  eager: [
+    {
+      format: 'png',
+      width: 200,
+      secure_url: 'https://res.cloudinary.com/<your-cloud-name>/image/upload/c_scale,w_200/example.png',
+      url: '',
+      transformation: 'c_scale,w_200',
+      /* ... */
+    }, {
+      format: 'png',
+      width: 400,
+      height: 400,
+      secure_url: 'https://res.cloudinary.com/<your-cloud-name>/image/upload/c_thumb,w_400,h_400/example.png',
+      url: '',
+      transformation: 'c_thumb,w_400,h_400',
+      /* ... */
+    }
+  ],
+  /*...*/
+}
+
+```
+
+Now you can use the `secure_url` of the any pre-generated version to display the target optimized asset on the client side. And forget about the first loading time! 🎉
 
 ## Using with `@nuxt/content` Hooks
 
