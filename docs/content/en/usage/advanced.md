@@ -199,7 +199,7 @@ export default {
 
 Similarly, after retrieving the cover image's original URL, we can:
 
-* Check if the image has been uploaded to your Cloudinary account and retrieve the existing image information by using `explicit`
+* Check if the image has been uploaded to your Cloudinary account and retrieve the existing image information by using `$cloudinary.explicit`
 * Else, upload the original file to Cloudinary with a dedicated options, such as `public_id` using `$cloudinary.upload`
 * Replace the original image value in the document with the new information.
 

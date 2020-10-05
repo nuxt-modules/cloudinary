@@ -10,7 +10,9 @@ version: 1
 
 To upload an media asset, you can use `this.$cloudinary.upload` (within a component), or `context.$cloudinary.upload` (for plugins, `asyncData`, `fetch`, `nuxtServerInit` and middleware).
 
-## `upload(file, options, callback)` <badge>v1.0.0+</badge>
+## `upload(file, options, callback)`
+
+<badge>v1.0.0+</badge>
 
 * `file`
   * Type: `String`
@@ -34,7 +36,7 @@ Cloudinary module offers two types of upload API - server and client, which are 
 
 However, there are different parameters **required** per use case. Below are the notes for each use case:
 
-## Server-side Upload (Secured)
+### Server-side Upload (Secured)
 
 <badge>v1.0.0+</badge>
 
@@ -69,7 +71,7 @@ You can also [pre-generate transformation](/advanced#pre-generate-media-assets) 
 
 </alert>
 
-## Client-side Upload (Unsecured)
+### Client-side Upload (Unsecured)
 
 <badge>v1.0.0+</badge>
 

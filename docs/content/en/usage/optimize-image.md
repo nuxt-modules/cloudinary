@@ -18,15 +18,19 @@ All of the generated delivery URLs are automatically optimized with `q_auto` (au
 
 </alert>
 
-## Methods
+## `image`
 
-## `image` <badge>v1.0.0+</badge>
+<badge>v1.0.0+</badge>
 
 * Returns an `Object` with methods designated for images.
 
 Below are the available methods of the returned object.
 
-## `url(publicId, options?)` <badge>v1.0.0+</badge>
+## Methods
+
+### `url(publicId, options?)`
+
+<badge>v1.0.0+</badge>
 
 * `publicId`
   * Type: `String`
@@ -49,7 +53,9 @@ For example, if you uploaded an asset named `sample.jpg` to folder `examples` in
 
 </alert>
 
-## `element(publicId, options?)` <badge>v1.0.0+</badge>
+### `element(publicId, options?)`
+
+<badge>v1.0.0+</badge>
 
 * `publicId`
   * Type: `String`
@@ -87,11 +93,13 @@ More information can be found in [the official Cloudinary documentation](https:/
 
 <alert type="info">
 
-Check out [this example](/examples#generate-html-element) on how to dynamically generate HTML media element and insert it to your application.
+Check out [this snippet](/snippets#imageelement) on how to dynamically generate HTML media element and insert it to your application.
 
 </alert>
 
-## `fetchRemote(url, options?)` <badge>v1.0.0+</badge>
+### `fetchRemote(url, options?)`
+
+<badge>v1.0.0+</badge>
 
 * `url`
   * Type: `String`

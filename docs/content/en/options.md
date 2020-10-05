@@ -40,7 +40,9 @@ You can find your cloud name details in **Dashboard** page, or in **Account Sett
 
 </alert>
 
-## `apiKey` <badge>v1.0.0+</badge>
+## `apiKey`
+
+<badge>v1.0.0+</badge>
 
 * Type: `String`
 * `Required` **only when you need to use Upload on server-side**
@@ -65,7 +67,9 @@ You need both `apiKey` and `apiSecret` in order to have server-side upload featu
 
 </alert>
 
-## `apiSecret` <badge>v1.0.0+</badge>
+## `apiSecret`
+
+<badge>v1.0.0+</badge>
 
 * Type: `String`
 * `Required` **only when you need to use Upload on server-side**

@@ -23,7 +23,7 @@ For `CldImage`, `CldVideo`, `CldPoster` and `CldContext`, you can set a differen
 
 </alert>
 
-## CLDImage
+### CLDImage
 
 Props:
 
@@ -57,7 +57,7 @@ Any non-Cloudinary standard attributes are treated as normal HTML attributes. If
 
 You can refer more details on a [full list of image transformation options](https://cloudinary.com/documentation/image_transformations)
 
-## CLDVideo
+### CLDVideo
 
 Props:
 
@@ -94,7 +94,7 @@ You can refer more details on a [full list of video transformation options](http
 
 ## Supportive components
 
-## CLDPoster
+### CLDPoster
 
 <alert>
 
@@ -130,7 +130,7 @@ Result
 </video>
 ```
 
-## CLDContext
+### CLDContext
 
 <alert>
 
@@ -152,7 +152,7 @@ Define additional shared Cloudinary configuration and transformation options to 
 </cld-context>
 ```
 
-## CLDTransformation
+### CLDTransformation
 
 <alert>
 

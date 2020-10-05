@@ -18,15 +18,19 @@ All of the generated delivery URLs are automatically optimized with `q_auto` (au
 
 </alert>
 
-## Methods
+## `video`
 
-## `video` <badge>v1.0.0+</badge>
+<badge>v1.0.0+</badge>
 
 * Returns an `Object` with methods designated for videos.
 
 Below are the available methods of the returned object.
 
-## `url(publicId, options?)` <badge>v1.0.0+</badge>
+## Methods
+
+### `url(publicId, options?)`
+
+<badge>v1.0.0+</badge>
 
 * `publicId`
   * Type: `String`
@@ -49,7 +53,9 @@ For example, if you uploaded an asset named `dog.mov` to folder `examples` in yo
 
 </alert>
 
-## `element(publicId, options?)` <badge>v1.0.0+</badge>
+### `element(publicId, options?)`
+
+<>v1.0.0+</>
 
 * `publicId`
   * Type: `String`
@@ -91,7 +97,9 @@ Check out [this example](/examples#generate-html-element) on how to dynamically 
 
 </alert>
 
-## `thumbnail(publidId, options?)` <badge>v1.0.0+</badge>
+### `thumbnail(publidId, options?)`
+
+<badge>v1.0.0+</badge>
 
 * `publicId`
   * Type: `String`

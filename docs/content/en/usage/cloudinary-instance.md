@@ -20,7 +20,9 @@ If you are using `v0.0.11` and older, please check out [Deprecated API](/before-
 
 </alert>
 
-## `$cloudinary` <badge>v1.0.0+</badge>
+## `$cloudinary`
+
+<badge>v1.0.0+</badge>
 
 * Returns an `CloudinaryApi` instance designated according the setup options.
 
@@ -28,13 +30,17 @@ Below are the available properties and methods of the returned object.
 
 ## Properties
 
-## `image` <badge>v1.0.0+</badge>
+### `image`
+
+<badge>v1.0.0+</badge>
 
 * Returns an `Object` with methods designated for images. 
 
 See [Image URLs and Tags](/usage/optimize-image) for the full list of available methods.
 
-## `video` <badge>v1.0.0+</badge>
+### `video`
+
+<badge>v1.0.0+</badge>
 
 * Returns an `Object` with methods designated for images. 
 
@@ -42,7 +48,9 @@ See [Video URLs and Tags](/usage/optimize-video) for the full list of available 
 
 ## Methods
 
-## `upload(file, options, callback)` <badge>v1.0.0+</badge>
+### `upload(file, options, callback)`
+
+<badge>v1.0.0+</badge>
 
 * `file`
   * Type: `String`
@@ -78,7 +86,9 @@ See [Optional parameters](https://cloudinary.com/documentation/image_upload_api_
 
 </alert>
 
-## `explicit(publicId, options)` <badge>v1.0.0+</badge>
+### `explicit(publicId, options)`
+
+<badge>v1.0.0+</badge>
 
 <alert type="warning">
 
@@ -117,7 +127,7 @@ See [Optional parameters](https://cloudinary.com/documentation/image_upload_api_
 
 </alert>
 
-## `config(options)`
+### `config(options)`
 
 * `options`
   * Type: `Object`
