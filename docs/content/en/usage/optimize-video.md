@@ -1,7 +1,7 @@
 ---
 title: Build Video URLs & Tags
 description: 'How to build dynamic urls for images with Cloudinary'
-position: 5
+position: 6
 category: Usage
 categoryPosition: 2
 version: 1
@@ -110,6 +110,12 @@ Returns `Object` which contains:
 ```js
 const url = this.$cloudinary.video
               .thumbnail(
-                'https://images6.alphacoders.com/337/337780.jpg',
+                'dog',
                 { crop: 'scale', width: 200 })
 ```
+
+<alert type="warning">
+
+Do not pass video extension to `publicId`.
+
+</alert>

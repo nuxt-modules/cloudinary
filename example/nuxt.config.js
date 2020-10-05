@@ -5,7 +5,7 @@ module.exports = {
   buildDir: resolve(__dirname, '.nuxt'),
   srcDir: __dirname,
   modules: [
-    { handler: require('../../') }
+    { handler: require('../') }
   ],
   cloudinary: {
     cloudName: 'demo'

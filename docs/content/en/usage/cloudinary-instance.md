@@ -1,6 +1,6 @@
 ---
 title: Cloudinary Instance
-description: 'How to build dynamic urls with Cloudinary'
+description: 'How to use the Cloudinary module'
 position: 4
 category: Usage
 categoryPosition: 2
@@ -54,7 +54,7 @@ See [Video URLs and Tags](/usage/optimize-video) for the full list of available 
 * `callback`
   * Type: `Function`
   * A callback method to trigger once the upload is completed. It is **not** needed if you are using ES6 `async/await` or Promise API.
-* Returns: a `Promise<Object>`
+* Returns: a `Promise<Asset | Error>`
 
 Upload the target asset file to Cloudinary, in a secured (server-side) or non-secure (client-side), depending on the use case.
 
@@ -70,8 +70,21 @@ const instance = this.$cloudinary
                   public_id: 'Example'
                 })
 ```
+<alert type="info">
+
+You can [pre-generate transformation](/advanced#pre-generate-media-assets) for uploading asset by passing the desired transformations to `options.eager`.
+
+See [Optional parameters](https://cloudinary.com/documentation/image_upload_api_reference#optional_parameters) for the full list of available supported properties for `options`.
+
+</alert>
 
 ## `explicit(publicId, options)` <badge>v1.0.0+</badge>
+
+<alert type="warning">
+
+This method is **only available** on server-side. Calling it on client-side during run time will cause error.
+
+</alert>
 
 * `publicId`
   * Type: `String`
@@ -81,7 +94,7 @@ const instance = this.$cloudinary
   * Type: `Object`
   * `options.type` is `required`.
 
-<alert type="warning">
+<alert type="info">
 
 Some common accepted values for `type` are `upload`, `private`, `authenticated`, `fetch`, and `multi`. See [Cloudinary delivery types](https://cloudinary.com/documentation/image_transformations#delivery_types) for full list of available values.
 
@@ -98,7 +111,7 @@ const instance = this.$cloudinary
 
 <alert type="info">
 
-You can pre-generate transformation for existing asset by passing the desired transformation as a string to `options.eager`, and avoid the normal on-the-fly generation.
+You can [pre-generate transformation](/advanced#pre-generate-media-assets) for existed asset by passing the desired transformations to `options.eager`.
 
 See [Optional parameters](https://cloudinary.com/documentation/image_upload_api_reference#optional_parameters-6) for the full list of available supported properties for `options`.
 

@@ -1,9 +1,9 @@
 ---
 title: Build URLs and Tags
 description: 'How to build dynamic urls with Cloudinary'
-position: 4
+position: 10
 category: Before v1.0.0
-categoryPosition: 2
+categoryPosition: 4
 ---
 
 <alert type="warning">

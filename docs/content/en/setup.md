@@ -71,4 +71,4 @@ See [options](/options) section for all available options to initialize Cloudina
 
 And that's it 🎉
 
-Now you can start [optimizing your images and videos](/usage/build-urls-and-tags) with Cloudinary.
+Now you can start [optimizing your images](/usage/optimize-image) and [videos](/usage/optimize-video) with Cloudinary.

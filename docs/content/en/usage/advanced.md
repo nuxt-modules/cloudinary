@@ -57,6 +57,12 @@ export default{
 
 ```
 
+## Pre-generate media assets
+
+<badge>v1.0.0+</badge>
+
+// TODO
+
 ## Using with `@nuxt/content` Hooks
 
 <badge>v1.0.0+</badge>

@@ -43,7 +43,7 @@ You can find your cloud name details in **Dashboard** page, or in **Account Sett
 ## `apiKey` <badge>v1.0.0+</badge>
 
 * Type: `String`
-* Required **only when you need to use Upload on server-side**
+* `Required` **only when you need to use Upload on server-side**
 
 The API Key associated with your Cloudinary account. It is used to configure and enable signed (secured) Upload features on the server-side.
 
@@ -61,14 +61,14 @@ You can find your API Key in your **Cloudinary Dashboard** page, or in **Setting
 
 <alert type="warning">
 
-You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These keys need to be secured and should be kept as environment variables in `.env`.
+You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These private keys should be kept as environment variables in `.env`.
 
 </alert>
 
 ## `apiSecret` <badge>v1.0.0+</badge>
 
 * Type: `String`
-* Required **only when you need to use Upload on server-side**
+* `Required` **only when you need to use Upload on server-side**
 
 The API Secret Key associated with your Cloudinary account. It is used to configure and enable signed (secured) Upload features on the server-side.
 
@@ -86,7 +86,7 @@ You can find your API Secret Key in your **Cloudinary Dashboard** page, or in **
 
 <alert type="warning">
 
-You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These keys need to be secured and should be kept as environment variables in `.env`.
+You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These private keys should be kept as environment variables in `.env`.
 
 </alert>
 

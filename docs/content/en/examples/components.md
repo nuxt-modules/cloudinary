@@ -1,7 +1,7 @@
 ---
 title: Using components examples
 description: 'Basic examples of how to use Cloudinary components'
-position: 7
+position: 10
 category: Examples
 menuTitle: Using Components
 ---

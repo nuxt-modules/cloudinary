@@ -7,11 +7,13 @@ category: ''
 features:
   - On-the-fly url generation for images and videos
   - On-the-fly size optimization per browser and device
+  - Pre-generate url generation for images and videos on build
   - Fast loading speed with progressive images
   - Auto-detect optimized format per browser for images and videos
   - Dynamically fetch and transform images and videos from remote sources
-  - Reactive transformations on images and videos
+  - Responsive and reactive transformations on images and videos
   - Minimum configuration required to set up Cloudinary and running
+  - Upload images and videos
 ---
 
 <img src="/preview.png" class="light-img">
