@@ -40,6 +40,60 @@ You can find your cloud name details in **Dashboard** page, or in **Account Sett
 
 </alert>
 
+## `apiKey`
+
+<badge>v1.0.0+</badge>
+
+* Type: `String`
+* `Required` **only when you need to use Upload on server-side**
+
+The API Key associated with your Cloudinary account. It is used to configure and enable signed (secured) Upload features on the server-side.
+
+```js[nuxt.config.js]
+export default {
+  cloudinary: {
+    apiKey: 'your-api-key'
+  }
+}
+```
+
+You can find your API Key in your **Cloudinary Dashboard** page, or in **Settings/Security** page in [Cloudinary console](https://cloudinary.com/console)
+
+![How to find apiKey in Cloudinary Console](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto,w_730/v1601805482/nuxt-cld/apikey)
+
+<alert type="warning">
+
+You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These private keys should be kept as environment variables in `.env`.
+
+</alert>
+
+## `apiSecret`
+
+<badge>v1.0.0+</badge>
+
+* Type: `String`
+* `Required` **only when you need to use Upload on server-side**
+
+The API Secret Key associated with your Cloudinary account. It is used to configure and enable signed (secured) Upload features on the server-side.
+
+```js[nuxt.config.js]
+export default {
+  cloudinary: {
+    apiSecret: 'your-api-secret-key'
+  }
+}
+```
+
+You can find your API Secret Key in your **Cloudinary Dashboard** page, or in **Settings/Security** page in [Cloudinary console](https://cloudinary.com/console)
+
+![How to find apiSecret in Cloudinary Console](https://res.cloudinary.com/mayashavin/image/upload/f_auto,q_auto,w_730/v1601805482/nuxt-cld/apikey_2)
+
+<alert type="warning">
+
+You need both `apiKey` and `apiSecret` in order to have server-side upload feature configured correctly. These private keys should be kept as environment variables in `.env`.
+
+</alert>
+
 ## `secure`
 
 * Type: `Boolean`
@@ -127,7 +181,7 @@ Only relevant for Advanced plan Cloudinary users. You can see [more details here
 * Type: `Boolean`
 * Default: `false`
 
-Enable it to switch to use [ready-made Vue components](/usage/vue-components) for images and videos embedded with Cloudinary functionalities instead of [generating mode](/usage/build-urls-and-tags).
+Enable it to use [ready-made Vue components](/usage/vue-components) for images and videos embedded with Cloudinary functionalities.
 
 ```js[nuxt.config.js]
 export default {
@@ -137,8 +191,8 @@ export default {
 }
 ```
 
-<alert>
+<alert type="info">
 
-Once enabled, you are no longer able to access `$cloudinary` within a component to build urls or element tags needed for images and videos.
+From `v1.0.0+`, you can access `$cloudinary` to build urls or element tags needed for images and videos even when `useComponent` is enabled.
 
 </alert>
