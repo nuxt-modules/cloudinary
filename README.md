@@ -17,10 +17,12 @@
 
 - On-the-fly url generating for images and videos
 - On-the-fly size optimization per browser and device
+- Pre-generate url generation for images and videos on build
 - Fast loading speed with progressive images
 - Auto-detect the optimized format per browser for images and videos
 - Dynamically fetch and transform images and videos from remote sources
 - Reactive transformations on images and videos
+- Upload images and videos
 - Minimum configuration required to set up Cloudinary and running
 
 [📖 &nbsp;Read more](https://cloudinary.nuxtjs.org)
