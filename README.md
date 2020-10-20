@@ -77,11 +77,11 @@ This module globally injects `$cloudinary` instance to the application. You can 
 Simple use example:
 
 ```js
-const url = this.$cloudinary()
+const url = this.$cloudinary.image
                 .url('sample', { crop: 'scale', width: 200 })
 ```
 
-See [Usage - Build URLs and Tags](https://cloudinary.nuxtjs.org/usage-build).
+See [Usage - Build Image URLs and Tags](https://cloudinary.nuxtjs.org/usage/optimize-image).
 
 ## Client components
 
