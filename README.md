@@ -87,7 +87,7 @@ See [Usage - Build Image URLs and Tags](https://cloudinary.nuxtjs.org/usage/opti
 
 This module uses the official [Vue components built for Cloudinary](https://github.com/cloudinary/cloudinary-vue) and registers the following components for use in the application: `CldImage`, `CldVideo` and other supportive components. 
 
-See [Usage - Vue components](https://cloudinary.nuxtjs.org/component).
+See [Usage - Vue components](https://cloudinary.nuxtjs.org/usage/vue-components).
 
 ## Development
 
