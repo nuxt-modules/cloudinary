@@ -72,7 +72,7 @@ export default {
   data() {
     return {
       src: this.$cloudinary.image.url(
-          'replace-your-asset-public-id-here',
+          'paste-path-to-image-here',
           {
             gravity: 'auto:subject',
             width: '200',
@@ -99,7 +99,7 @@ export default {
 export default {
   asyncData ({ $cloudinary }) {
     const src = this.$cloudinary.image.url(
-        'replace-your-asset-public-id-here',
+        'paste-path-to-image-here',
         {
           gravity: 'auto:subject',
           width: '200',
@@ -127,7 +127,7 @@ export default {
 export default {
   data() {
     return {
-      url: 'replace-your-asset-public-id-here'
+      url: 'paste-path-to-image-here'
     }
   },
   computed: {
@@ -160,7 +160,7 @@ For readability and easy maintainance, you can also wrap `this.$cloudinary.image
 export default {
   data() {
     return {
-      url: 'replace-your-asset-public-id-here'
+      url: 'paste-path-to-image-here'
     }
   },
   methods: {
