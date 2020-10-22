@@ -14,17 +14,17 @@ To upload an media asset, you can use `this.$cloudinary.upload` (within a compon
 
 <badge>v1.0.0+</badge>
 
-- `file`
-  - Type: `String`
-  - `required`
-  - Path to the target asset file for uploading
-- `options`
-  - Type: `Object`
-  - Configuration options to apply to the target asset during uploading to Cloudinary.
-- `callback`
-  - Type: `Function`
-  - A callback method to trigger once the upload is completed. It is **not** needed if you are using ES6 `async/await` or Promise API.
-- Returns a `Promise<Asset | Error>`
+* `file`
+  * Type: `String`
+  * `required`
+  * Path to the target asset file for uploading
+*`options`
+  *Type: `Object`
+  *Configuration options to apply to the target asset during uploading to Cloudinary.
+*`callback`
+  * Type: `Function`
+  * A callback method to trigger once the upload is completed. It is **not** needed if you are using ES6 `async/await` or Promise API.
+* Returns a `Promise<Asset | Error>`
 
 <alert type="info">
 
@@ -84,30 +84,30 @@ It's **required** to provide `options.upload_preset` per call. Check out [Upload
 
 Client-side `upload` receives `options` parameter with the following properties:
 
-- `upload_preset`
-  - Type: `String`
-  - `required`
-  - **Unsigned** upload preset defined for your Cloudinary account.
-- `public_id`
-  - Type: `String`
-  - The identifier for accessing the uploaded asset.
-- `folder`
-  - Type: `String`
-  - Folder name where the uploaded asset will be store.
-- `tags`
-  - Type: `Array<String>`
-  - List of tag names to assign to the uploaded asset, such as `['animal', 'dog']`
-- `context`
-  - Type: `Array<Object>`
-  - List of key-value pairs of general textual contet metadata to attach to the uploaded asset.
-- `face_coordinates`
-  - Type: `Array<Array>`
-  - For **images only**
-  - List of array of coordinates (`[ x, y, width, height ]`) of faces contained in the uploaded asset. This is for overriding the automatically detected faces.
-- `custom_coordinates`
-  - Type: `Array<Array>`
-  - For **images only**
-  - List of array of coordinates (`[ x, y, width, height ]`) of single region contained in the uploaded asset. It is relevant only if you are planning to crop images using `custom` gravity.
+* `upload_preset`
+  * Type: `String`
+  * `required`
+  * **Unsigned** upload preset defined for your Cloudinary account.
+* `public_id`
+  * Type: `String`
+  * The identifier for accessing the uploaded asset.
+* `folder`
+  * Type: `String`
+  * Folder name where the uploaded asset will be store.
+* `tags`
+  * Type: `Array<String>`
+  * List of tag names to assign to the uploaded asset, such as `['animal', 'dog']`
+* `context`
+  * Type: `Array<Object>`
+  * List of key-value pairs of general textual contet metadata to attach to the uploaded asset.
+* `face_coordinates`
+  * Type: `Array<Array>`
+  * For **images only**
+  * List of array of coordinates (`[ x, y, width, height ]`) of faces contained in the uploaded asset. This is for overriding the automatically detected faces.
+* `custom_coordinates`
+  * Type: `Array<Array>`
+  * For **images only**
+  * List of array of coordinates (`[ x, y, width, height ]`) of single region contained in the uploaded asset. It is relevant only if you are planning to crop images using `custom` gravity.
 
 Once resolved sucessfully, the method returns an [Asset](#asset) containing information about the uploaded asset, or an `Error` otherwise.
 
@@ -128,7 +128,7 @@ Client-side upload using unsigned upload preset is **not** secured, since the up
 
 ### Client-side Upload (Pre-signed)
 
-<badge>v1.0.0+</badge>
+<badge>v1.0.1+</badge>
 
 It's possible to secure client-side uploads by generating a signature beforehand, that we pass to the upload request. These uploads _do not_ require you to pass an [upload preset](#upload-preset), but you may still include one if you are using signed upload presets.
 
@@ -205,48 +205,48 @@ This is the **read-only** object containing an asset's information, which is ret
 
 Below are some main properties:
 
-- `public_id`
-  - Type: `String`
-  - The asset's public identifier (path to the asset stored in Cloudinary)
-- `asset_id`
-  - Type: `String`
-  - Asset's hashed id
-- `format`
-  - Type: `String`
-  - Original format, such as `.png`, `.jpg`, etc.
-- `secure_url`
-  - Type: `String`
-  - Original delivery URL using HTTPS
-- `url`
-  - Type: `String`
-  - Original unsecured delivery URL (HTTP)
-- `type`
-  - Type: `String`
-  - Asset's delivery type, can be `fetch`, `upload`, `authenticated`, `private`, etc.
-- `version`
-  - Type: `String`
-  - Current version of the asset
-- `height`
-  - Type: `Number`
-  - Asset's height
-- `width`
-  - Type: `Number`
-  - Asset's width
-- `eager`
-  - Type: `Array<Object>`
-  - Pre-generate assets' info based on the eager transformations passed
-- `placeholder`
-  - Type: `Boolean`
-  - Whether there is a placeholder generated
-- `tags`
-  - Type: `Array`
-  - All the tags assigned to the asset
-- `original_filename`
-  - Type: `String`
-  - The original filename when uploading
-- `overwritten`
-  - Type: `Boolean`
-  - Whether it is overwritten (**for upload**)
+* `public_id`
+  * Type: `String`
+  * The asset's public identifier (path to the asset stored in Cloudinary)
+* `asset_id`
+  * Type: `String`
+  * Asset's hashed id
+* `format`
+  * Type: `String`
+  * Original format, such as `.png`, `.jpg`, etc.
+* `secure_url`
+  * Type: `String`
+  * Original delivery URL using HTTPS
+* `url`
+  * Type: `String`
+  * Original unsecured delivery URL (HTTP)
+* `type`
+  * Type: `String`
+  * Asset's delivery type, can be `fetch`, `upload`, `authenticated`, `private`, etc.
+* `version`
+  * Type: `String`
+  * Current version of the asset
+* `height`
+  * Type: `Number`
+  * Asset's height
+* `width`
+  * Type: `Number`
+  * Asset's width
+* `eager`
+  * Type: `Array<Object>`
+  * Pre-generate assets' info based on the eager transformations passed
+* `placeholder`
+  * Type: `Boolean`
+  * Whether there is a placeholder generated
+* `tags`
+  * Type: `Array`
+  * All the tags assigned to the asset
+* `original_filename`
+  * Type: `String`
+  * The original filename when uploading
+* `overwritten`
+  * Type: `Boolean`
+  * Whether it is overwritten (**for upload**)
 
 Example of a returned asset:
 

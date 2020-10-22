@@ -42,7 +42,7 @@ See [Image URLs and Tags](/usage/optimize-image) for the full list of available 
 
 <badge>v1.0.0+</badge>
 
-* Returns an `Object` with methods designated for images. 
+* Returns an `Object` with methods designated for videos. 
 
 See [Video URLs and Tags](/usage/optimize-video) for the full list of available methods.
 

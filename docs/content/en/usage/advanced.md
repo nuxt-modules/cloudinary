@@ -158,7 +158,7 @@ When building a blog, we can use one of the hook to retrieve the cover image's o
 ```yaml
 ---
 title: Hello World
-image: https://images6.alphacoders.com/337/337780.jpg
+image: https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png
 ---
 ```
 

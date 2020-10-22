@@ -134,7 +134,7 @@ Returns `String` as the Cloudinary delivery URL for the requested asset.
 ```js
 const url = this.$cloudinary()
               .fetchRemote(
-                'https://images6.alphacoders.com/337/337780.jpg',
+                'https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png',
                 { crop: 'scale', width: 200 })
 ```
 

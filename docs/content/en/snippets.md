@@ -144,7 +144,7 @@ export default {
 <template>
   <div>
     <cld-image
-      public-id="https://images6.alphacoders.com/337/337780.jpg"
+      public-id="https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png"
       type="fetch"
       reponsive
       loading="lazy"
@@ -167,7 +167,7 @@ export default {
 export default {
   data() {
     return {
-      image: this.$cloudinary.image.fetchRemote("https://images6.alphacoders.com/337/337780.jpg")
+      image: this.$cloudinary.image.fetchRemote("https://icatcare.org/app/uploads/2018/07/Thinking-of-getting-a-cat.png")
     }
   }
 }
