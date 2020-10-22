@@ -12,6 +12,9 @@ version: 1
 1. After you run the installation command for `@nuxtjs/cloudinary`, copy and paste the following to your `nuxt.config.js` file:
 
   ```js[nuxt.config.js]
+  modules: [
+    '@nuxtjs/cloudinary',
+  ],
   cloudinary: {
     cloudName: process.env.CLOUDNAME,
     apiKey: process.env.API_KEY, //only needed if you are using server-side upload
