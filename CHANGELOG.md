@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/nuxt-community/cloudinary-module/compare/v1.0.0...v1.0.1) (2020-10-27)
+
+
+### Bug Fixes
+
+* [#31](https://github.com/nuxt-community/cloudinary-module/issues/31) api_key of undefine and snakecase convert ([#32](https://github.com/nuxt-community/cloudinary-module/issues/32)) ([e2033fb](https://github.com/nuxt-community/cloudinary-module/commit/e2033fb7b65a9cf999cc3702494e483ae42385d2))
+
 ### [0.0.10](https://github.com/nuxt-community/cloudinary-module/compare/v0.0.9...v0.0.10) (2020-09-07)
 
 ### [0.0.9](https://github.com/nuxt-community/cloudinary-module/compare/v0.0.8...v0.0.9) (2020-08-11)
