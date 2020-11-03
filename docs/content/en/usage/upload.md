@@ -18,10 +18,10 @@ To upload an media asset, you can use `this.$cloudinary.upload` (within a compon
   * Type: `String`
   * `required`
   * Path to the target asset file for uploading
-*`options`
-  *Type: `Object`
-  *Configuration options to apply to the target asset during uploading to Cloudinary.
-*`callback`
+* `options`
+  * Type: `Object`
+  * Configuration options to apply to the target asset during uploading to Cloudinary.
+* `callback`
   * Type: `Function`
   * A callback method to trigger once the upload is completed. It is **not** needed if you are using ES6 `async/await` or Promise API.
 * Returns a `Promise<Asset | Error>`
