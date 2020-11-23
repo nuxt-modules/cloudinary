@@ -12,7 +12,7 @@
   "author": "Maya Shavin",
   "license": "MIT",
   "dependencies": {
-    "@nuxt/content-theme-docs": "^0.7.2",
+    "@nuxt/content-theme-docs": "^0.8.1",
     "nuxt": "^2.14.7"
   },
   "devDependencies": {
