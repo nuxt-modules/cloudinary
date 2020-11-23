@@ -116,7 +116,7 @@ Returns `Object` which contains:
   * Delivery URL generated for the requested video as a video thumbnail.
 
 ```js
-const url = this.$cloudinary.video
+const { url } = this.$cloudinary.video
               .thumbnail(
                 'dog',
                 { crop: 'scale', width: 200 })
