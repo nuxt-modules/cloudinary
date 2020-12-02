@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.2](https://github.com/nuxt-community/cloudinary-module/compare/v1.0.1...v1.0.2) (2020-11-25)
+
+
+### Bug Fixes
+
+*  [#37](https://github.com/nuxt-community/cloudinary-module/issues/37) error on installing ([46204bf](https://github.com/nuxt-community/cloudinary-module/commit/46204bf3975183b85094733181c0ccc9c63bacc4))
+* leak of nodejs cloudinary to client ([#47](https://github.com/nuxt-community/cloudinary-module/issues/47)) ([32023a8](https://github.com/nuxt-community/cloudinary-module/commit/32023a87a38cc7d2a0f24159e83043f9e98e585c))
+
 ### [1.0.1](https://github.com/nuxt-community/cloudinary-module/compare/v1.0.0...v1.0.1) (2020-10-27)
 
 
