@@ -77,11 +77,17 @@
     "siroc": "latest",
     "standard-version": "latest"
   },
+  "resolutions": {
+    "rollup-plugin-esbuild": "2.3.0"
+  },
   "peerDependencies": {
     "chalk": "^3.0.0",
     "consola": "^2.15.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "volta": {
+    "node": "10.23.0"
   }
 }
