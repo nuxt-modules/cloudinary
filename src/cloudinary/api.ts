@@ -1,78 +1,71 @@
-import { CloudConfig, buildImageUrl, CldOptions, buildVideoUrl, TransformerOption, TransformerVideoOption, STORAGE_TYPES } from 'cloudinary-build-url'
-import { ImageElement, VideoElement } from './element'
+import type { CloudConfig } from '@cld-apis/types'
+import { STORAGE_TYPES } from '@cld-apis/utils'
+import { ImageTag, VideoTag, Cloudinary, Util } from 'cloudinary-core'
 
-/**To support until deprecate */
-export interface CldOptionsImageLegacy extends CloudConfig, TransformerOption{}
-export interface CldOptionsVideoLegacy extends CloudConfig, TransformerVideoOption{}
+const basicOptimizations = {
+  quality: 'auto',
+  fetch_format: 'auto'
+}
 
-//TODO: 
-/**
- * 1. Map legacy APIs to new APIs (only need to map options to transformations and clouds)
- * 2. Unit test
- * 3. Upload/resources/explicit
- * 4. Revert back to Cloudinary-core until build-url is stable?
- */
-
-export class CloudinaryApi {
-  private readonly _config: CloudConfig
-
-  constructor(config: CloudConfig = {}) {
-    this._config = config
-    }
-
-    config(config: CloudConfig = {}) {
-    return new CloudinaryApi({
-      ...this._config,
-      ...config
-    })
-  }
-
-  get image():ImageApi{
-    const url = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):string => { return buildImageUrl(publicId, options as CldOptions)} 
-    const element = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):ImageElement => { 
-      return new ImageElement(publicId, options as CldOptions)
-    }
-    const fetchRemote = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):string => { 
-      
-      return buildImageUrl(publicId, {
-      cloud: {
-        ...options,
-        storageType: STORAGE_TYPES.FETCH
-      },
-      transformations: (options as CldOptions).transformations
-      })
-    } 
-
-    return {
-      url,
-      element,
-      fetchRemote
-    }
-  }
-  get video(): VideoApi {
-  const url = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):string => { return buildImageUrl(publicId, options as CldOptions)} 
-  const thumbnail = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):string => { return buildImageUrl(publicId, options as CldOptions) }
-  const element = (publicId: string, options: CldOptions | CldOptionsImageLegacy = {}):VideoElement => { return new VideoElement(publicId, options as CldOptions)}
-
+export const getTransformationOptions = (options = {}) => {
   return {
-    url,
-    thumbnail,
-    element
-  }
-    
+    ...basicOptimizations,
+    ...options
   }
 }
 
 export type ImageApi = {
-  url: typeof buildImageUrl,
-  element: (publicId: string, options: CldOptions) => Object,
-  fetchRemote: typeof buildImageUrl
+  url: (publicId: string, options) => string,
+  element: (publicId: string, options) => ImageTag,
+  fetchRemote: (publicId: string, options) => string
+}
+
+export type VideoThumbnail = {
+  url: string
 }
 
 export type VideoApi = {
-  url: typeof buildVideoUrl,
-  element: (publicId: string, options: CldOptions) => Object,
-  thumbnail: typeof buildImageUrl //return object
+  url: (publicId: string, options) => string,
+  element: (publicId: string, options) => VideoTag,
+  thumbnail: (publicId: string, options) => VideoThumbnail
+}
+
+export class CloudinaryApi {
+  private readonly _config: CloudConfig
+  public readonly image: ImageApi
+  public readonly video: VideoApi
+
+  constructor (config: CloudConfig = {}) {
+    this._config = Util.withSnakeCaseKeys({
+      secure: true,
+      ...config
+    })
+
+    const cld = new Cloudinary(this._config as any)
+
+    this.image = {
+      url: (publicId: string, options:Object = {}):string => cld.url(publicId, getTransformationOptions(options)),
+      element: (publicId: string, options:Object = {}):ImageTag => cld.imageTag(publicId, getTransformationOptions(options)),
+      fetchRemote: (url: string, options:Object = {}):string => cld.url(url, getTransformationOptions({ ...options, type: STORAGE_TYPES.FETCH }))
+    }
+
+    this.video = {
+      url: (publicId: string, options:Object = {}):string => cld.video_url(publicId, getTransformationOptions(options)),
+      element: (publicId: string, options:Object = {}):VideoTag => cld.videoTag(publicId, getTransformationOptions(options)),
+      thumbnail: (publicId: string, options:Object = {}):VideoThumbnail => ({ url: cld.video_thumbnail_url(publicId, getTransformationOptions(options)) })
+    }
+  }
+
+  config (config: CloudConfig = {}) {
+    return new CloudinaryApi({
+      ...this._config,
+      ...Util.withSnakeCaseKeys(config)
+    })
+  }
+
+  get configurations ():CloudConfig {
+    return this._config
+  }
 }
 
 export default CloudinaryApi

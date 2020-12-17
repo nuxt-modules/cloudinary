@@ -1,10 +1,7 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "1.0.2",
+  "version": "1.0.3-beta",
   "description": "Cloudinary module for Nuxt",
-  "repository": "nuxt-community/cloudinary-module",
-  "license": "MIT",
-  "sideEffects": false,
   "keywords": [
     "nuxt",
     "module",
@@ -15,55 +12,65 @@
     "optimization",
     "plugins"
   ],
+  "repository": "nuxt-community/cloudinary-module",
+  "license": "MIT",
   "contributors": [
     {
       "name": "Maya Shavin <dpnminh@gmail.com>"
     }
   ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.es.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "templates"
   ],
-  "main": "dist/module.js",  
-  "types": "dist/module.d.ts",
   "scripts": {
     "build": "siroc build",
     "dev": "nuxt-ts example",
-    "lint": "eslint --ext .js,.ts,.vue .",
-    "release": "yarn build && yarn test && standard-version && git push --follow-tags && npm publish",
-    "test": "yarn lint && jest",
+    "lint": "eslint --fix --ext .js,.ts,.vue .",
     "prepare": "yarn build",
-    "prepublishOnly": "yarn test"
+    "prepublishOnly": "yarn test",
+    "release": "yarn build && yarn test && standard-version && git push --follow-tags && npm publish",
+    "test": "yarn lint && jest"
   },
   "dependencies": {
-    "cloudinary": "^1.23.0",
-    "cloudinary-build-url": "^0.0.5",
     "cloudinary-vue": "^1.1.2",
     "defu": "^2.0.4"
   },
   "devDependencies": {
-    "@babel/plugin-transform-runtime": "latest",
     "@babel/core": "latest",
-    "@babel/preset-typescript": "latest",
+    "@babel/plugin-transform-runtime": "latest",
     "@babel/preset-env": "latest",
+    "@babel/preset-typescript": "latest",
+    "@cld-apis/types": "^0.1.1",
+    "@cld-apis/utils": "^0.1.1",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxt/test-utils": "latest",
-    "@nuxtjs/eslint-config-typescript": "latest",
+    "@nuxt/types": "latest",
     "@nuxt/typescript-runtime": "latest",
-    "@nuxtjs/module-test-utils": "latest",
+    "@nuxtjs/eslint-config-typescript": "latest",
     "@siroc/jest-preset": "latest",
     "@types/jest": "latest",
     "babel-eslint": "latest",
     "babel-jest": "latest",
+    "cloudinary": "^1.23.0",
     "eslint": "latest",
     "husky": "latest",
     "jest": "latest",
     "nuxt": "latest",
-    "puppeteer": "^5.5.0",
-    "standard-version": "latest",
+    "playwright": "^1.7.0",
     "siroc": "latest",
-    "tib": "^0.7.4"
+    "standard-version": "latest"
   },
   "peerDependencies": {
     "chalk": "^3.0.0",
@@ -71,10 +78,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "husky": {
-    "gitHooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
