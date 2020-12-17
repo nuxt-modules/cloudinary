@@ -1,17 +1,20 @@
 module.exports = {
   testEnvironment: 'node',
   collectCoverage: true,
-  collectCoverageFrom: [
-    'lib/**/*.js',
-    '!lib/templates/**/*'
-  ],
+  collectCoverageFrom: ['src/**', '!templates/**/*'],
   moduleNameMapper: {
-    '^~/(.*)$': '<rootDir>/lib/$1',
+    '^~/(.*)$': '<rootDir>/src/$1',
     '^~~$': '<rootDir>',
     '^@@$': '<rootDir>',
-    '^@/(.*)$': '<rootDir>/lib/$1'
+    '^@/(.*)$': '<rootDir>/src/$1'
   },
   transform: {
-    '^.+\\.js$': 'babel-jest'
+    '^.+\\.(js|ts)$': [
+      'babel-jest',
+      {
+        presets: ['@babel/preset-env', '@babel/preset-typescript'],
+        plugins: ['@babel/plugin-transform-runtime']
+      }
+    ]
   }
 }

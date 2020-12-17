@@ -42,6 +42,11 @@
     "release": "yarn build && yarn test && standard-version && git push --follow-tags && npm publish",
     "test": "yarn lint && jest"
   },
+  "husky": {
+    "gitHooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "cloudinary-vue": "^1.1.2",
     "defu": "^2.0.4"
@@ -65,7 +70,7 @@
     "babel-jest": "latest",
     "cloudinary": "^1.23.0",
     "eslint": "latest",
-    "husky": "latest",
+    "husky": "^4.3.6",
     "jest": "latest",
     "nuxt": "latest",
     "playwright": "^1.7.0",
