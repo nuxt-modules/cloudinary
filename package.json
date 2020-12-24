@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "1.0.3-beta-1",
+  "version": "1.0.3-beta-2",
   "description": "Cloudinary module for Nuxt",
   "keywords": [
     "nuxt",
@@ -47,6 +47,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "resolutions": {
+    "rollup-plugin-esbuild": "2.3.0"
+  },
   "dependencies": {
     "@cld-apis/utils": "^0.1.1",
     "cloudinary": "^1.23.0",
@@ -76,9 +79,6 @@
     "playwright": "^1.7.0",
     "siroc": "latest",
     "standard-version": "latest"
-  },
-  "resolutions": {
-    "rollup-plugin-esbuild": "2.3.0"
   },
   "peerDependencies": {
     "chalk": "^3.0.0",
