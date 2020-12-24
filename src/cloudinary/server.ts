@@ -1,5 +1,5 @@
-import { Util } from 'cloudinary-core'
 import { Asset } from '@cld-apis/types'
+import { toSnakeCase } from '@cld-apis/utils'
 import CloudinaryApi from './api'
 
 export type CldError = {
@@ -15,11 +15,11 @@ export class ServerApi extends CloudinaryApi {
    * @returns {Promise<Asset | CldError>}
    */
   upload (file: string, options: Object = {}, callback?: Function):Promise<Asset | CldError> {
-    const $options = Util.withSnakeCaseKeys(options)
+    const $options = toSnakeCase(options)
 
     const cldServer = require('cloudinary').v2
 
-    cldServer.config(this.configurations)
+    cldServer.config(toSnakeCase(this.configurations))
 
     const uploader = cldServer.uploader
 
@@ -33,11 +33,11 @@ export class ServerApi extends CloudinaryApi {
    * @returns {Promise<Asset | CldError | null>}
    */
   async explicit (publicId: string, options:Object = {}):Promise<Asset | CldError> {
-    const $options = Util.withSnakeCaseKeys(options)
+    const $options = toSnakeCase(options)
 
     const cldServer = require('cloudinary').v2
 
-    cldServer.config(this.configurations)
+    cldServer.config(toSnakeCase(this.configurations))
 
     const uploader = cldServer.uploader
 

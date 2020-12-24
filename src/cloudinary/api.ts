@@ -1,10 +1,10 @@
 import type { CloudConfig } from '@cld-apis/types'
-import { STORAGE_TYPES } from '@cld-apis/utils'
-import { ImageTag, VideoTag, Cloudinary, Util } from 'cloudinary-core'
+import { STORAGE_TYPES, toSnakeCase } from '@cld-apis/utils'
+import { ImageTag, VideoTag, Cloudinary } from 'cloudinary-core'
 
 const basicOptimizations = {
   quality: 'auto',
-  fetch_format: 'auto'
+  fetchFormat: 'auto'
 }
 
 export const getTransformationOptions = (options = {}) => {
@@ -36,12 +36,12 @@ export class CloudinaryApi {
   public readonly video: VideoApi
 
   constructor (config: CloudConfig = {}) {
-    this._config = Util.withSnakeCaseKeys({
+    this._config = {
       secure: true,
       ...config
-    })
+    }
 
-    const cld = new Cloudinary(this._config as any)
+    const cld = new Cloudinary(toSnakeCase(this._config))
 
     this.image = {
       url: (publicId: string, options:Object = {}):string => cld.url(publicId, getTransformationOptions(options)),
@@ -59,7 +59,7 @@ export class CloudinaryApi {
   config (config: CloudConfig = {}) {
     return new CloudinaryApi({
       ...this._config,
-      ...Util.withSnakeCaseKeys(config)
+      ...config
     })
   }
 

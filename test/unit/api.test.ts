@@ -6,10 +6,10 @@ describe('CloudinaryApi', () => {
     privateCdn: false
   })
 
-  it('should create CloudinaryApi with snake_case config', () => {
+  it('should create CloudinaryApi with config', () => {
     expect(instance.configurations).toEqual({
-      cloud_name: 'demo',
-      private_cdn: false,
+      cloudName: 'demo',
+      privateCdn: false,
       secure: true
     })
   })
@@ -26,14 +26,14 @@ describe('CloudinaryApi', () => {
     })
 
     expect(newInst.configurations).toEqual({
-      cloud_name: 'maya',
-      private_cdn: false,
+      cloudName: 'maya',
+      privateCdn: false,
       secure: false
     })
 
     expect(instance.configurations).toEqual({
-      cloud_name: 'demo',
-      private_cdn: false,
+      cloudName: 'demo',
+      privateCdn: false,
       secure: true
     })
   })
@@ -47,8 +47,9 @@ describe('CloudinaryApi', () => {
       it('should return modified image', () => {
         expect(instance.image.url('example', {
           width: 200,
-          crop: 'scale'
-        })).toBe('https://res.cloudinary.com/demo/image/upload/c_scale,f_auto,q_auto,w_200/example')
+          crop: 'scale',
+          fetchFormat: 'jpg'
+        })).toBe('https://res.cloudinary.com/demo/image/upload/c_scale,f_jpg,q_auto,w_200/example')
       })
     })
 
@@ -103,7 +104,7 @@ describe('getTransformationOptions()', () => {
   it('should return default options if no input', () => {
     expect(getTransformationOptions()).toEqual({
       quality: 'auto',
-      fetch_format: 'auto'
+      fetchFormat: 'auto'
     })
   })
 
@@ -112,13 +113,13 @@ describe('getTransformationOptions()', () => {
       resize: {
         width: 100
       },
-      fetch_format: 'png'
+      fetchFormat: 'png'
     })).toEqual({
       resize: {
         width: 100
       },
       quality: 'auto',
-      fetch_format: 'png'
+      fetchFormat: 'png'
     })
   })
 })
