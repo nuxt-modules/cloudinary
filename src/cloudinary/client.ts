@@ -1,10 +1,10 @@
 /* eslint-disable */
 import CloudinaryApi from './api'
-import { Util } from 'cloudinary-core'
+import { toSnakeCase } from '@cld-apis/utils'
 
 export class ClientApi extends CloudinaryApi {
   async upload (file: string, options:Object = {}, callback?: Function) {
-    const $options = Util.withSnakeCaseKeys(options)
+    const $options = toSnakeCase(options)
 
     const endpoint = `https://api.cloudinary.com/v1_1/${this.configurations.cloudName}/upload`
 
