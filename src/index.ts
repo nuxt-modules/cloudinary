@@ -77,6 +77,9 @@ function cloudinaryModule (moduleOptions): Module<ModuleOptions> {
 declare module '@nuxt/types' {
   interface NuxtConfig { cloudinary?: ModuleOptions } // Nuxt 2.14+
   interface Configuration { cloudinary?: ModuleOptions } // Nuxt 2.9 - 2.13
+  interface Context {
+    $cloudinary: CloudinaryApi
+  }
 }
 
 declare module 'vue/types/vue' {
