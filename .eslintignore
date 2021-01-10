@@ -3,9 +3,16 @@ node_modules
 dist
 .nuxt
 coverage
+*.log
+
+.DS_STORE
+.code
+*.iml
+package-lock.json
 
 # Plugin
 lib/plugin.js
 lib/templates/*.js
+templates/*
 
 docs/static/sw.js
