@@ -30,6 +30,10 @@ export type VideoApi = {
   thumbnail: (publicId: string, options) => VideoThumbnail
 }
 
+export interface CloudinaryActions {
+  upload (file: string, options:Object, callback?: Function)
+}
+
 export class CloudinaryApi {
   private readonly _config: CloudConfig
   public readonly image: ImageApi

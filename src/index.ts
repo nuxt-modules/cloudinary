@@ -5,7 +5,7 @@ import defu from 'defu'
 import chalk from 'chalk'
 import { logger } from './utilties/logger'
 import { ServerApi } from './cloudinary/server'
-import CloudinaryApi from './cloudinary/api'
+import { ClientApi } from './cloudinary/client'
 
 type Exclude<T, U> = T extends U ? never : T
 
@@ -78,19 +78,20 @@ declare module '@nuxt/types' {
   interface NuxtConfig { cloudinary?: ModuleOptions } // Nuxt 2.14+
   interface Configuration { cloudinary?: ModuleOptions } // Nuxt 2.9 - 2.13
   interface Context {
-    $cloudinary: CloudinaryApi
+    $cloudinary: ServerApi
   }
 }
 
 declare module 'vue/types/vue' {
   interface Vue {
-    $cloudinary: CloudinaryApi
+    $cloudinary: ClientApi
   }
 }
 
 export type { ImageApi, VideoApi, VideoThumbnail } from './cloudinary/api'
-export { ClientApi } from './cloudinary/client'
 
-export { CloudinaryApi }
+export { CloudinaryApi } from './cloudinary/api'
+
+export { ClientApi, ServerApi }
 
 export default cloudinaryModule

@@ -1,4 +1,4 @@
-import { Asset } from '@cld-apis/types'
+import { Asset, CloudConfig } from '@cld-apis/types'
 import { toSnakeCase } from '@cld-apis/utils'
 import CloudinaryApi from './api'
 
@@ -7,6 +7,13 @@ export type CldError = {
 }
 
 export class ServerApi extends CloudinaryApi {
+  config (config: CloudConfig = {}) {
+    return new ServerApi({
+      ...this.configurations,
+      ...config
+    })
+  }
+
   /**
    * Returns a Promise from the upload process for an asset on Server side
    * @param {String} file - path to the asset you wish to upload
