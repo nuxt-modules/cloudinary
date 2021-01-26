@@ -153,7 +153,15 @@ Only relevant if you are Advanced plan Cloudinary user with private CDN distribu
 
 </alert>
 
-## `privateCDN`
+## `privateCdn`
+
+<badge>v1.0.3+</badge>
+
+<alert type="warning">
+
+For version 1.0.2 and below, please use `privateCDN` instead.
+
+</alert>
 
 * Type: `Boolean`
 * Default: `false`

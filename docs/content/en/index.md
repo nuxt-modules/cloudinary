@@ -14,6 +14,8 @@ features:
   - Responsive and reactive transformations on images and videos
   - Minimum configuration required to set up Cloudinary and running
   - Upload images and videos
+  - TypeScript support.
+version: 1
 ---
 
 <img src="/preview.png" class="light-img">
