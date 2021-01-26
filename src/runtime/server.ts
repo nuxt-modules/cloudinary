@@ -1,4 +1,4 @@
-import { Asset, CloudConfig } from '@cld-apis/types'
+import type { Asset, CloudConfig } from '@cld-apis/types'
 import { toSnakeCase } from '@cld-apis/utils'
 import CloudinaryApi from './api'
 

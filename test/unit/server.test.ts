@@ -1,4 +1,4 @@
-import { ServerApi } from '../../src/cloudinary/server'
+import { ServerApi } from '../../src/runtime/server'
 
 describe('ServerApi', () => {
   const instance = new ServerApi({

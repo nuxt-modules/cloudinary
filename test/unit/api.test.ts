@@ -1,4 +1,4 @@
-import CloudinaryApi, { getTransformationOptions } from '../../src/cloudinary/api'
+import CloudinaryApi, { getTransformationOptions } from '../../src/runtime/api'
 
 describe('CloudinaryApi', () => {
   const instance = new CloudinaryApi({

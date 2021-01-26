@@ -1,13 +1,14 @@
-const { resolve } = require('path')
-
-module.exports = {
-  rootDir: resolve(__dirname, '..'),
-  buildDir: resolve(__dirname, '.nuxt'),
-  srcDir: __dirname,
+export default {
+  components: true,
+  target: 'static',
   modules: [
-    { handler: require('../') }
+    '../src/index.ts'
+  ],
+  buildModules: [
+    '@nuxt/typescript-build'
   ],
   cloudinary: {
-    cloudName: 'demo'
+    cloudName: 'demo',
+    useComponent: true
   }
 }

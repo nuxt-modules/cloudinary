@@ -1,7 +1,7 @@
 /* eslint-disable */
 import CloudinaryApi from './api'
 import { toSnakeCase } from '@cld-apis/utils'
-import { CloudConfig } from '@cld-apis/types'
+import type { CloudConfig } from '@cld-apis/types'
 
 export class ClientApi extends CloudinaryApi {
   async upload (file: string, options:Object = {}, callback?: Function) {

@@ -11,8 +11,5 @@ coverage
 package-lock.json
 
 # Plugin
-lib/plugin.js
-lib/templates/*.js
-templates/*
-
+src/runtime/plugin.*.js
 docs/static/sw.js

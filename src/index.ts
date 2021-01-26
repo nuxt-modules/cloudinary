@@ -1,11 +1,11 @@
 import { resolve } from 'path'
-import { Module } from '@nuxt/types'
-import { CloudConfig } from '@cld-apis/types'
+import type { Module } from '@nuxt/types'
+import type { CloudConfig } from '@cld-apis/types'
 import defu from 'defu'
 import chalk from 'chalk'
 import { logger } from './utilties/logger'
-import { ServerApi } from './cloudinary/server'
-import { ClientApi } from './cloudinary/client'
+import { ServerApi } from './runtime/server'
+import type { ClientApi } from './runtime/client'
 
 type Exclude<T, U> = T extends U ? never : T
 
@@ -47,20 +47,21 @@ function cloudinaryModule (moduleOptions): Module<ModuleOptions> {
 
   const $cloudinary = new ServerApi(options)
 
-  this.nuxt.hook('vue-renderer:context', (ssrContext) => {
-    ssrContext.$cloudinary = $cloudinary
-  })
+  // Transpile and alias runtime
+  const runtimeDir = resolve(__dirname, 'runtime')
+  this.nuxt.options.alias['~cloudinary'] = runtimeDir
+  this.nuxt.options.build.transpile.push(runtimeDir, '@nuxtjs/cloudinary')
 
   // Add server plugin
   this.addPlugin({
-    src: resolve(__dirname, '../templates/plugin.server.js'),
+    src: resolve(__dirname, './runtime/plugin.server.js'),
     fileName: 'cloudinary/plugin.server.js',
     options
   })
 
   // Add client plugin
   this.addPlugin({
-    src: resolve(__dirname, '../templates/plugin.client.js'),
+    src: resolve(__dirname, './runtime/plugin.client.js'),
     fileName: 'cloudinary/plugin.client.js',
     options
   })
@@ -88,10 +89,10 @@ declare module 'vue/types/vue' {
   }
 }
 
-export type { ImageApi, VideoApi, VideoThumbnail } from './cloudinary/api'
+export type { ImageApi, VideoApi, VideoThumbnail } from './runtime/api'
 
-export { CloudinaryApi } from './cloudinary/api'
+export type { CloudinaryApi } from './runtime/api'
 
-export { ClientApi, ServerApi }
+export type { ClientApi, ServerApi }
 
 export default cloudinaryModule
