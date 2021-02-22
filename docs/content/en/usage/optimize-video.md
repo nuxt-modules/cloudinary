@@ -10,7 +10,7 @@ badge: v1.0.0+
 
 This module globally injects `$cloudinary` instance.
 
-You can access the APIs for working with images anywhere using `this.$cloudinary.video` (within a component), or `context.$cloudinary.video` (for plugins, `asyncData`, `fetch`, `nuxtServerInit` and middleware).
+You can access the APIs for working with videos anywhere using `this.$cloudinary.video` (within a component), or `context.$cloudinary.video` (for plugins, `asyncData`, `fetch`, `nuxtServerInit` and middleware).
 
 <alert type="info">
 
