@@ -40,15 +40,15 @@
     }
   },
   "resolutions": {
-    "rollup-plugin-esbuild": "2.3.0"
+    "rollup-plugin-esbuild": "2.6.1"
   },
   "dependencies": {
-    "@cld-apis/utils": "^0.1.1",
+    "@cld-apis/utils": "^0.1.3",
     "chalk": "^4.1.0",
-    "cloudinary": "^1.23.0",
+    "cloudinary": "^1.25.0",
     "cloudinary-core": "^2.11.3",
     "cloudinary-vue": "^1.1.2",
-    "consola": "^2.15.0",
+    "consola": "^2.15.3",
     "defu": "^3.2.2"
   },
   "devDependencies": {
@@ -56,12 +56,12 @@
     "@babel/plugin-transform-runtime": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-typescript": "latest",
-    "@cld-apis/types": "^0.1.1",
+    "@cld-apis/types": "^0.1.3",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "@nuxt/test-utils": "latest",
     "@nuxt/types": "latest",
-    "@nuxt/typescript-build": "^2.0.4",
+    "@nuxt/typescript-build": "^2.0.5",
     "@nuxt/typescript-runtime": "latest",
     "@nuxtjs/eslint-config-typescript": "latest",
     "@siroc/jest-preset": "latest",
@@ -73,7 +73,7 @@
     "jest": "latest",
     "mkdist": "^0.1.1",
     "nuxt": "latest",
-    "playwright": "^1.7.0",
+    "playwright": "^1.8.1",
     "siroc": "latest",
     "standard-version": "latest"
   },
@@ -81,6 +81,6 @@
     "access": "public"
   },
   "volta": {
-    "node": "10.23.0"
+    "node": "10.23.3"
   }
 }
