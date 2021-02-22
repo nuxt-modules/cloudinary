@@ -49,7 +49,7 @@
     "cloudinary-core": "^2.11.3",
     "cloudinary-vue": "^1.1.2",
     "consola": "^2.15.0",
-    "defu": "^3.2.2"
+    "defu": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "latest",
