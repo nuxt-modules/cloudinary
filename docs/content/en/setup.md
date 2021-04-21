@@ -17,6 +17,7 @@ You can set up the Cloudinary module easily in two following steps:
 ## Installation
 
 1. Add `@nuxtjs/cloudinary` dependency to your Nuxt project:
+
 <code-group>
   <code-block label="YARN" active>
 
