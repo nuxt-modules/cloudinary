@@ -173,7 +173,7 @@ export default {
   },
   computed: {
     src() {
-      return this.url(
+      return this.fetchRemote(
         this.url,
         {
           gravity: 'auto:subject',
