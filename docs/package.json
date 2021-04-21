@@ -12,8 +12,8 @@
   "author": "Maya Shavin",
   "license": "MIT",
   "dependencies": {
-    "@nuxt/content-theme-docs": "^0.8.2",
-    "nuxt": "^2.14.7"
+    "@nuxt/content-theme-docs": "^0.10.1",
+    "nuxt": "^2.15.1"
   },
   "devDependencies": {
     "nuxt-ackee": "^2.0.0"
