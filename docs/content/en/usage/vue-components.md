@@ -15,6 +15,13 @@ This module uses the official [Vue components built for Cloudinary](https://gith
 
 Each of the components below is embedded with delivery URL building mechanism of Cloudinary.
 
+<alert>
+
+If you encounter issue during install Cloudinary module because of the version of `cloudinary-vue`, please delete your `npm-modules` folder, re-install `cloudinary-vue@1.1.2` (or newer version) and then re-install `@nuxtjs/cloudinary`.
+
+</alert>
+
+
 ## Media components
 
 <alert type="info">
