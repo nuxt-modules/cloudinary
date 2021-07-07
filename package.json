@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "1.0.3-beta-3",
+  "version": "1.0.3",
   "description": "Cloudinary module for Nuxt",
   "keywords": [
     "nuxt",

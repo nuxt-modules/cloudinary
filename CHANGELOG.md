@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/nuxt-community/cloudinary-module/compare/v1.0.2...v1.0.3) (2021-07-07)
+
+
+### Bug Fixes
+
+* installation md in setup.md ([#74](https://github.com/nuxt-community/cloudinary-module/issues/74)) ([6a2312a](https://github.com/nuxt-community/cloudinary-module/commit/6a2312afdfde45b2dcb9acac86537c763e056022))
+* optimize build for TypeScript ([e09026b](https://github.com/nuxt-community/cloudinary-module/commit/e09026b6a987411ff6d5bb0b9ea74694e765300f))
+
 ### [1.0.2](https://github.com/nuxt-community/cloudinary-module/compare/v1.0.1...v1.0.2) (2020-11-25)
 
 
