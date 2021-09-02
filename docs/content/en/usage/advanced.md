@@ -11,7 +11,7 @@ version: 1
 
 <badge>v1.0.0+</badge>
 
-`$cloudinary` is accessible from **@nuxjs/cloudinary**
+`$cloudinary` is accessible from **@nuxtjs/cloudinary**
 
 <alert type="warning">
 
