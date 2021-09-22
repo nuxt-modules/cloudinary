@@ -41,7 +41,8 @@ npm install @nuxtjs/cloudinary
 
 2. Add `@nuxtjs/cloudinary` to the `modules` section of `nuxt.config.js`
 
-```js[nuxt.config.js]
+```js
+/// nuxt.config.js
 {
   modules: [
     // Simple usage
@@ -55,7 +56,8 @@ npm install @nuxtjs/cloudinary
 
 Or a separate section `cloudinary` for module options:
 
-```js[nuxt.config.js]
+```js
+// nuxt.config.js
 {
   modules: [
     // Simple usage
