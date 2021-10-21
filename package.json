@@ -69,7 +69,7 @@
     "babel-eslint": "latest",
     "babel-jest": "latest",
     "eslint": "latest",
-    "husky": "^6.0.0",
+    "husky": "^7.0.4",
     "jest": "latest",
     "mkdist": "^0.1.1",
     "nuxt": "latest",
