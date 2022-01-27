@@ -6,11 +6,9 @@ import type { CloudConfig } from '@cld-apis/types'
 export class ClientApi extends CloudinaryApi {
   async upload (file: string, options:Object = {}, callback?: Function) {
     const $options = toSnakeCase(options)
-
-    const region = this.configurations.region || null
+  
     let apiRegion = 'api'
-
-    switch (region) {
+    switch (this.configurations.region || null) {
       case 'europe':
         apiRegion = 'api-eu'
         break
