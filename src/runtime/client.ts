@@ -7,7 +7,18 @@ export class ClientApi extends CloudinaryApi {
   async upload (file: string, options:Object = {}, callback?: Function) {
     const $options = toSnakeCase(options)
 
-    const endpoint = `https://api.cloudinary.com/v1_1/${this.configurations.cloudName}/upload`
+    const region = this.configurations.region || null
+    let apiRegion = 'api'
+
+    switch (region) {
+      case 'europe':
+        apiRegion = 'api-eu'
+        break
+      case 'asia':
+        apiRegion = 'api-ap'
+    }
+
+    const endpoint = `https://${apiRegion}.cloudinary.com/v1_1/${this.configurations.cloudName}/upload`
 
     const request = await fetch(endpoint, {
       method: 'POST',
