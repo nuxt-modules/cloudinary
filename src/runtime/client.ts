@@ -14,6 +14,7 @@ export class ClientApi extends CloudinaryApi {
         break
       case 'asia':
         apiRegion = 'api-ap'
+        break
     }
 
     const endpoint = `https://${apiRegion}.cloudinary.com/v1_1/${this.configurations.cloudName}/upload`
