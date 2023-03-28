@@ -71,7 +71,7 @@
     "eslint": "latest",
     "husky": "^6.0.0",
     "jest": "latest",
-    "mkdist": "^0.1.1",
+    "mkdist": "^1.2.0",
     "nuxt": "latest",
     "playwright": "^1.8.1",
     "siroc": "latest",
