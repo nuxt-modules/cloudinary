@@ -6,17 +6,17 @@ console.log(url)
 
 <template>
   <!-- Usage of `CldImage.vue` component -->
-  <CldImage
-    src="cld-sample-5.jpg"
-    width="600"
-    height="600"
-    sizes="50vw"
-    alt="Sample Product"
-  />
   <!-- <CldImage
     src="cld-sample-5.jpg"
-    width="600"
-    height="600"
+    width="987"
+    height="987"
+    sizes="50vw"
+    alt="Sample Product"
+  /> -->
+  <!-- <CldImage
+    src="cld-sample-5.jpg"
+    width="987"
+    height="987"
     sizes="50vw"
     alt="Sample Product"
     :overlays="[
