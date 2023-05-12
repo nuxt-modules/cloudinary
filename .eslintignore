@@ -1,15 +1,2 @@
-# Common
-node_modules
 dist
-.nuxt
-coverage
-*.log
-
-.DS_STORE
-.code
-*.iml
-package-lock.json
-
-# Plugin
-src/runtime/plugin.*.js
-docs/static/sw.js
+node_modules

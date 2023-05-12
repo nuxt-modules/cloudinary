@@ -8,22 +8,17 @@
 [![Codecov][codecov-src]][codecov-href]
 [![License][license-src]][license-href]
 
-> [Cloudinary](https://cloudinary.com) integration with for [NuxtJS](https://nuxtjs.org)
+> [Cloudinary](https://cloudinary.com) integration with for [Nuxt](https://nuxt.com)
 
 - [✨ &nbsp;Release Notes](https://cloudinary.nuxtjs.org/releases)
 - [📖 &nbsp;Documentation](https://cloudinary.nuxtjs.org)
 
 ## Features
 
-- On-the-fly url generating for images and videos
-- On-the-fly size optimization per browser and device
-- Pre-generate url generation for images and videos on build
-- Fast loading speed with progressive images
-- Auto-detect the optimized format per browser for images and videos
-- Dynamically fetch and transform images and videos from remote sources
-- Reactive transformations on images and videos
-- Upload images and videos
-- Minimum configuration required to set up Cloudinary and running
+- Nuxt 3 ready
+- Automatically optimize images and deliver in modern formats
+- Remove backgrounds from images
+- Dynamically add image and text overlays to images
 
 [📖 &nbsp;Read more](https://cloudinary.nuxtjs.org)
 
@@ -32,64 +27,39 @@
 1. Add `@nuxtjs/cloudinary` dependency to your project
 
 ```bash
-# using yarn
 yarn add @nuxtjs/cloudinary 
-
-# using npm
 npm install @nuxtjs/cloudinary
 ```
 
-2. Add `@nuxtjs/cloudinary` to the `modules` section of `nuxt.config.js`
+2. Add `@nuxtjs/cloudinary` to the `modules` section of `nuxt.config.ts`
 
 ```js
-/// nuxt.config.js
-{
-  modules: [
-    // Simple usage
-    '@nuxtjs/cloudinary',
-
-    // With options
-    ['@nuxtjs/cloudinary', { /* module options */ }]
-  ]
-}
+export default defineNuxtConfig({
+  modules: ['@nuxtjs/cloudinary'],
+})
 ```
 
-Or a separate section `cloudinary` for module options:
+See [module options](https://cloudinary.nuxtjs.org/options) for more configuration options.
 
-```js
-// nuxt.config.js
-{
-  modules: [
-    // Simple usage
-    '@nuxtjs/cloudinary',
-  ],
-  cloudinary: {
-    cloudName: '<your-cloudinary-cloudname>',
-    /* all other options */
-  }
-}
+3. Create .env file with following `CLOUDINARY_CLOUD_NAME` variable:
+
+```bash
+CLOUDINARY_CLOUD_NAME=<YOUR_CLOUDINARY_CLOUD_NAME>
 ```
 
-See [module options](https://cloudinary.nuxtjs.org/options).
+And that's it! You can now use Clodinary in Nuxt ✨
 
-## Build URLs and Tags for images/videos
-
-This module globally injects `$cloudinary` instance to the application. You can access it anywhere using `this.$cloudinary` (within a component), or `context.$cloudinary` (for plugins, `asyncData`, `fetch`, `nuxtServerInit` and middleware).
-
-Simple use example:
-
-```js
-const url = this.$cloudinary.image
-                .url('sample', { crop: 'scale', width: 200 })
+```html
+<template>
+  <CldImage
+    src="cld-sample-5.jpg"
+    width="987"
+    height="987"
+    format="webp"
+    sizes="50vw"
+  />
+</template>
 ```
-
-See [Usage - Build Image URLs and Tags](https://cloudinary.nuxtjs.org/usage/optimize-image).
-
-## Client components
-
-This module uses the official [Vue components built for Cloudinary](https://github.com/cloudinary/cloudinary-vue) and registers the following components for use in the application: `CldImage`, `CldVideo` and other supportive components. 
-
-See [Usage - Vue components](https://cloudinary.nuxtjs.org/usage/vue-components).
 
 ## Development
 
@@ -100,10 +70,6 @@ See [Usage - Vue components](https://cloudinary.nuxtjs.org/usage/vue-components)
 ## License
 
 [MIT License](./LICENSE)
-
-Copyright (c)
-
-Maintained by [Maya Shavin](https://github.com/mayashavin)
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/@nuxtjs/cloudinary/latest.svg
