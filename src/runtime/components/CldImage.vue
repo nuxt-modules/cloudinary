@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ImgHTMLAttributes } from 'vue';
+
 // The following does not work now as Nuxt 3.4.3 uses Vue 3.2.X while typing defineProps was added in 3.3
 // When Nuxt will migrate to Vue 3.3.X we will be able to replace the local props with just the import of the types from cloudinary url loader.
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
@@ -7,7 +9,7 @@ interface AssetOptionsResize {
   crop?: string;
   width?: number | string;
 }
-interface AssetOptions {
+interface AssetOptions extends ImgHTMLAttributes{
   assetType?: string;
   crop?: string;
   deliveryType?: string;
@@ -34,19 +36,17 @@ interface AssetOptions {
 }
 
 interface CldImageProps extends AssetOptions {
-  sizes?: string;
   loading?: "eager" | "lazy";
   fetchPriority?: "high" | "low" | "auto";
-  srcset?: string;
-  crossorigin?: "" | "anonymous" | "use-credentials" | undefined;
 }
 
 const props = defineProps<CldImageProps>()
 
-const { url } = useCldImageUrl(props)
+const { url } = useCldImageUrl({ options: props })
 </script>
 
 <template>
+  <!-- TODO: bind attrs -->
   <img
     :src="url"
     :width="width"

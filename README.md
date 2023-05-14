@@ -1,4 +1,4 @@
-[![@nuxtjs/cloudinary](https://cloudinary.nuxtjs.org/preview.png)](https://cloudinary.nuxtjs.org)
+[![@nuxtjs/cloudinary](https://cloudinary.nuxtjs.org/cover.jpg)](https://cloudinary.nuxtjs.org)
 
 # @nuxtjs/cloudinary
 
@@ -16,6 +16,8 @@
 ## Features
 
 - Nuxt 3 ready
+- Useful `CldImage.vue` component
+- Handy `useCldImageUrl` composable
 - Automatically optimize images and deliver in modern formats
 - Remove backgrounds from images
 - Dynamically add image and text overlays to images

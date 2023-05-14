@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 // Usage of `useCldImageUrl` composable
-const { url } = useCldImageUrl({ src: '/cld-sample-5.jpg' })
+const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
 console.log(url)
 </script>
 
@@ -9,11 +9,12 @@ console.log(url)
   <CldImage
     src="cld-sample-5.jpg"
     width="987"
+    format="png"
     height="987"
     sizes="50vw"
     alt="Sample Product"
   />
-  <!-- <CldImage
+  <CldImage
     src="cld-sample-5.jpg"
     width="987"
     height="987"
@@ -55,5 +56,5 @@ console.log(url)
         }
       }
     ]"
-  /> -->
+  />
 </template>
