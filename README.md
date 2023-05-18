@@ -1,4 +1,4 @@
-[![@nuxtjs/cloudinary](https://cloudinary.nuxtjs.org/cover.jpg)](https://cloudinary.nuxtjs.org)
+[![@nuxtjs/cloudinary](https://v2.cloudinary.nuxtjs.org/cover.jpg)](https://v2.cloudinary.nuxtjs.org)
 
 # @nuxtjs/cloudinary
 
@@ -10,8 +10,10 @@
 
 > [Cloudinary](https://cloudinary.com) integration with for [Nuxt](https://nuxt.com)
 
-- [✨ &nbsp;Release Notes](https://cloudinary.nuxtjs.org/releases)
-- [📖 &nbsp;Documentation](https://cloudinary.nuxtjs.org)
+- [✨ &nbsp;Release Notes](https://v2.cloudinary.nuxtjs.org/releases)
+- [📖 &nbsp;Documentation](https://v2.cloudinary.nuxtjs.org)
+
+> This is a module for version 3.X of Nuxt. If you are looking for Nuxt 2.X support check out the following [branch](https://github.com/nuxt-modules/cloudinary/tree/v1.x.x) and the legacy documentation [here](https://v1.cloudinary.nuxtjs.org)
 
 ## Features
 
@@ -22,7 +24,7 @@
 - Remove backgrounds from images
 - Dynamically add image and text overlays to images
 
-[📖 &nbsp;Read more](https://cloudinary.nuxtjs.org)
+[📖 &nbsp;Read more](https://v2.cloudinary.nuxtjs.org)
 
 ## Quick Setup
 
@@ -41,7 +43,7 @@ export default defineNuxtConfig({
 })
 ```
 
-See [module options](https://cloudinary.nuxtjs.org/options) for more configuration options.
+See [module options](https://v2.cloudinary.nuxtjs.org/options) for more configuration options.
 
 3. Create .env file with following `CLOUDINARY_CLOUD_NAME` variable:
 
