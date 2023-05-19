@@ -10,8 +10,8 @@
 
 > [Cloudinary](https://cloudinary.com) integration with for [Nuxt](https://nuxt.com)
 
-- [✨ &nbsp;Release Notes](https://v2.cloudinary.nuxtjs.org/releases)
 - [📖 &nbsp;Documentation](https://v2.cloudinary.nuxtjs.org)
+- [👾 &nbsp;Playground](https://stackblitz.com/github/nuxt-modules/cloudinary?file=.stackblitz%2Fnuxt.config.ts)
 
 > This is a module for version 3.X of Nuxt. If you are looking for Nuxt 2.X support check out the following [branch](https://github.com/nuxt-modules/cloudinary/tree/v1.x.x) and the legacy documentation [here](https://v1.cloudinary.nuxtjs.org)
 

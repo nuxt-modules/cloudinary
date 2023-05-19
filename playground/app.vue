@@ -13,6 +13,7 @@ console.log(url)
     height="987"
     sizes="50vw"
     alt="Sample Product"
+    crop="fill"
   />
   <CldImage
     src="cld-sample-5.jpg"
@@ -20,6 +21,7 @@ console.log(url)
     height="987"
     sizes="50vw"
     alt="Sample Product"
+    crop="fill"
     :overlays="[
       {
         position: {

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
   // cloudinary: {
-  //   cloudName: 'fesfese4324',
+  //   cloudName: <YOUR_CLOUDINARY_CLOUD_NAME>,
   // }
 })

@@ -1,19 +1,25 @@
 <script lang="ts" setup>
 // Usage of `useCldImageUrl` composable
-const { url } = useCldImageUrl({ src: '/cld-sample-5.jpg' })
+const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
 console.log(url)
 </script>
 
 <template>
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
-    :src="'cld-sample-5.jpg'"
+    src="cld-sample-5.jpg"
+    width="987"
+    format="png"
+    height="987"
+    sizes="50vw"
+    alt="Sample Product"
+  />
+  <CldImage
+    src="cld-sample-5.jpg"
     width="987"
     height="987"
     sizes="50vw"
-    alt="Image of woman with headphones transformed with Cloudinary"
-    tint="40:253f8c"
-    :underlay="'cld-sample-4.jpg'"
+    alt="Sample Product"
     :overlays="[
       {
         position: {
