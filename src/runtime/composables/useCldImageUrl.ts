@@ -1,5 +1,7 @@
 import { useRuntimeConfig } from '#imports'
 import { constructCloudinaryUrl, ConstructUrlProps } from '@cloudinary-util/url-loader'
+import nuxtPkg from 'nuxt/package.json';
+import pkg from '../../../package.json'
 
 export const useCldImageUrl = (props: ConstructUrlProps) => {
   if (!props.options.src) console.error("`@nuxtjs/cloudinary`: Property `src` is missing")
@@ -13,11 +15,17 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
         ...props.options
       },
       config: {
+        ...props.config,
         cloud: {
           cloudName: cldCloudName
         }
       },
-      analytics: props.analytics
+      analytics: Object.assign({
+        sdkCode: 'Y',
+        sdkSemver: pkg.version,
+        techVersion: nuxtPkg,
+        feature: ''
+      }, props.analytics)
     })
   }
 }
