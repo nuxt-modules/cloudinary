@@ -9,9 +9,7 @@ console.log(url)
   <CldImage
     src="cld-sample-5.jpg"
     width="987"
-    format="png"
     height="987"
-    sizes="50vw"
     alt="Sample Product"
     crop="fill"
   />
@@ -19,7 +17,6 @@ console.log(url)
     src="cld-sample-5.jpg"
     width="987"
     height="987"
-    sizes="50vw"
     alt="Sample Product"
     crop="fill"
     :overlays="[

@@ -8,7 +8,6 @@ const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
     <CldImage
       src="cld-sample-5.jpg"
       width="987"
-      format="png"
       height="987"
       sizes="50vw"
       alt="Sample Product"

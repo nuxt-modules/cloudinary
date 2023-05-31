@@ -21,10 +21,10 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
         }
       },
       analytics: Object.assign({
-        sdkCode: 'Y',
+        sdkCode: 'D',
         sdkSemver: pkg.version,
         techVersion: nuxtPkg,
-        feature: ''
+        product: 'B'
       }, props.analytics)
     })
   }

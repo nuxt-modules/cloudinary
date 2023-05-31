@@ -12,7 +12,7 @@ const { url } = useCldImageUrl({ options: props })
 </script>
 
 <template>
-  <img
+  <nuxt-img
     :src="url"
     :width="width"
     :height="height"

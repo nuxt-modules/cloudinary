@@ -59,8 +59,6 @@ And that's it! You can now use Clodinary in Nuxt ✨
     src="cld-sample-5.jpg"
     width="987"
     height="987"
-    format="webp"
-    sizes="50vw"
   />
 </template>
 ```
