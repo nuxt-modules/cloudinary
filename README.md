@@ -1,4 +1,4 @@
-[![@nuxtjs/cloudinary](https://v2.cloudinary.nuxtjs.org/cover.jpg)](https://v2.cloudinary.nuxtjs.org)
+[![@nuxtjs/cloudinary](./docs/public/cover.jpg)](https://v2.cloudinary.nuxtjs.org)
 
 # @nuxtjs/cloudinary
 
