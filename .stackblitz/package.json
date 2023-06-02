@@ -11,6 +11,6 @@
     "nuxt": "^3.5.0"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^2.0.0-rc.2"
+    "@nuxtjs/cloudinary": "^2.0.0-rc.3"
   }
 }
