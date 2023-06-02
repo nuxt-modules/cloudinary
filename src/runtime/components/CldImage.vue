@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { AssetOptions } from '@cloudinary-util/url-loader'
+import { useCldImageUrl } from '../composables/useCldImageUrl';
 
 interface CldImageProps {
   loading?: "eager" | "lazy";
