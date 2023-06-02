@@ -17,8 +17,6 @@ export default defineNuxtModule<ModuleOptions>({
   setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    if (!options.cloudName) throw new Error('`@nuxtjs/cloudinary`: Property `cloudName` or variable `CLOUDINARY_CLOUD_NAME` missing. ')
-
     nuxt.options.runtimeConfig.public.cloudinary = defu(nuxt.options.runtimeConfig.public.cloudinary, {
       cloudName: process.env.CLOUDINARY_CLOUD_NAME || options.cloudName,
     })
