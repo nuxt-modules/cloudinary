@@ -80,11 +80,11 @@ And that's it! You can now use Clodinary in Nuxt ✨
 [npm-downloads-src]: https://img.shields.io/npm/dt/@nuxtjs/cloudinary.svg
 [npm-downloads-href]: https://npmjs.com/package/@nuxtjs/cloudinary
 
-[github-actions-ci-src]: https://github.com/nuxt-community/cloudinary-module/workflows/ci/badge.svg
-[github-actions-ci-href]: https://github.com/nuxt-community/cloudinary-module/actions?query=workflow%3Aci
+[github-actions-ci-src]: https://github.com/nuxt-modules/cloudinary/workflows/ci/badge.svg
+[github-actions-ci-href]: https://github.com/nuxt-modules/cloudinary/actions?query=workflow%3Aci
 
-[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-community/cloudinary-module.svg
-[codecov-href]: https://codecov.io/gh/nuxt-community/cloudinary-module
+[codecov-src]: https://img.shields.io/codecov/c/github/nuxt-modules/cloudinary.svg
+[codecov-href]: https://codecov.io/gh/nuxt-modules/cloudinary
 
 [license-src]: https://img.shields.io/npm/l/@nuxtjs/cloudinary.svg
 [license-href]: https://npmjs.com/package/@nuxtjs/cloudinary
