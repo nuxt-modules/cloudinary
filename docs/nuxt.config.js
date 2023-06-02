@@ -9,6 +9,11 @@ export default theme({
     fallback: '404.html', // for Netlify
     routes: ['/'] // give the first url to start crawling
   },
+  build: {
+    postcss: {
+      preset: {}
+    }
+  },
   buildModules: ['nuxt-ackee'],
   i18n: {
     defaultLocale: 'en'

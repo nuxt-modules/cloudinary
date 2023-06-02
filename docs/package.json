@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "@nuxt/content-theme-docs": "^0.10.1",
-    "nuxt": "^2.15.1"
+    "nuxt": "^2.16.3"
   },
   "devDependencies": {
     "nuxt-ackee": "^2.0.0"
