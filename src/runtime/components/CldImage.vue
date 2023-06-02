@@ -18,6 +18,6 @@ const { url } = useCldImageUrl({ options: props })
     :height="height"
     v-bind="$attrs"
     :loading="loading"
-    :fetchPriority="fetchPriority"
+    :fetch-priority="fetchPriority"
   />
 </template>
