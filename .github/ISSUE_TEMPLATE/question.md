@@ -12,5 +12,5 @@ Please make sure to look for an answer to your question in our documentation and
 If you have a general question regarding the module use Discord `modules` channel. Thanks!
 
 Nuxt Discord: https://discord.nuxtjs.org/
-Documentation: https://v2.cloudinary.nuxtjs.org/
+Documentation: https://cloudinary.nuxtjs.org/
 -->

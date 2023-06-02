@@ -10,7 +10,7 @@
   },
   "author": "NuxtCommunity",
   "license": "MIT",
-  "homepage": "https://v2.cloudinary.nuxtjs.org",
+  "homepage": "https://cloudinary.nuxtjs.org",
   "devDependencies": {
     "@nuxt-themes/docus": "^1.8.1",
     "@nuxthq/studio": "^0.7.2",
