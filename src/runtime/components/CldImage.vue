@@ -39,6 +39,10 @@ interface AssetOptions {
 interface CldImageProps {
   loading?: "eager" | "lazy";
   fetchPriority?: "high" | "low" | "auto";
+  // Adding below as required props to promote good patterns in developing images
+  alt: string;
+  width: string | number;
+  height: string | number;
 }
 
 const props = defineProps<AssetOptions & CldImageProps>()
