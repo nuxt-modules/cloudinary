@@ -4,9 +4,11 @@ import nuxtPkg from 'nuxt/package.json';
 import pkg from '../../../package.json'
 
 export const useCldImageUrl = (props: ConstructUrlProps) => {
-  if (!props.options.src) console.error("`@nuxtjs/cloudinary`: Property `src` is missing")
+  if (!props.options.src) console.error("`[@nuxtjs/cloudinary]`: Property `src` is missing")
 
   const cldCloudName = props.config?.cloud?.cloudName || useRuntimeConfig().public.cloudinary.cloudName
+
+  if (!cldCloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
 
   return {
     url: constructCloudinaryUrl({

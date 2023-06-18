@@ -21,6 +21,8 @@ export default defineNuxtModule<ModuleOptions>({
       cloudName: process.env.CLOUDINARY_CLOUD_NAME || options.cloudName,
     })
 
+    if (!nuxt.options.runtimeConfig.public.cloudinary?.cloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
+
     installModule('@nuxt/image-edge')
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
