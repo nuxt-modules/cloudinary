@@ -25,6 +25,8 @@ version: 1
 
 Optimize images and videos in your Nuxt application with `@nuxtjs/cloudinary` module.
 
+> This is a module for version 2.X of Nuxt. If you are looking for Nuxt 3.X support check out the documentation [here](https://cloudinary.nuxtjs.org)
+
 ## What is Cloudinary?
 
 [Cloudinary](https://cloudinary.com) is a cloud-based SaaS that provides **an end-to-end image and video management** solution including uploads, storage, manipulations, optimizations and delivery. All your media resources are optimized and delivered through a fast CDN using industry best practices.

@@ -1,4 +1,4 @@
-[![@nuxtjs/cloudinary](https://cloudinary.nuxtjs.org/preview.png)](https://cloudinary.nuxtjs.org)
+[![@nuxtjs/cloudinary](https://v1.cloudinary.nuxtjs.org/preview.png)](https://v1.cloudinary.nuxtjs.org)
 
 # @nuxtjs/cloudinary
 
@@ -9,9 +9,10 @@
 [![License][license-src]][license-href]
 
 > [Cloudinary](https://cloudinary.com) integration with for [NuxtJS](https://nuxtjs.org)
+> This is a module for version 2.X of Nuxt. If you are looking for Nuxt 3.X support check out the following [branch](https://github.com/nuxt-modules/cloudinary) and the documentation [here](https://cloudinary.nuxtjs.org)
 
-- [✨ &nbsp;Release Notes](https://cloudinary.nuxtjs.org/releases)
-- [📖 &nbsp;Documentation](https://cloudinary.nuxtjs.org)
+- [✨ &nbsp;Release Notes](https://v1.cloudinary.nuxtjs.org//releases)
+- [📖 &nbsp;Documentation](https://v1.cloudinary.nuxtjs.org)
 
 ## Features
 
@@ -25,7 +26,7 @@
 - Upload images and videos
 - Minimum configuration required to set up Cloudinary and running
 
-[📖 &nbsp;Read more](https://cloudinary.nuxtjs.org)
+[📖 &nbsp;Read more](https://v1.cloudinary.nuxtjs.org)
 
 ## Quick Setup
 
@@ -70,7 +71,7 @@ Or a separate section `cloudinary` for module options:
 }
 ```
 
-See [module options](https://cloudinary.nuxtjs.org/options).
+See [module options](https://v1.cloudinary.nuxtjs.org/options).
 
 ## Build URLs and Tags for images/videos
 
@@ -83,13 +84,13 @@ const url = this.$cloudinary.image
                 .url('sample', { crop: 'scale', width: 200 })
 ```
 
-See [Usage - Build Image URLs and Tags](https://cloudinary.nuxtjs.org/usage/optimize-image).
+See [Usage - Build Image URLs and Tags](https://v1.cloudinary.nuxtjs.org/usage/optimize-image).
 
 ## Client components
 
 This module uses the official [Vue components built for Cloudinary](https://github.com/cloudinary/cloudinary-vue) and registers the following components for use in the application: `CldImage`, `CldVideo` and other supportive components. 
 
-See [Usage - Vue components](https://cloudinary.nuxtjs.org/usage/vue-components).
+See [Usage - Vue components](https://v1.cloudinary.nuxtjs.org/usage/vue-components).
 
 ## Development
 
