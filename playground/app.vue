@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 // Usage of `useCldImageUrl` composable
-// const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
-// console.log(url)
+const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
+console.log(url)
 </script>
 
 <template>
