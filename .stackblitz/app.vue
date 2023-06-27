@@ -7,13 +7,13 @@ console.log(url)
 <template>
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
-    src="cld-sample-5.jpg"
+    src="cld-sample-5"
     width="987"
     height="987"
     alt="Sample Product"
   />
   <CldImage
-    src="cld-sample-5.jpg"
+    src="cld-sample-5"
     width="987"
     height="987"
     alt="Sample Product"

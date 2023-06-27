@@ -10,7 +10,7 @@ Using `CldImage.vue` component is really straight forward. It accepts the same a
 <CldImage
   width="987"
   height="987"
-  :src="'images/woman-headphones'"
+  src="images/woman-headphones"
   sizes="50vw"
   crop="thumb"
   gravity="faces"
