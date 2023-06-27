@@ -24,8 +24,8 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
       },
       analytics: Object.assign({
         sdkCode: 'D',
-        sdkSemver: pkg.version,
-        techVersion: nuxtPkg,
+        sdkSemver: `${pkg.version.split('.')[0]}.0.0`,
+        techVersion: `${nuxtPkg.version.split('.')[0]}.0.0`,
         product: 'B'
       }, props.analytics)
     })
