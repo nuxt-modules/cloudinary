@@ -3,6 +3,7 @@
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
 import { useCldImageUrl } from '../composables/useCldImageUrl';
+import { Image } from "@unpic/vue";
 
 interface AssetOptionsResize {
     crop?: string;
@@ -36,6 +37,14 @@ interface AssetOptions {
     zoom?: string;
 }
 
+interface ImageOptionsZoomPan {
+    loop: string | boolean;
+    options: string;
+}
+interface ImageOptions extends AssetOptions {
+    zoompan?: string | boolean | ImageOptionsZoomPan;
+}
+
 interface CldImageProps {
   loading?: "eager" | "lazy";
   fetchPriority?: "high" | "low" | "auto";
@@ -43,16 +52,21 @@ interface CldImageProps {
   alt: string;
   width: string | number;
   height: string | number;
+  // Unpic props
+  layout?: 'constrained' | 'fullWidth' | 'fixed';
+  priority?: boolean;
+  background?: 'auto' | string;
 }
 
-const props = defineProps<AssetOptions & CldImageProps>()
+const props = defineProps<ImageOptions & CldImageProps>()
 
 const { url } = useCldImageUrl({ options: props })
 </script>
 
 <template>
-  <nuxt-img
+  <Image
     :src="url"
+    :layout="layout || 'constrained'"
     :width="width"
     :height="height"
     v-bind="$attrs"

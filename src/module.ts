@@ -1,4 +1,4 @@
-import { defineNuxtModule, createResolver, addImportsDir, addComponentsDir, installModule } from '@nuxt/kit'
+import { defineNuxtModule, createResolver, addImportsDir, addComponentsDir } from '@nuxt/kit'
 import { fileURLToPath } from 'url'
 import { defu } from 'defu'
 
@@ -22,8 +22,6 @@ export default defineNuxtModule<ModuleOptions>({
     })
 
     if (!nuxt.options.runtimeConfig.public.cloudinary?.cloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
-
-    installModule('@nuxt/image-edge')
 
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
     nuxt.options.build.transpile.push(runtimeDir)

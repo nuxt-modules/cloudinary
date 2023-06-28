@@ -56,7 +56,7 @@ And that's it! You can now use Clodinary in Nuxt ✨
 ```html
 <template>
   <CldImage
-    src="cld-sample-5.jpg"
+    src="cld-sample-5"
     width="987"
     height="987"
   />

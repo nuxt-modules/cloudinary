@@ -9,6 +9,6 @@ describe('ssr', async () => {
 
   it('renders the index page', async () => {
     const html = await $fetch('/')
-    expect(html).toContain('<p>https://res.cloudinary.com/ddtc5sowb/image/upload/f_auto/q_auto/v1//cld-sample-5.jpg?_a=E</p>')
+    expect(html).toContain('<p>https://res.cloudinary.com/ddtc5sowb/image/upload/f_auto/q_auto/v1//cld-sample-5.jpg?_a=BBDAACAD0</p>')
   })
 })
