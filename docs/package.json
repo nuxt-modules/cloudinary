@@ -12,9 +12,12 @@
   "license": "MIT",
   "homepage": "https://cloudinary.nuxtjs.org",
   "devDependencies": {
-    "@nuxt-themes/docus": "^1.8.1",
-    "@nuxthq/studio": "^0.7.2",
-    "@nuxtjs/plausible": "^0.2.0",
-    "nuxt": "^3.2.0"
+    "@nuxt-themes/docus": "^1.12.3",
+    "@nuxthq/studio": "^0.13.2",
+    "@nuxtjs/plausible": "^0.2.1",
+    "nuxt": "^3.5.3"
+  },
+  "dependencies": {
+    "@nuxtjs/cloudinary": "^2.0.0-rc.4"
   }
 }

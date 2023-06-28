@@ -6,6 +6,8 @@
 
 Using `CldImage.vue` component is really straight forward. It accepts the same attributes as native img tag (such us sizes, width, loading, etc) and bunch of Cloudinary specific props used to optimize the image (such as removeBackground, overlays, gravity, etc). Thanks to the auto import feature of Nuxt, you do not need to import anything. Just add `<CldImage />` to your template and optimize your images!
 
+:image-with-overlays{style="text-align: center; margin: 0 auto"}
+
 ```html
 <CldImage
   width="987"
