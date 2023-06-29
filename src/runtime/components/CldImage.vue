@@ -61,6 +61,23 @@ interface CldImageProps {
 const props = defineProps<ImageOptions & CldImageProps>()
 
 const { url } = useCldImageUrl({ options: props })
+
+const transformUrl = ({ width }: { width: string | number }) => {
+		const options = {
+      ...props
+		};
+
+		options.width = typeof options.width === 'string' ? parseInt(options.width) : options.width;
+		options.height = typeof options.height === 'string' ? parseInt(options.height) : options.height;
+
+		if (typeof width === 'number' && typeof options.width === 'number' && width !== options.width) {
+			options.widthResize = width;
+		}
+
+    const { url } = useCldImageUrl({ options });
+
+		return url
+}
 </script>
 
 <template>
@@ -72,5 +89,7 @@ const { url } = useCldImageUrl({ options: props })
     v-bind="$attrs"
     :loading="loading"
     :fetch-priority="fetchPriority"
+    cdn="cloudinary"
+    :transformer="transformUrl"
   />
 </template>
