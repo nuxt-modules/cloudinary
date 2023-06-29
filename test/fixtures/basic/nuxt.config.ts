@@ -5,6 +5,6 @@ export default defineNuxtConfig({
     MyModule
   ],
   cloudinary: {
-    cloudName: 'ddtc5sowb',
+    cloudName: 'nuxt-cloudinary',
   }
 })

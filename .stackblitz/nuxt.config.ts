@@ -2,6 +2,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/cloudinary'],
   cloudinary: {
-    cloudName: 'ddtc5sowb'
+    cloudName: 'nuxt-cloudinary'
   }
 });
