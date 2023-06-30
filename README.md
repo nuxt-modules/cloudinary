@@ -51,7 +51,7 @@ See [module options](https://cloudinary.nuxtjs.org/options) for more configurati
 CLOUDINARY_CLOUD_NAME=<YOUR_CLOUDINARY_CLOUD_NAME>
 ```
 
-And that's it! You can now use Clodinary in Nuxt ✨
+And that's it! You can now use Cloudinary in Nuxt ✨
 
 ```html
 <template>
