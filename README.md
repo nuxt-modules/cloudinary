@@ -18,7 +18,7 @@
 ## Features
 
 - Nuxt 3 ready
-- Useful `CldImage.vue` component
+- Useful `CldImage.vue` & `CldOgImage` components
 - Handy `useCldImageUrl` composable
 - Automatically optimize images and deliver in modern formats
 - Remove backgrounds from images
@@ -59,6 +59,7 @@ And that's it! You can now use Cloudinary in Nuxt ✨
     src="cld-sample-5"
     width="987"
     height="987"
+    alt="My Awesome Image"
   />
 </template>
 ```

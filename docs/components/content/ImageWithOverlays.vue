@@ -1,8 +1,8 @@
 <template>
   <CldImage
     src="cld-sample-5"
-    width="400"
-    height="400"
+    width="900"
+    height="900"
     alt="Sample Product"
     crop="fill"
     :overlays="[

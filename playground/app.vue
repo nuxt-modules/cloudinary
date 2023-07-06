@@ -5,6 +5,10 @@ console.log(url)
 </script>
 
 <template>
+  <!-- Usage of `CldOgImage.vue` component -->
+  <CldOgImage
+    src="cld-sample-2"
+  />
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
     src="cld-sample-5"
@@ -13,6 +17,9 @@ console.log(url)
     alt="Sample Product"
     crop="fill"
     sizes="sm:100vw md:50vw lg:400px"
+  />
+  <CldOgImage
+    src="cld-sample-2"
   />
   <CldImage
     src="cld-sample-5"
