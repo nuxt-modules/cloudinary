@@ -63,6 +63,7 @@ export interface CldImageProps extends ImageOptions {
 
 const props = defineProps<CldImageProps>();
 
+// eslint-disable-next-line vue/no-setup-props-destructure
 const { config, ...options } = props;
 
 const { url } = useCldImageUrl({ options, config });

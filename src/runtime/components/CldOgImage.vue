@@ -15,8 +15,6 @@ export type CldOgImageProps = CldImageProps & {
 
 const props = defineProps<CldOgImageProps>();
 
-const { alt, excludeTags } = props;
-
 const options: ImageOptions = {
   ...props,
   crop: props.crop || "fill",
@@ -63,7 +61,11 @@ const { url: twitterImageUrl } = useCldImageUrl({
 
 <template>
   <Head>
-    <Meta key="og-image" property="og:image" :content="ogImageUrl" />
+    <Meta
+      key="og-image"
+      property="og:image"
+      :content="ogImageUrl"
+    />
     <Meta
       key="og-image-secureurl"
       property="og:image:secure_url"
@@ -79,22 +81,23 @@ const { url: twitterImageUrl } = useCldImageUrl({
       property="og:image:height"
       :content="height.toString()"
     />
-
     <Meta
       v-if="alt"
       key="og-image-alt"
       property="og:image:alt"
       :content="alt"
     />
-
     <Meta
       v-if="!excludeTags?.includes('twitter:title')"
       key="twitter-title"
       property="twitter:title"
       :content="twitterTitle || ' '"
     />
-
-    <Meta key="twitter-card" property="twitter:card" :content="TWITTER_CARD" />
+    <Meta
+      key="twitter-card"
+      property="twitter:card"
+      :content="TWITTER_CARD"
+    />
     <Meta
       key="twitter-image"
       property="twitter:image"
