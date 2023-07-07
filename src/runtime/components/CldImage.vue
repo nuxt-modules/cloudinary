@@ -3,6 +3,7 @@
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
 import { useCldImageUrl } from "../composables/useCldImageUrl";
+import { ref } from 'vue'
 import { Image } from "@unpic/vue";
 import { ConfigOptions } from "@cloudinary-util/url-loader";
 

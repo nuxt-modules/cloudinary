@@ -12,6 +12,11 @@ console.log(url)
     height="987"
     alt="Sample Product"
   />
+  <p>CldOgImage is here. Inspect the html meta to see the result</p>
+  <CldOgImage
+    src="cld-sample-2"
+    twitter-title="test"
+  />
   <CldImage
     src="cld-sample-5"
     width="987"

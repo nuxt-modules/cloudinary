@@ -2,6 +2,8 @@
 import type { CldImageProps } from "./CldImage.vue";
 import { useCldImageUrl } from "../composables/useCldImageUrl";
 import type { ImageOptions } from "@cloudinary-util/url-loader";
+import { computed } from 'vue'
+import { useRouter } from "#imports";
 
 const TWITTER_CARD = "summary_large_image";
 const OG_IMAGE_WIDTH = 2400;
