@@ -8,6 +8,7 @@ console.log(url)
   <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage
     src="cld-sample-2"
+    twitter-title="test"
   />
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
@@ -17,9 +18,6 @@ console.log(url)
     alt="Sample Product"
     crop="fill"
     sizes="sm:100vw md:50vw lg:400px"
-  />
-  <CldOgImage
-    src="cld-sample-2"
   />
   <CldImage
     src="cld-sample-5"

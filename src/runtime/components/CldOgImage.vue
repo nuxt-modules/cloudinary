@@ -10,8 +10,6 @@ const OG_IMAGE_HEIGHT = 1254;
 
 const { currentRoute } = useRouter()
 
-console.log(currentRoute)
-
 export type CldOgImageProps = CldImageProps & {
   excludeTags?: Array<string>;
   twitterTitle?: string;
