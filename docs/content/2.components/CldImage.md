@@ -60,7 +60,7 @@ Using `CldImage.vue` component is really straight forward. It accepts the same a
 
 ## Configuration
 
-Configuration for CldImage is the same as [getCldImageUrl](https://next-cloudinary.spacejelly.dev/helpers/getcldimageurl/configuration), which both use the same underlying API.
+Configuration for CldImage is the same as [useCldImageUrl](/composables/useCldImageUrl), which both use the same underlying API.
 
 ## General Props
 

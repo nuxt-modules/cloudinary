@@ -5,6 +5,11 @@ console.log(url)
 </script>
 
 <template>
+  <!-- Usage of `CldOgImage.vue` component -->
+  <CldOgImage
+    src="cld-sample-2"
+    twitter-title="test"
+  />
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
     src="cld-sample-5"
