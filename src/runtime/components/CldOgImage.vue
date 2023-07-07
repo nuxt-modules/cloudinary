@@ -8,9 +8,16 @@ const OG_IMAGE_WIDTH = 2400;
 const OG_IMAGE_WIDTH_RESIZE = 1200;
 const OG_IMAGE_HEIGHT = 1254;
 
+const { currentRoute } = useRouter()
+
+console.log(currentRoute)
+
 export type CldOgImageProps = CldImageProps & {
   excludeTags?: Array<string>;
   twitterTitle?: string;
+  alt?: string;
+  width?: string | number;
+  height?: string | number;
 };
 
 const props = defineProps<CldOgImageProps>();
@@ -57,6 +64,8 @@ const { url: twitterImageUrl } = useCldImageUrl({
     format: props.format || "webp",
   },
 });
+
+const computedTwitterTitle = computed(() => props.twitterTitle || currentRoute.meta?.title || ' ')
 </script>
 
 <template>
@@ -91,7 +100,7 @@ const { url: twitterImageUrl } = useCldImageUrl({
       v-if="!excludeTags?.includes('twitter:title')"
       key="twitter-title"
       property="twitter:title"
-      :content="twitterTitle || ' '"
+      :content="computedTwitterTitle"
     />
     <Meta
       key="twitter-card"
