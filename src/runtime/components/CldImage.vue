@@ -2,10 +2,10 @@
 // This is working in dev playground but does not work in the published package
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
+// import type { ConfigOptions } from "@cloudinary-util/url-loader";
 import { useCldImageUrl } from "../composables/useCldImageUrl";
 import { ref } from 'vue'
 import { Image } from "@unpic/vue";
-import { ConfigOptions } from "@cloudinary-util/url-loader";
 
 interface AssetOptionsResize {
   crop?: string;
@@ -55,7 +55,8 @@ export interface CldImageProps extends ImageOptions {
   width: string | number;
   height: string | number;
   // Cloudinary URL Loader props
-  config?: ConfigOptions;
+  // Cannot use `ConfigOptions` due to the same issue as mentioned at the top
+  config?: any;
   // Unpic props
   layout?: "constrained" | "fullWidth" | "fixed";
   priority?: boolean;
