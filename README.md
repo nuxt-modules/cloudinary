@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 })
 ```
 
-See [module options](https://cloudinary.nuxtjs.org/options) for more configuration options.
+See [module options](https://cloudinary.nuxtjs.org/getting-started/options) for more configuration options.
 
 3. Create .env file with following `CLOUDINARY_CLOUD_NAME` variable:
 
