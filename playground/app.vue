@@ -10,6 +10,11 @@ console.log(url)
     src="cld-sample-2"
     twitter-title="test"
   />
+  <CldVideoPlayer
+    width="1620"
+    height="1080"
+    src="https://res.cloudinary.com/colbycloud-next-cloudinary/video/upload/v1/videos/mountain-stars.webm"
+  />
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
     src="cld-sample-5"
