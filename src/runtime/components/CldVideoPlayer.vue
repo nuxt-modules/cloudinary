@@ -113,7 +113,9 @@ if (publicId.startsWith("http")) {
     if (typeof parts?.publicId === "string") {
       publicId = parts?.publicId;
     }
-  } catch (e) {}
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 playerTransformations.unshift({
@@ -169,7 +171,7 @@ const handleOnLoad = () => {
       };
     }
 
-    let playerOptions: CloudinaryVideoPlayerOptions = {
+    const playerOptions: CloudinaryVideoPlayerOptions = {
       autoplayMode: autoPlay,
       cloud_name: useRuntimeConfig().public.cloudinary.cloudName,
       controls,
@@ -225,8 +227,8 @@ useHead({
 <template>
   <div :style="{ width: '100%', aspectRatio: `${width} / ${height}` }">
     <video
-      ref="videoRef"
       :id="playerId"
+      ref="videoRef"
       :class="playerClassName"
       :width="width"
       :height="height"
