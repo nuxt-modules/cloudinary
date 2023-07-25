@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import { ref, Ref } from 'vue'
-import { useHead } from '@unhead/vue';
+import { ref, Ref } from "vue";
+import { useHead } from "@unhead/vue";
+import { useRuntimeConfig } from "#imports";
 
 export interface CloudinaryVideoPlayer {
-  on: Function
+  on: Function;
 }
 
 export interface CloudinaryVideoPlayerOptions {
@@ -32,12 +33,15 @@ export interface CloudinaryVideoPlayerOptionsLogo {
 }
 
 export interface CldVideoPlayerPropsLogo {
-  imageUrl?: CloudinaryVideoPlayerOptionsLogo['logoImageUrl'];
+  imageUrl?: CloudinaryVideoPlayerOptionsLogo["logoImageUrl"];
   logo?: boolean;
-  onClickUrl?: CloudinaryVideoPlayerOptionsLogo['logoOnclickUrl'];
+  onClickUrl?: CloudinaryVideoPlayerOptionsLogo["logoOnclickUrl"];
 }
 
-export type CldVideoPlayerProps = Pick<CloudinaryVideoPlayerOptions, "colors" | "controls" | "fontFace" | "loop" | "muted" | "transformation"> & {
+export type CldVideoPlayerProps = Pick<
+  CloudinaryVideoPlayerOptions,
+  "colors" | "controls" | "fontFace" | "loop" | "muted" | "transformation"
+> & {
   autoPlay?: string;
   className?: string;
   height: string | number;
@@ -53,25 +57,33 @@ export type CldVideoPlayerProps = Pick<CloudinaryVideoPlayerOptions, "colors" | 
   src: string;
   version?: string;
   videoRef?: Ref<HTMLVideoElement | null>;
-  quality: string | number;
+  quality?: string | number;
   width: string | number;
-}
+};
 
-const props = defineProps<CldVideoPlayerProps>()
+const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
+  autoPlay: "never",
+  controls: true,
+  logo: true,
+  loop: false,
+  muted: false,
+  version: "1.9.4",
+  quality: "auto",
+});
 
 const idRef = ref(Math.ceil(Math.random() * 100000));
 
 const {
-  autoPlay = 'never',
+  autoPlay,
   className,
   colors,
-  controls = true,
+  controls,
   fontFace,
   height,
   id,
-  logo = true,
-  loop = false,
-  muted = false,
+  logo,
+  loop,
+  muted,
   onDataLoad,
   onError,
   onMetadataLoad,
@@ -80,125 +92,129 @@ const {
   onEnded,
   src,
   transformation,
-  version = '1.9.4',
-  quality = 'auto',
+  version,
+  quality,
   width,
 } = props as CldVideoPlayerProps;
 
-const playerTransformations = Array.isArray(transformation) ? transformation : [transformation];
-
-// Set default transformations for the player
+const playerTransformations = Array.isArray(transformation)
+  ? transformation
+  : [transformation];
 
 playerTransformations.unshift({
-  quality
+  quality,
 });
-
-// Setup the refs and allow for the caller to pass through their
-// own ref instance
 
 const cloudinaryRef = ref<any>();
 const defaultVideoRef = ref() as Ref<HTMLVideoElement | null>;
 const videoRef = props.videoRef || defaultVideoRef;
-const defaultPlayerRef = ref()as Ref<CloudinaryVideoPlayer | null>;
+const defaultPlayerRef = ref() as Ref<CloudinaryVideoPlayer | null>;
 const playerRef = props.playerRef || defaultPlayerRef;
 
-const playerId = id || `player-${src.replace('/', '-')}-${idRef.value}`;
-let playerClassName = 'cld-video-player cld-fluid';
+const playerId = id || `player-${src.replace("/", "-")}-${idRef.value}`;
+let playerClassName = "cld-video-player cld-fluid";
 
-if ( className ) {
+if (className) {
   playerClassName = `${playerClassName} ${className}`;
 }
 
-const events: Record<string, Function|undefined> = {
+const events: Record<string, Function | undefined> = {
   error: onError,
   loadeddata: onDataLoad,
   loadedmetadata: onMetadataLoad,
   pause: onPause,
   play: onPlay,
-  ended: onEnded
+  ended: onEnded,
 };
-  function handleEvent(event: { type: 'string' }) {
-    const activeEvent = events[event.type];
+function handleEvent(event: { type: "string" }) {
+  const activeEvent = events[event.type];
 
-    if ( typeof activeEvent === 'function' ) {
-      activeEvent(getPlayerRefs());
-    }
-  }
-
-  const handleOnLoad = () => {
-    if ( 'cloudinary' in window ) {
-      cloudinaryRef.value = window.cloudinary;
-
-      let logoOptions: CloudinaryVideoPlayerOptionsLogo = {};
-
-      if ( typeof logo === 'boolean' ) {
-        logoOptions.showLogo = logo;
-      } else if ( typeof logo === 'object' ) {
-        logoOptions = {
-          ...logoOptions,
-          showLogo: true,
-          logoImageUrl: logo.imageUrl,
-          logoOnclickUrl: logo.onClickUrl
-        }
-      }
-
-      let playerOptions: CloudinaryVideoPlayerOptions = {
-        autoplayMode: autoPlay,
-        cloud_name: 'colbycloud-next-cloudinary', // useRuntimeConfig().public.cloudinary.cloudName,
-        controls,
-        fontFace: fontFace || '',
-        loop,
-        muted,
-        publicId: src,
-        secure: true,
-        transformation: playerTransformations,
-        ...logoOptions
-      };
-
-      if ( typeof colors === 'object' ) {
-        playerOptions.colors = colors;
-      }
-
-      playerRef.value = cloudinaryRef.value.videoPlayer(videoRef.value, playerOptions);
-
-      Object.keys(events).forEach((key) => {
-        if ( typeof events[key] === 'function' ) {
-          playerRef.value?.on(key, handleEvent);
-        }
-      });
-    }
-  }
-
-  function getPlayerRefs() {
-    return {
+  if (typeof activeEvent === "function") {
+    activeEvent({
       player: playerRef.value,
-      video: videoRef.value
-    }
+      video: videoRef.value,
+    });
   }
+}
 
-  useHead({
+const handleOnLoad = () => {
+  if ("cloudinary" in window) {
+    cloudinaryRef.value = window.cloudinary;
+
+    let logoOptions: CloudinaryVideoPlayerOptionsLogo = {};
+
+    if (typeof logo === "boolean") {
+      logoOptions.showLogo = logo;
+    } else if (typeof logo === "object") {
+      logoOptions = {
+        ...logoOptions,
+        showLogo: true,
+        logoImageUrl: logo.imageUrl,
+        logoOnclickUrl: logo.onClickUrl,
+      };
+    }
+
+    let playerOptions: CloudinaryVideoPlayerOptions = {
+      autoplayMode: autoPlay,
+      cloud_name: useRuntimeConfig().public.cloudinary.cloudName,
+      controls,
+      fontFace: fontFace || "",
+      loop,
+      muted,
+      publicId: src,
+      secure: true,
+      transformation: playerTransformations,
+      ...logoOptions,
+    };
+
+    if (typeof colors === "object") {
+      playerOptions.colors = colors;
+    }
+
+    playerRef.value = cloudinaryRef.value.videoPlayer(
+      videoRef.value,
+      playerOptions
+    );
+
+    Object.keys(events).forEach((key) => {
+      if (typeof events[key] === "function") {
+        playerRef.value?.on(key, handleEvent);
+      }
+    });
+  }
+};
+
+useHead({
   script: [
     {
       id: `cloudinary-videoplayer-${Math.floor(Math.random() * 100)}`,
-      src: `https://unpkg.com/cloudinary-video-player@${props.version || '1.9.4'}/dist/cld-video-player.min.js`,
+      src: `https://unpkg.com/cloudinary-video-player@${version}/dist/cld-video-player.min.js`,
       onload: handleOnLoad,
-      onerror: (e) => console.error(`Failed to load Cloudinary Video Player: ${(e as any).message}`)
+      onerror: (e) =>
+        console.error(
+          `Failed to load Cloudinary Video Player: ${(e as any).message}`
+        ),
+    },
+  ],
+  link: [
+    {
+      href: `https://unpkg.com/cloudinary-video-player@${
+        version || '1.9.4'
+      }/dist/cld-video-player.min.css`,
+      rel: 'stylesheet'
     }
   ]
-})
+});
 </script>
 
 <template>
-    <Head>
-      <Link :href="`https://unpkg.com/cloudinary-video-player@${version || '1.9.4'}/dist/cld-video-player.min.css`" rel="stylesheet"/>
-    </Head>
-    <div :style="{ width: '100%', aspectRatio: `${width} / ${height}`}">
-      <video
-        ref="videoRef"
-        :id="playerId"
-        :class="playerClassName"
-        :width="width"
-        :height="height"
-      />
-    </div>
+  <div :style="{ width: '100%', aspectRatio: `${width} / ${height}` }">
+    <video
+      ref="videoRef"
+      :id="playerId"
+      :class="playerClassName"
+      :width="width"
+      :height="height"
+    />
+  </div>
 </template>

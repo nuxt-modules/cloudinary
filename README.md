@@ -18,7 +18,7 @@
 ## Features
 
 - Nuxt 3 ready
-- Useful `CldImage.vue` & `CldOgImage` components
+- Useful `CldImage`, `CldOgImage` & `CldVideoPlayer` components
 - Handy `useCldImageUrl` composable
 - Automatically optimize images and deliver in modern formats
 - Remove backgrounds from images
