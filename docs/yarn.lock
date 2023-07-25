@@ -863,10 +863,10 @@
     socket.io-client "^4.6.1"
     ufo "^1.1.2"
 
-"@nuxtjs/cloudinary@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.0.0.tgz#eaeca58da6cc45684074f83465877d57e05de54e"
-  integrity sha512-hGXBx6wxYLfM9ka3lKNOK2hWHkfe9akgYo9etnRU2B3rTs4iKo7DnnIOwXBmGqpzvAO9txylsZf1qSgert4VcA==
+"@nuxtjs/cloudinary@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.2.0.tgz#5a6e5eb10a2696f9691e147c058cf4c017d55dd0"
+  integrity sha512-Uy8XLmWJ0mj3FOPxZqCTcNNOTlbgc/90aIxtWJ3H/xQrH8kU8bPu51F4ZLW1ONEL8dcG6QqI0MMjaxmk9jYi6Q==
   dependencies:
     "@cloudinary-util/url-loader" "^3.8.1"
     "@nuxt/kit" "^3.5.0"

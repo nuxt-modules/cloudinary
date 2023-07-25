@@ -12,6 +12,11 @@ console.log(url)
     height="987"
     alt="Sample Product"
   />
+  <CldVideoPlayer
+    width="1620"
+    height="1080"
+    src="videos/mountain-stars"
+  />
   <p>CldOgImage is here. Inspect the html meta to see the result</p>
   <CldOgImage
     src="cld-sample-2"
