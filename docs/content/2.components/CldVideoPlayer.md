@@ -10,7 +10,7 @@ The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudin
 
 The basic required props include `width`, `height`, and `src`:
 
-```jsx
+```html
 <CldVideoPlayer
   width="1920"
   height="1080"
@@ -18,56 +18,50 @@ The basic required props include `width`, `height`, and `src`:
 />
 ```
 
-<CldVideoPlayer
-  width="1620"
-  height="1080"
-  src="videos/mountain-stars"
-/>
+:cld-video-player{src="videos/mountain-stars" width="900" height="900"}
 
 ## Customization
 
 You can further take advantage of features like customizing your player:
 
-```jsx
-<CldVideoPlayer
-  width="1620"
-  height="1080"
-  src="<Public ID>"
-  colors={{
+```html
+<template>
+  <CldVideoPlayer
+    width="1620"
+    height="1080"
+    src="videos/mountain-stars"
+    :colors="colors"
+    fontFace="Source Serif Pro"
+  />
+</template>
+
+<script setup lang="ts">
+const colors = {
     accent: '#ff0000',
     base: '#00ff00',
     text: '#0000ff'
-  }}
-  fontFace="Source Serif Pro"
-/>
+  }
+</script>
 ```
 
-<CldVideoPlayer
-  width="1620"
-  height="1080"
-  src="videos/mountain-stars"
-  colors={{
-    accent: '#ff0000',
-    base: '#00ff00',
-    text: '#0000ff'
-  }}
-  fontFace="Source Serif Pro"
-/>
+:colored-video-player
 
 ## Player Events
 
 Or listening to player events for advanced interactions with:
 
-```jsx
+```html
 <CldVideoPlayer
   width="600"
   height="600"
   src="<Cloudinary URL>"
-  onMetadataLoad={({ player }) => {
-    console.log(`duration: ${player.duration()}`);
-  }}
-  onPause={({ player }) => {
-    console.log(`current time: ${player.currentTime()}`);
-  }}
+  :onMetadataLoad="({ player }) => console.log(`duration: ${player.duration()}`)"
+  :onPause="({ player }) => console.log(`current time: ${player.currentTime()}`)"
 />
 ```
+
+::alert{type="info"}
+Check the browser console after playing and pausing the video for logs that were added to the component.
+::
+
+:video-player-with-events
