@@ -2,6 +2,7 @@
 import { ref, Ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
+import { parseUrl } from "@cloudinary-util/util";
 
 export interface CloudinaryVideoPlayer {
   on: Function;
@@ -101,6 +102,20 @@ const playerTransformations = Array.isArray(transformation)
   ? transformation
   : [transformation];
 
+let publicId = src;
+
+// If the publicId/src is a URL, attempt to parse it as a Cloudinary URL
+// to get the public ID alone
+
+if (publicId.startsWith("http")) {
+  try {
+    const parts = parseUrl(src);
+    if (typeof parts?.publicId === "string") {
+      publicId = parts?.publicId;
+    }
+  } catch (e) {}
+}
+
 playerTransformations.unshift({
   quality,
 });
@@ -111,7 +126,7 @@ const videoRef = props.videoRef || defaultVideoRef;
 const defaultPlayerRef = ref() as Ref<CloudinaryVideoPlayer | null>;
 const playerRef = props.playerRef || defaultPlayerRef;
 
-const playerId = id || `player-${src.replace("/", "-")}-${idRef.value}`;
+const playerId = id || `player-${publicId.replace("/", "-")}-${idRef.value}`;
 let playerClassName = "cld-video-player cld-fluid";
 
 if (className) {
@@ -161,7 +176,7 @@ const handleOnLoad = () => {
       fontFace: fontFace || "",
       loop,
       muted,
-      publicId: src,
+      publicId,
       secure: true,
       transformation: playerTransformations,
       ...logoOptions,
@@ -199,11 +214,11 @@ useHead({
   link: [
     {
       href: `https://unpkg.com/cloudinary-video-player@${
-        version || '1.9.4'
+        version || "1.9.4"
       }/dist/cld-video-player.min.css`,
-      rel: 'stylesheet'
-    }
-  ]
+      rel: "stylesheet",
+    },
+  ],
 });
 </script>
 
