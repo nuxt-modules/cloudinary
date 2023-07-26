@@ -48,7 +48,7 @@
     "stackblitz": "cd .stackblitz && yarn && yarn dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^3.8.1",
+    "@cloudinary-util/url-loader": "^3.10.0",
     "@nuxt/kit": "^3.5.0",
     "@unpic/vue": "^0.0.23",
     "defu": "^6.1.2"

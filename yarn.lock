@@ -287,18 +287,18 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary-util/url-loader@^3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.8.1.tgz#c819e6c305293333ba4bb5b72b640d1f386d821b"
-  integrity sha512-cBAPiAulWIG5M6HkFDvHhWVo0BJfWnZrr3jz7mIvdVrhKJl3CgK6p9kzSWKC62Ib9SUHMzKBC9R2B8jn+ZCBKA==
+"@cloudinary-util/url-loader@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.10.0.tgz#30dbed4d60968687c9161a60b246da62d42c3e33"
+  integrity sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg==
   dependencies:
-    "@cloudinary-util/util" "2.0.1"
-    "@cloudinary/url-gen" "^1.10.1"
+    "@cloudinary-util/util" "2.2.1"
+    "@cloudinary/url-gen" "^1.10.2"
 
-"@cloudinary-util/util@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.0.1.tgz#0797d2dd96f91971184b2f94da768c15922ea33d"
-  integrity sha512-d2imgUjYTLjv8ZhZPMAts/uPbMvIE71X4I/5hwdY/7vM4BuFQoJMSyq+h2pW1z1MyGG9BOWBm70vp082lSrbEQ==
+"@cloudinary-util/util@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.2.1.tgz#c482d9321d37d921b347858a121c161b68782bd3"
+  integrity sha512-MEIqn5WtPP3mxSMTNNfpqlGS1UquAXcjmVdY/t/edD/ZWVjI85viBiOMIuF0W6n6UF5gTstLymfQNYx0YO/GZg==
 
 "@cloudinary/transformation-builder-sdk@^1.2.7":
   version "1.2.8"
@@ -307,10 +307,10 @@
   dependencies:
     "@cloudinary/url-gen" "^1.7.0"
 
-"@cloudinary/url-gen@^1.10.1":
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.10.1.tgz#b5b49e03252a90bba17038024f206328482eac96"
-  integrity sha512-6pBmapnL7G231NbNWhKbi+08HcpNASci7M3OmZWaUCQWUfdmo3au27HT3Zqg9NMsisfyer3t7o0RXzPQ4XlmMg==
+"@cloudinary/url-gen@^1.10.2":
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/@cloudinary/url-gen/-/url-gen-1.10.2.tgz#ac538d01473ba523271ff4a72fca97856d49954d"
+  integrity sha512-0iQcowRGxbRMuWijr3gkWajyrtocXyO5va6b2f5AIuA8K5Utd3IEq17DGR93kpOOLU439JBSjORuWifyphGduA==
   dependencies:
     "@cloudinary/transformation-builder-sdk" "^1.2.7"
 

@@ -4,6 +4,8 @@ import { defu } from 'defu'
 
 export type ModuleOptions = {
   cloudName?: string;
+  uploadPreset?: string;
+  apiKey?: string;
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -19,6 +21,8 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.cloudinary = defu(nuxt.options.runtimeConfig.public.cloudinary, {
       cloudName: process.env.CLOUDINARY_CLOUD_NAME || options.cloudName,
+      uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET || options.uploadPreset,
+      apiKey: process.env.CLOUDINARY_API_KEY || options.apiKey
     })
 
     if (!nuxt.options.runtimeConfig.public.cloudinary?.cloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
