@@ -10,10 +10,8 @@ The CldUploadButton component wraps the [CldUploadWidget](/clduploadwidget) comp
 
 ## Basic Usage
 
-```jsx
-  <CldUploadButton
-    uploadPreset="<Upload Preset>"
-  >Upload</CldUploadButton>
+```html
+<CldUploadButton uploadPreset="<Upload Preset>">Upload</CldUploadButton>
 ```
 
 :upload-button
