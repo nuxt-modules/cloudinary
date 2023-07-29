@@ -119,7 +119,7 @@ defineProps<CldUploadWidgetProps>();
 <template>
   <CldUploadWidget
     v-slot="{ open, isLoading }"
-    upload-preset="nuxt-cloudinary-unsigned"
+    :upload-preset="uploadPreset"
   >
     <button
       type="button"
