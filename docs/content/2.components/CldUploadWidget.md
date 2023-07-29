@@ -2,8 +2,6 @@
 
 ---
 
-# Getting Started with CldUploadWidget
-
 The CldUploadWidget creates a new instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) giving you an easy way to add upload capabilities to your Nuxt app.
 
 ## Basic Usage
@@ -32,12 +30,7 @@ Use the following to generate an unsigned upload widget:
 </CldUploadWidget>
 ```
 
-<CldUploadWidget
-v-slot="{ open }"
-uploadPreset="nuxt-cloudinary-unsigned"
-
-> <button type="button" @click="open">Upload an Image</button>
-> </CldUploadWidget>
+:upload-widget
 
 ### Signed
 
