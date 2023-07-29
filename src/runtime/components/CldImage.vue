@@ -62,13 +62,13 @@ export interface CldImageProps extends ImageOptions {
   priority?: boolean;
   background?: "auto" | string;
   // Cloudinary missing effect props
-  blur: string | number;
-  pixelate: boolean;
-  grayscale: boolean;
-  tint: string | number;
-  opacity: string | number;
-  shear: string;
-  border: string;
+  blur?: string | number;
+  pixelate?: boolean;
+  grayscale?: boolean;
+  tint?: string | number;
+  opacity?: string | number;
+  shear?: string;
+  border?: string;
 }
 
 const props = defineProps<CldImageProps>();
