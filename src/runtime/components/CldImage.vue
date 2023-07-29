@@ -4,7 +4,7 @@
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
 // import type { ConfigOptions } from "@cloudinary-util/url-loader";
 import { useCldImageUrl } from "../composables/useCldImageUrl";
-import { ref } from 'vue'
+import { ref } from "vue";
 import { Image } from "@unpic/vue";
 
 interface AssetOptionsResize {
@@ -103,12 +103,12 @@ const transformUrl = ({ width }: { width: string | number }) => {
   return url;
 };
 
-const imgKey = ref('image-key')
+const imgKey = ref("image-key");
 
 const handleError = async (payload: Event) => {
   const result = await pollForProcessingImage(payload);
 
-  if (result) imgKey.value = `${imgKey.value}-${Math.random()}`
+  if (result) imgKey.value = `${imgKey.value}-${Math.random()}`;
 };
 
 const pollForProcessingImage = async (options: Event): Promise<boolean> => {

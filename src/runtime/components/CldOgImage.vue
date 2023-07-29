@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCldImageUrl } from "../composables/useCldImageUrl";
-import { computed } from 'vue'
+import { computed } from "vue";
 import { useRouter } from "#imports";
 
 const TWITTER_CARD = "summary_large_image";
@@ -8,7 +8,7 @@ const OG_IMAGE_WIDTH = 2400;
 const OG_IMAGE_WIDTH_RESIZE = 1200;
 const OG_IMAGE_HEIGHT = 1254;
 
-const { currentRoute } = useRouter()
+const { currentRoute } = useRouter();
 
 // Same story as with CldImage.vue component. Cannot use imported types for props
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
@@ -121,16 +121,14 @@ const { url: twitterImageUrl } = useCldImageUrl({
   },
 });
 
-const computedTwitterTitle = computed(() => props.twitterTitle || currentRoute.meta?.title || ' ')
+const computedTwitterTitle = computed(
+  () => props.twitterTitle || currentRoute.meta?.title || " "
+);
 </script>
 
 <template>
   <Head>
-    <Meta
-      key="og-image"
-      property="og:image"
-      :content="ogImageUrl"
-    />
+    <Meta key="og-image" property="og:image" :content="ogImageUrl" />
     <Meta
       key="og-image-secureurl"
       property="og:image:secure_url"
@@ -158,11 +156,7 @@ const computedTwitterTitle = computed(() => props.twitterTitle || currentRoute.m
       property="twitter:title"
       :content="computedTwitterTitle"
     />
-    <Meta
-      key="twitter-card"
-      property="twitter:card"
-      :content="TWITTER_CARD"
-    />
+    <Meta key="twitter-card" property="twitter:card" :content="TWITTER_CARD" />
     <Meta
       key="twitter-image"
       property="twitter:image"

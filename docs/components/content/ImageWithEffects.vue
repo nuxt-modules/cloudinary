@@ -7,14 +7,14 @@
     crop="fill"
     :effects="[
       {
-        background: 'green'
+        background: 'green',
       },
       {
-        gradientFade: true
+        gradientFade: true,
       },
       {
-        gradientFade: 'symetric,x_0.5'
-      }
+        gradientFade: 'symetric,x_0.5',
+      },
     ]"
   />
 </template>

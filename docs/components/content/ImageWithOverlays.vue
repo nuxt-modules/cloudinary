@@ -9,7 +9,7 @@
       {
         position: {
           gravity: 'north',
-          y: 60
+          y: 60,
         },
         text: {
           color: 'rgb:52a4ff80',
@@ -21,12 +21,12 @@
           lineSpacing: -100,
           stroke: true,
           border: '20px_solid_rgb:2d0eff99',
-        }
+        },
       },
       {
         position: {
           gravity: 'south',
-          y: 60
+          y: 60,
         },
         text: {
           color: 'rgb:52a4ff80',
@@ -38,8 +38,8 @@
           lineSpacing: -100,
           stroke: true,
           border: '20px_solid_rgb:2d0eff99',
-        }
-      }
+        },
+      },
     ]"
   />
 </template>

@@ -6,8 +6,8 @@ const resource = ref();
 <template>
   <div>
     <CldUploadButton
-      uploadPreset="nuxt-cloudinary-unsigned"
-      :onUpload="
+      upload-preset="nuxt-cloudinary-unsigned"
+      :on-upload="
         (result, widget) => {
           resource.value = result?.info;
           widget.close();
