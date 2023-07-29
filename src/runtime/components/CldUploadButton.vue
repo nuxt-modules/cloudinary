@@ -119,16 +119,16 @@ defineProps<CldUploadWidgetProps>();
 <template>
   <CldUploadWidget
     v-slot="{ open, isLoading }"
-    uploadPreset="nuxt-cloudinary-unsigned"
+    upload-preset="nuxt-cloudinary-unsigned"
   >
     <button
       type="button"
       :disabled="isLoading"
       @click="(e: Event) => {
-      e.preventDefault();
-      open();
-      if (typeof onClick === 'function') onClick(e)
-    }"
+        e.preventDefault();
+        open();
+        if (typeof onClick === 'function') onClick(e)
+      }"
     >
       <slot />
     </button>

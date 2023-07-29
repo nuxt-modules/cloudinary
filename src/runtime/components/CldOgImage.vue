@@ -128,7 +128,11 @@ const computedTwitterTitle = computed(
 
 <template>
   <Head>
-    <Meta key="og-image" property="og:image" :content="ogImageUrl" />
+    <Meta
+      key="og-image"
+      property="og:image"
+      :content="ogImageUrl"
+    />
     <Meta
       key="og-image-secureurl"
       property="og:image:secure_url"
@@ -156,7 +160,11 @@ const computedTwitterTitle = computed(
       property="twitter:title"
       :content="computedTwitterTitle"
     />
-    <Meta key="twitter-card" property="twitter:card" :content="TWITTER_CARD" />
+    <Meta
+      key="twitter-card"
+      property="twitter:card"
+      :content="TWITTER_CARD"
+    />
     <Meta
       key="twitter-image"
       property="twitter:image"

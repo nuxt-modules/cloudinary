@@ -13,8 +13,9 @@ const resource = ref();
           widget.close();
         }
       "
-      >Upload</CldUploadButton
     >
+      Upload
+    </CldUploadButton>
     <p>URL: {{ resource?.secure_url }}</p>
   </div>
 </template>

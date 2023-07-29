@@ -151,6 +151,7 @@ const WIDGET_WATCHED_EVENTS = ["success", "display-changed"];
 
 const props = defineProps<CldUploadWidgetProps>();
 
+// eslint-disable-next-line vue/no-setup-props-destructure
 const {
   onClose,
   onError,
@@ -194,7 +195,7 @@ if (signed) {
 // Handle result states and callbacks
 
 watch(results, () => {
-  if (typeof results === "undefined") return;
+  if (typeof results.value === "undefined") return;
 
   const isSuccess = results.value?.event === "success";
   const isClosed =
@@ -211,7 +212,7 @@ watch(results, () => {
 });
 
 watch(error, () => {
-  if (error && typeof onError === "function") {
+  if (error.value && typeof onError === "function") {
     onError(error, widget.value);
   }
 });
@@ -322,6 +323,6 @@ useHead({
     :open="open"
     :results="results"
     :error="error"
-    :isLoading="isScriptLoading"
+    :is-loading="isScriptLoading"
   />
 </template>
