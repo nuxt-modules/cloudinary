@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useCldImageUrl } from "../composables/useCldImageUrl";
-import { computed } from 'vue'
+import { computed } from "vue";
 import { useRouter } from "#imports";
 
 const TWITTER_CARD = "summary_large_image";
@@ -8,7 +8,7 @@ const OG_IMAGE_WIDTH = 2400;
 const OG_IMAGE_WIDTH_RESIZE = 1200;
 const OG_IMAGE_HEIGHT = 1254;
 
-const { currentRoute } = useRouter()
+const { currentRoute } = useRouter();
 
 // Same story as with CldImage.vue component. Cannot use imported types for props
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
@@ -121,7 +121,9 @@ const { url: twitterImageUrl } = useCldImageUrl({
   },
 });
 
-const computedTwitterTitle = computed(() => props.twitterTitle || currentRoute.meta?.title || ' ')
+const computedTwitterTitle = computed(
+  () => props.twitterTitle || currentRoute.meta?.title || " "
+);
 </script>
 
 <template>

@@ -281,7 +281,7 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary-util/url-loader@^3.8.1":
+"@cloudinary-util/url-loader@^3.10.0":
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.10.0.tgz#30dbed4d60968687c9161a60b246da62d42c3e33"
   integrity sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg==
@@ -859,12 +859,12 @@
     socket.io-client "^4.6.1"
     ufo "^1.1.2"
 
-"@nuxtjs/cloudinary@^2.1.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.2.0.tgz#5a6e5eb10a2696f9691e147c058cf4c017d55dd0"
-  integrity sha512-Uy8XLmWJ0mj3FOPxZqCTcNNOTlbgc/90aIxtWJ3H/xQrH8kU8bPu51F4ZLW1ONEL8dcG6QqI0MMjaxmk9jYi6Q==
+"@nuxtjs/cloudinary@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.3.1.tgz#4c2a86f70d00b4c75a3889c23b75f389ecffa56f"
+  integrity sha512-gVURxdLzAOPpcw/daopVkD+0rymwauKN1S+X4/dsQOMr/cq6vPUOCBJ0MnfXzk+PJ/WVoO41sLNFESWOFVaK/g==
   dependencies:
-    "@cloudinary-util/url-loader" "^3.8.1"
+    "@cloudinary-util/url-loader" "^3.10.0"
     "@nuxt/kit" "^3.5.0"
     "@unpic/vue" "^0.0.23"
     defu "^6.1.2"

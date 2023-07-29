@@ -145,7 +145,7 @@ All effect props are disabled by default.
 
 [View the Cloudinary docs](https://cloudinary.com/documentation/transformation_reference#e_effect) to see learn more about using effects.
 
-### Overlay Props
+## Overlay Props
 
 The `overlays` prop is an array of objects with the following configuration options:
 
@@ -190,3 +190,97 @@ The text property can include:
 | lineSpacing    | number | `"14"`                                     |
 | stroke         | bool   | `true` in coordination with Border         |
 | textDecoration | string | `"underline"`                              |
+
+## Examples
+
+Below, you can see examples of usage of various effects that you can use from Cloudinary:
+
+### Zoompan
+
+```html
+zoompan="loop"
+```
+
+:cld-image{src="cld-sample-5" width="900" zoompan="loop" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Blur
+
+```html
+blur="1200"
+```
+
+:cld-image{src="cld-sample-5" width="900" blur="1200" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Pixelate
+
+```html
+pixelate
+```
+
+:cld-image{src="cld-sample-5" width="900" pixelate height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Grayscale
+
+```html
+grayscale
+```
+
+:cld-image{src="cld-sample-5" width="900" grayscale height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Tint
+
+```html
+tint="equalize:80:blue:blueviolet"
+```
+
+:cld-image{src="cld-sample-5" width="900" tint="equalize:80:blue:blueviolet" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Opacity
+
+```html
+opacity="50"
+```
+
+:cld-image{src="cld-sample-5" width="900" opacity="50" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Shear
+
+```html
+shear="40:0"
+```
+
+:cld-image{src="cld-sample-5" width="900" shear="40:0" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Border
+
+```html
+border="40px_solid_purple"
+```
+
+:cld-image{src="cld-sample-5" width="900" border="40px_solid_purple" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+
+<!-- TODO: not working yet -->
+### Multiple Effects
+
+```html
+:effects="[
+  {
+    background: 'green'
+  },
+  {
+    gradientFade: true
+  },
+  {
+    gradientFade: 'symetric,x_0.5'
+  }
+]"
+```
+
+:image-with-effects{style="text-align: center; margin: 0 auto"}

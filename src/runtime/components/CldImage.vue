@@ -4,7 +4,7 @@
 // import type { AssetOptions } from '@cloudinary-util/url-loader'
 // import type { ConfigOptions } from "@cloudinary-util/url-loader";
 import { useCldImageUrl } from "../composables/useCldImageUrl";
-import { ref } from 'vue'
+import { ref } from "vue";
 import { Image } from "@unpic/vue";
 
 interface AssetOptionsResize {
@@ -61,6 +61,14 @@ export interface CldImageProps extends ImageOptions {
   layout?: "constrained" | "fullWidth" | "fixed";
   priority?: boolean;
   background?: "auto" | string;
+  // Cloudinary missing effect props
+  blur?: string | number;
+  pixelate?: boolean;
+  grayscale?: boolean;
+  tint?: string | number;
+  opacity?: string | number;
+  shear?: string;
+  border?: string;
 }
 
 const props = defineProps<CldImageProps>();
@@ -95,12 +103,12 @@ const transformUrl = ({ width }: { width: string | number }) => {
   return url;
 };
 
-const imgKey = ref('image-key')
+const imgKey = ref("image-key");
 
 const handleError = async (payload: Event) => {
   const result = await pollForProcessingImage(payload);
 
-  if (result) imgKey.value = `${imgKey.value}-${Math.random()}`
+  if (result) imgKey.value = `${imgKey.value}-${Math.random()}`;
 };
 
 const pollForProcessingImage = async (options: Event): Promise<boolean> => {

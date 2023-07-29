@@ -16,6 +16,24 @@ console.log(url)
     height="1080"
     src="videos/mountain-stars"
   />
+  <!-- Usage of `CldUploadWidget.vue` component -->
+  <CldUploadWidget
+    v-slot="{ open }"
+    upload-preset="nuxt-cloudinary-unsigned"
+  >
+    <button
+      type="button"
+      @click="open"
+    >
+      Upload an Image
+    </button>
+  </CldUploadWidget>
+  <!-- Usage of `CldUploadButton.vue` component -->
+  <CldUploadButton
+    upload-preset="nuxt-cloudinary-unsigned"
+  >
+    Upload
+  </CldUploadButton>
   <!-- Usage of `CldImage.vue` component -->
   <CldImage
     src="cld-sample-5"
