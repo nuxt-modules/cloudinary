@@ -117,12 +117,10 @@ defineProps<CldUploadWidgetProps>();
 </script>
 
 <template>
-  <CldUploadWidget
-    v-slot="{ open, isLoading }"
-    :upload-preset="uploadPreset"
-  >
+  <CldUploadWidget v-slot="{ open, isLoading }" :upload-preset="uploadPreset">
     <button
       type="button"
+      v-bind="$attrs"
       :disabled="isLoading"
       @click="(e: Event) => {
         e.preventDefault();

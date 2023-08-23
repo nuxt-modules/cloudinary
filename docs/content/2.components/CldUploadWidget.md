@@ -65,3 +65,44 @@ export default eventHandler(async (event) => {
 ```
 
 To use the above, create a Node-based API route, add the snippet, and use that endpoint as the `signatureEndpoint` prop.
+
+## General Props
+
+| Prop Name         | Type     | Example                            |
+| ----------------- | -------- | ---------------------------------- |
+| children          | function | `{ (options) => {} }`              |
+| options           | object   | `{ encryption: {...} }`            |
+| signatureEndpoint | string   | `"/api/sign-cloudinary-params.js"` |
+| uploadPreset      | string   | `"my-upload-preset"`               |
+
+## Event Props
+
+| Prop Name        | Type     | Example                    |
+| ---------------- | -------- | -------------------------- |
+| onError          | function | `(error, widget) => { }`   |
+| onOpen           | function | `(widget) => { }`          |
+| onUpload         | function | `(result, widget) => { }`  |
+| onAbort          | function | `(result, options) => { }` |
+| onBatchCancelled | function | `(result, options) => { }` |
+| onClose          | function | `(widget) => { }`          |
+| onDisplayChanged | function | `(result, options) => { }` |
+| onPublicId       | function | `(result, options) => { }` |
+| onQueuesEnd      | function | `(result, options) => { }` |
+| onQueuesStart    | function | `(result, options) => { }` |
+| onRetry          | function | `(result, options) => { }` |
+| onShowCompleted  | function | `(result, options) => { }` |
+| onSourceChanged  | function | `(result, options) => { }` |
+| onSuccess        | function | `(result, options) => { }` |
+| onTags           | function | `(result, options) => { }` |
+| onUploadAdded    | function | `(result, options) => { }` |
+
+To learn more about the event callbacks and when they trigger, see: https://cloudinary.com/documentation/upload_widget_reference#events
+
+### Callback Options
+
+Most of the callbacks provide a set of options that give access to the widget instance and allow more interaction.
+
+| Name               | Type     | Description                                            |
+| ------------------ | -------- | ------------------------------------------------------ |
+| widget             | Widget   | The widget instance attached to the current component. |
+| [Instance Methods] | function | See below.                                             |
