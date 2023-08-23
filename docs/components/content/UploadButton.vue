@@ -22,13 +22,13 @@ const resource = ref();
 </template>
 
 <style>
-.button > button {
+.button {
   background-color: #3448c5;
   padding: 12px;
   border-radius: 4px;
   transition: background-color 0.1s;
 }
-.button > button:hover {
+.button:hover {
   background-color: #5d6dd1;
 }
 </style>
