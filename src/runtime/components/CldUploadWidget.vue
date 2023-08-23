@@ -4,13 +4,6 @@ import { ref, watch } from "vue";
 import { useRuntimeConfig } from "#imports";
 
 export interface CldUploadWidgetProps {
-  children?: ({
-    cloudinary,
-    widget,
-    open,
-    results,
-    error,
-  }: CldUploadWidgetPropsChildren) => JSX.Element;
   onClose?: Function;
   onError?: Function;
   onOpen?: Function;
@@ -18,15 +11,6 @@ export interface CldUploadWidgetProps {
   options?: CldUploadWidgetPropsOptions;
   signatureEndpoint?: URL | RequestInfo;
   uploadPreset?: string;
-}
-
-export interface CldUploadWidgetPropsChildren {
-  cloudinary: any;
-  widget: any;
-  open: Function;
-  results?: object;
-  error?: any;
-  isLoading?: boolean;
 }
 
 // Parameters sourced from:

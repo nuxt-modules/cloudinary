@@ -13,3 +13,18 @@ The CldUploadButton component wraps the [CldUploadWidget](/components/clduploadw
 ```
 
 :upload-button
+
+## Props
+
+CldUploadButton inherits all of the props associated with the [CldUploadWidget](/components/clduploadwidget) component including callback functions except for the `children` option.
+
+In addition, the following props are available:
+
+| Prop Name | Type     | Example                |
+| --------- | -------- | ---------------------- |
+| className | string   | `"my-button"`          |
+| onClick   | function | `function (event) { }` |
+
+`children` are rendered "as is" inside of the `<button>` element if provided, otherwise, the button will include a label of "Upload".
+
+The remaining props are spread onto the `<button>` element for full control of the UI.
