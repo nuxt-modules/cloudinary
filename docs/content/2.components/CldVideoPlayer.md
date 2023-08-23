@@ -11,14 +11,10 @@ The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudin
 The basic required props include `width`, `height`, and `src`:
 
 ```html
-<CldVideoPlayer
-  width="1920"
-  height="1080"
-  src="<Public ID>"
-/>
+<CldVideoPlayer width="1920" height="1080" src="<Public ID>" />
 ```
 
-:cld-video-player{src="videos/mountain-stars" width="900" height="900"}
+:cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080"}
 
 ## Customization
 
@@ -36,11 +32,11 @@ You can further take advantage of features like customizing your player:
 </template>
 
 <script setup lang="ts">
-const colors = {
-    accent: '#ff0000',
-    base: '#00ff00',
-    text: '#0000ff'
-  }
+  const colors = {
+    accent: "#ff0000",
+    base: "#00ff00",
+    text: "#0000ff",
+  };
 </script>
 ```
 
