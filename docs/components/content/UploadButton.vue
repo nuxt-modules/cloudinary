@@ -6,6 +6,7 @@ const resource = ref();
 <template>
   <div>
     <CldUploadButton
+      class="button"
       upload-preset="nuxt-cloudinary-unsigned"
       :on-upload="
         (result, widget) => {
@@ -19,3 +20,15 @@ const resource = ref();
     <p>URL: {{ resource?.secure_url }}</p>
   </div>
 </template>
+
+<style>
+.button > button {
+  background-color: #3448c5;
+  padding: 12px;
+  border-radius: 4px;
+  transition: background-color 0.1s;
+}
+.button > button:hover {
+  background-color: #5d6dd1;
+}
+</style>
