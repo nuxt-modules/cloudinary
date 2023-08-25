@@ -122,7 +122,7 @@ const { url: twitterImageUrl } = useCldImageUrl({
 });
 
 const computedTwitterTitle = computed(
-  () => props.twitterTitle || currentRoute.meta?.title || " "
+  () => props.twitterTitle || currentRoute.value.meta?.title || " "
 );
 </script>
 
