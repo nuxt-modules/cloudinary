@@ -19,6 +19,7 @@ export interface CloudinaryVideoPlayerOptions {
   publicId: string;
   secure?: boolean;
   transformation?: Array<object> | object;
+  hideContextMenu: boolean;
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -41,7 +42,13 @@ export interface CldVideoPlayerPropsLogo {
 
 export type CldVideoPlayerProps = Pick<
   CloudinaryVideoPlayerOptions,
-  "colors" | "controls" | "fontFace" | "loop" | "muted" | "transformation"
+  | "colors"
+  | "controls"
+  | "fontFace"
+  | "loop"
+  | "muted"
+  | "transformation"
+  | "hideContextMenu"
 > & {
   autoPlay?: string;
   className?: string;
@@ -96,6 +103,7 @@ const {
   version,
   quality,
   width,
+  hideContextMenu,
 } = props as CldVideoPlayerProps;
 
 const playerTransformations = Array.isArray(transformation)
@@ -182,6 +190,7 @@ const handleOnLoad = () => {
       secure: true,
       transformation: playerTransformations,
       ...logoOptions,
+      hideContextMenu,
     };
 
     if (typeof colors === "object") {
