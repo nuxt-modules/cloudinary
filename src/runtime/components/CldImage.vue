@@ -12,6 +12,12 @@ interface AssetOptionsResize {
   width?: number | string;
 }
 
+interface ImageOptionsFillBackground {
+  crop?: string;
+  gravity?: string;
+  prompt?: string;
+}
+
 interface AssetOptions {
   assetType?: string;
   crop?: string;
@@ -45,6 +51,7 @@ interface ImageOptionsZoomPan {
 }
 interface ImageOptions extends AssetOptions {
   zoompan?: string | boolean | ImageOptionsZoomPan;
+  fillBackground?: boolean | ImageOptionsFillBackground;
 }
 
 export interface CldImageProps extends ImageOptions {
