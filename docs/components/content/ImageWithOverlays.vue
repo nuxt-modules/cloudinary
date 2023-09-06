@@ -1,6 +1,6 @@
 <template>
   <CldImage
-    src="cld-sample-5"
+    src="images/sneakers"
     width="900"
     height="900"
     alt="Sample Product"

@@ -150,14 +150,14 @@ All effect props are disabled by default.
 
 The `overlays` prop is an array of objects with the following configuration options:
 
-| Property Name  | Type   | Example                                          |
-| -------------- | ------ | ------------------------------------------------ | -------------------------------- |
-| appliedEffects | array  | Same as effects, added as applied transformation |
-| effects        | array  | See Below                                        |
-| position       | object | See Below                                        |
-| publicId       | string | `"thumb"`                                        |
-| text           | object | string                                           | `"Next Cloudinary"` or See Below |
-| url            | string | `"https://.../image.jpg"`                        |
+| Property Name  | Type          | Example                                          |
+| -------------- | ------------- | ------------------------------------------------ |
+| appliedEffects | array         | Same as effects, added as applied transformation |
+| effects        | array         | See Below                                        |
+| position       | object        | See Below                                        |
+| publicId       | string        | `"thumb"`                                        |
+| text           | object/string | `"Nuxt Cloudinary"` or See Below                 |
+| url            | string        | `"https://.../image.jpg"`                        |
 
 The position property can include:
 
@@ -202,7 +202,7 @@ Below, you can see examples of usage of various effects that you can use from Cl
 zoompan="loop"
 ```
 
-:cld-image{src="cld-sample-5" width="900" zoompan="loop" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/sneakers" width="900" zoompan="loop" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Blur
 
@@ -210,7 +210,7 @@ zoompan="loop"
 blur="1200"
 ```
 
-:cld-image{src="cld-sample-5" width="900" blur="1200" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/turtle" width="900" blur="1200" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Pixelate
 
@@ -218,7 +218,7 @@ blur="1200"
 pixelate
 ```
 
-:cld-image{src="cld-sample-5" width="900" pixelate height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/mountain" width="900" pixelate height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Grayscale
 
@@ -226,7 +226,7 @@ pixelate
 grayscale
 ```
 
-:cld-image{src="cld-sample-5" width="900" grayscale height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/galaxy" width="900" grayscale height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Tint
 
@@ -234,7 +234,7 @@ grayscale
 tint="equalize:80:blue:blueviolet"
 ```
 
-:cld-image{src="cld-sample-5" width="900" tint="equalize:80:blue:blueviolet" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/mountain" width="900" tint="equalize:80:blue:blueviolet" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Opacity
 
@@ -242,7 +242,7 @@ tint="equalize:80:blue:blueviolet"
 opacity="50"
 ```
 
-:cld-image{src="cld-sample-5" width="900" opacity="50" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/turtle" width="900" opacity="50" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Shear
 
@@ -250,7 +250,7 @@ opacity="50"
 shear="40:0"
 ```
 
-:cld-image{src="cld-sample-5" width="900" shear="40:0" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/sneakers" width="900" shear="40:0" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### Border
 
@@ -258,7 +258,7 @@ shear="40:0"
 border="40px_solid_purple"
 ```
 
-:cld-image{src="cld-sample-5" width="900" border="40px_solid_purple" height="900" alt="test" style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/turtle" width="900" border="40px_solid_purple" height="900" alt="test" style="text-align: center; margin: 0 auto"}
 
 ### fillBackground
 
@@ -266,7 +266,7 @@ border="40px_solid_purple"
 fillBackground
 ```
 
-:cld-image{src="cld-sample-5" width="1200" height="1200" alt="test" fillBackground style="text-align: center; margin: 0 auto"}
+:cld-image{src="images/woman-headphones" width="1200" height="1200" alt="test" fillBackground style="text-align: center; margin: 0 auto"}
 
 ### Multiple Effects
 
