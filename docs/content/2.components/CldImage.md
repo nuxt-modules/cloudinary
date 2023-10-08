@@ -272,6 +272,7 @@ fillBackground
 
 ```html
 :effects="[ { background: 'green' }, { gradientFade: true }, { gradientFade:
+
 'symetric,x_0.5' } ]"
 ```
 
