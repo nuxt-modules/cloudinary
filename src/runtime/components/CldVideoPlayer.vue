@@ -19,7 +19,7 @@ export interface CloudinaryVideoPlayerOptions {
   publicId: string;
   secure?: boolean;
   transformation?: Array<object> | object;
-  hideContextMenu: boolean;
+  hideContextMenu?: boolean;
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
