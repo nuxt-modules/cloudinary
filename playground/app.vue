@@ -2,9 +2,16 @@
 // Usage of `useCldImageUrl` composable
 const { url } = useCldImageUrl({ options: { src: "/cld-sample-5.jpg" } });
 console.log(url);
+
+const mediaAssets = [
+  { tag: "electric_car_product_gallery_demo" }, // by default mediaType: "image"
+  { tag: "electric_car_product_gallery_demo", mediaType: "video" },
+  { tag: "electric_car_360_product_gallery_demo", mediaType: "spin" },
+];
 </script>
 
 <template>
+  <CldProductGallery :media-assets="mediaAssets" cloud-name="demo" />
   <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage src="cld-sample-2" twitter-title="test" />
   <!-- Usage of `CldVideoPlayer.vue` component -->
