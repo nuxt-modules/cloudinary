@@ -108,6 +108,18 @@ export interface CldUploadWidgetProps {
   onOpen?: Function;
   onUpload?: Function;
   onClick?: Function;
+  onAbort?: Function;
+  onBatchCancelled?: Function;
+  onDisplayChanged?: Function;
+  onPublicId?: Function;
+  onQueuesEnd?: Function;
+  onQueuesStart?: Function;
+  onRetry?: Function;
+  onShowCompleted?: Function;
+  onSourceChanged?: Function;
+  onSuccess?: Function;
+  onTags?: Function;
+  onUploadAdded?: Function;
   options?: CldUploadWidgetPropsOptions;
   signatureEndpoint?: URL | RequestInfo;
   uploadPreset?: string;
