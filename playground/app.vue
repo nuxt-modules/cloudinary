@@ -35,7 +35,7 @@ const buttonId = 'open-btn'
     height="987"
     alt="Sample Product"
     crop="fill"
-    loading="lazy"
+    priority
     sizes="(max-width: 600px) 480px,
          800px"
   />
