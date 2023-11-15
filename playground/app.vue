@@ -8,10 +8,14 @@ const mediaAssets = [
   { tag: "electric_car_product_gallery_demo", mediaType: "video" },
   { tag: "electric_car_360_product_gallery_demo", mediaType: "spin" },
 ];
+
+const buttonId = 'open-btn'
 </script>
 
 <template>
-  <CldProductGallery :media-assets="mediaAssets" cloud-name="demo" />
+  <button :id="buttonId">Select Image or Video</button>
+  <CldMediaGallery api-key="12345" :button-id="buttonId"/>
+  <CldProductGallery :media-assets="mediaAssets" cloud-name="demo" :button-id="buttonId" />
   <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage src="cld-sample-2" twitter-title="test" />
   <!-- Usage of `CldVideoPlayer.vue` component -->
