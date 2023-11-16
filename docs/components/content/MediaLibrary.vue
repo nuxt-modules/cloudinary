@@ -6,6 +6,6 @@ const apiKey = "12345";
 <template>
   <div>
     <button :id="buttonId">Select Image or Video</button>
-    <CldMediaGallery :api-key="apiKey" :button-id="buttonId" />
+    <CldMediaLibrary :api-key="apiKey" :button-id="buttonId" />
   </div>
 </template>

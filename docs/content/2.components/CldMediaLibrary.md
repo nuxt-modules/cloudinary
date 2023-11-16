@@ -1,8 +1,8 @@
-# CldMediaGallery.vue
+# CldMediaLibrary.vue
 
 ---
 
-The CldMediaGallery creates a media gallery element that uses an instance of the [Cloudinary Product Gallery Widget](https://cloudinary.com/documentation/media_library_widget) to give you an easy way to add product gallery component to your Nuxt app.
+The CldMediaLibrary creates a media gallery element that uses an instance of the [Cloudinary Media Library Widget](https://cloudinary.com/documentation/media_library_widget) to give you an easy way to add media librarry component to your Nuxt app.
 
 ## Basic Usage
 
@@ -15,16 +15,16 @@ const apiKey = useRuntimeConfig().public.cloudinary.apiKey;
 <template>
   <div>
     <button :id="buttonId">Select Image or Video</button>
-    <CldMediaGallery :api-key="apiKey" :button-id="buttonId" />
+    <CldMediaLibrary :api-key="apiKey" :button-id="buttonId" />
   </div>
 </template>
 ```
 
-:media-gallery
+:media-library
 
 ## Props
 
-CldMediaGallery accepts several customization props listed below:
+CldMediaLibrary accepts several customization props listed below:
 
 | Prop Name | Type    | Example    |
 | --------- | ------- | ---------- |
@@ -35,7 +35,7 @@ CldMediaGallery accepts several customization props listed below:
 | useSaml   | boolean | `false`    |
 | params    | object  | `{}`       |
 
-For all other available props checkout [Cloudinary Product Gallery Docs](https://cloudinary.com/documentation/media_library_widget#2_set_the_configuration_options) and make sure to pass them to the component as `params` like following:
+For all other available props checkout [Cloudinary Media Gallery Docs](https://cloudinary.com/documentation/media_library_widget#2_set_the_configuration_options) and make sure to pass them to the component as `params` like following:
 
 ```vue
 <script setup lang="ts">
@@ -55,14 +55,14 @@ const params = {
 <template>
   <div>
     <button :id="buttonId">Select Image or Video</button>
-    <CldMediaGallery :api-key="apiKey" :button-id="buttonId" :params="params" />
+    <ClsMediaLibrary :api-key="apiKey" :button-id="buttonId" :params="params" />
   </div>
 </template>
 ```
 
 ## Events
 
-ClsMediaGallery emits following events:
+ClsMediaLibrary emits following events:
 
 | Event Name | Type     | Example         |
 | ---------- | -------- | --------------- |
@@ -83,7 +83,7 @@ function handleInsert(data: unknown) {
 <template>
   <div>
     <button :id="buttonId">Select Image or Video</button>
-    <CldMediaGallery
+    <ClsMediaLibrary
       :api-key="apiKey"
       :button-id="buttonId"
       :params="params"

@@ -14,7 +14,7 @@ const buttonId = 'open-btn'
 
 <template>
   <button :id="buttonId">Select Image or Video</button>
-  <CldMediaGallery api-key="12345" :button-id="buttonId"/>
+  <CldMediaLibrary api-key="12345" :button-id="buttonId"/>
   <CldProductGallery :media-assets="mediaAssets" cloud-name="demo" :button-id="buttonId" />
   <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage src="cld-sample-2" twitter-title="test" />

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
-import { PropType } from "vue";
+import { PropType, ref } from "vue";
 
 const cloudinaryRef = ref();
 
@@ -64,12 +64,12 @@ const handleOnLoad = () => {
 useHead({
   script: [
     {
-      id: `cloudinary-product-gallery-${Math.floor(Math.random() * 100)}`,
+      id: `cloudinary-media-library-${Math.floor(Math.random() * 100)}`,
       src: `https://media-library.cloudinary.com/global/all.js`,
       onload: handleOnLoad,
       onerror: (e) =>
         console.error(
-          `Failed to load Cloudinary Product Gallery: ${(e as any).message}`
+          `Failed to load Cloudinary Media Library: ${(e as any).message}`
         ),
     },
   ],

@@ -2,7 +2,6 @@
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
 import { PropType } from "vue";
-import { Prop } from "nuxt/dist/app/compat/capi";
 
 const cloudinaryRef = ref();
 
