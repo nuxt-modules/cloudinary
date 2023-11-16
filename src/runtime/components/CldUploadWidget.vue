@@ -8,6 +8,18 @@ export interface CldUploadWidgetProps {
   onError?: Function;
   onOpen?: Function;
   onUpload?: Function;
+  onAbort?: Function;
+  onBatchCancelled?: Function;
+  onDisplayChanged?: Function;
+  onPublicId?: Function;
+  onQueuesEnd?: Function;
+  onQueuesStart?: Function;
+  onRetry?: Function;
+  onShowCompleted?: Function;
+  onSourceChanged?: Function;
+  onSuccess?: Function;
+  onTags?: Function;
+  onUploadAdded?: Function;
   options?: CldUploadWidgetPropsOptions;
   signatureEndpoint?: URL | RequestInfo;
   uploadPreset?: string;
@@ -144,6 +156,18 @@ const {
   options,
   signatureEndpoint,
   uploadPreset,
+  onAbort,
+  onBatchCancelled,
+  onDisplayChanged,
+  onPublicId,
+  onQueuesEnd,
+  onQueuesStart,
+  onRetry,
+  onShowCompleted,
+  onSourceChanged,
+  onSuccess,
+  onTags,
+  onUploadAdded,
 } = props;
 
 const cloudinary = ref();
@@ -160,12 +184,39 @@ const isScriptLoading = ref(true);
 // either on page load or during the upload process. Read more about signed uploads at:
 // https://cloudinary.com/documentation/upload_widget#signed_uploads
 
+
+const instanceMethods = {
+    close,
+    destroy,
+    hide,
+    isDestroyed,
+    isMinimized,
+    isShowing,
+    minimize,
+    open,
+    show,
+    update,
+    'abort': onAbort,
+    'batch-cancelled': onBatchCancelled,
+    'display-changed': onDisplayChanged,
+    'publicid': onPublicId,
+    'queues-end': onQueuesEnd,
+    'queues-start': onQueuesStart,
+    'retry': onRetry,
+    'show-completed': onShowCompleted,
+    'source-changed': onSourceChanged,
+    'success': onSuccess,
+    'tags': onTags,
+    'upload-added': onUploadAdded,
+  }
+
 const uploadOptions = {
   cloudName: useRuntimeConfig().public.cloudinary.cloudName,
   uploadPreset:
     uploadPreset || useRuntimeConfig().public.cloudinary.uploadPreset,
   apiKey: useRuntimeConfig().public.cloudinary.apiKey,
   ...options,
+  ...instanceMethods
 };
 
 if (signed) {
@@ -264,21 +315,58 @@ function createWidget() {
       if (WIDGET_WATCHED_EVENTS.includes(uploadResult?.event)) {
         results.value = uploadResult;
       }
+
     }
   );
 }
 
-/**
- * open
- * @description When triggered, uses the current widget instance to open the upload modal
- */
+function invokeInstanceMethod(method: string) {
+    if (!widget.value) {
+      widget.value = createWidget();
+    }
 
-function open() {
-  if (!widget.value) {
-    widget.value = createWidget();
+    if ( typeof widget?.value[method] === 'function' ) {
+      widget.value[method](widget.value);
+    }
   }
 
-  widget?.value.open();
+  function close() {
+    invokeInstanceMethod('close');
+  }
+
+  function destroy() {
+    invokeInstanceMethod('destroy');
+  }
+
+  function hide() {
+    invokeInstanceMethod('hide');
+  }
+
+  function isDestroyed() {
+    invokeInstanceMethod('isDestroyed');
+  }
+
+  function isMinimized() {
+    invokeInstanceMethod('isMinimized');
+  }
+
+  function isShowing() {
+    invokeInstanceMethod('isShowing');
+  }
+
+  function minimize() {
+    invokeInstanceMethod('minimize');
+  }
+
+  function show() {
+    invokeInstanceMethod('show');
+  }
+
+  function update() {
+    invokeInstanceMethod('update');
+  }
+function open() {
+  invokeInstanceMethod('open');
 
   if (typeof onOpen === "function") {
     onOpen(widget.value);
@@ -305,6 +393,15 @@ useHead({
     :cloudinary="cloudinary"
     :widget="widget"
     :open="open"
+    :update="update"
+    :show="show"
+    :is-showing="isShowing"
+    :is-minimized="isMinimized"
+    :is-destroyed="isDestroyed"
+    :destroy="destroy"
+    :close="close"
+    :hide="hide"
+    :minimize="minimize"
     :results="results"
     :error="error"
     :is-loading="isScriptLoading"
