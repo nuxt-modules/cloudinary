@@ -1,67 +1,38 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
-import { PropType, ref } from "vue";
+import { ref } from "vue";
 
 const cloudinaryRef = ref();
 
 type MediaType = "image" | "video" | "spin";
 
-const props = defineProps({
-  cloudName: {
-    type: String,
-    default: "",
-  },
+type ProductGalleryProps = {
+  cloudName?: string;
   mediaAssets: {
-    type: Array as PropType<{ tag: string; mediaType?: MediaType }[]>,
-    required: true,
-  },
-  displayProps: {
-    type: Object as PropType<{ mode: string; columns: number }>,
-    default: () => ({}),
-  },
-  aspectRatio: {
-    type: String,
-    default: "",
-  },
-  imageBreakpoint: {
-    type: Number,
-    default: 0,
-  },
-  carouselStyle: {
-    type: String,
-    default: "",
-  },
-  indicatorProps: {
-    type: Object as PropType<{ color: string }>,
-    default: () => ({}),
-  },
-  carouselLocation: {
-    type: String,
-    default: "",
-  },
-  borderColor: {
-    type: String,
-    default: "",
-  },
-  borderWidth: {
-    type: Number,
-    default: 0,
-  },
-  transition: {
-    type: String,
-    default: "",
-  },
-  zoom: {
-    type: Boolean,
-    default: false,
-  },
+    tage: string;
+    mediaType?: MediaType;
+  }[];
+  displayProps?: {
+    mode: string;
+    columns: number
+  }[];
+  aspectRatio?: string;
+  imageBreakpoint?: number;
+  carouselStyle?: string;
+  indicatorProps?: {
+    color?: string;
+  };
+  carouselLocation?: string;
+  borderColor?: string;
+  borderWidth?: number;
+  transition?: string;
+  zoom?: boolean;
   // Other params listed https://cloudinary.com/documentation/product_gallery_reference#widget_parameters
-  params: {
-    type: Object as PropType<Record<string, any>>,
-    default: () => ({}),
-  },
-});
+  params?: Record<string, any>
+}
+
+const props = defineProps<ProductGalleryProps>();
 
 const handleOnLoad = () => {
   if ("cloudinary" in window) {

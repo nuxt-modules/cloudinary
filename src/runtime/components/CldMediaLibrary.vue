@@ -1,37 +1,20 @@
 <script setup lang="ts">
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
-import { PropType, ref } from "vue";
+import { ref } from "vue";
 
 const cloudinaryRef = ref();
 
-const props = defineProps({
-  cloudName: {
-    type: String,
-    default: "",
-  },
-  apiKey: {
-    type: String,
-    required: true
-  },
-  username: {
-    type: String,
-    default: "",
-  },
-  useSaml: {
-    type: Boolean,
-    default: false,
-  },
-  buttonId: {
-    type: String,
-    required: true,
-  },
-  // Other params listed https://cloudinary.com/documentation/media_library_widget#2_set_the_configuration_options
-  params: {
-    type: Object as PropType<Record<string, any>>,
-    default: () => ({}),
-  },
-});
+type MediaLibraryProps = {
+  cloudName?: string;
+  apiKey: string;
+  username?: string;
+  useSaml?: boolean;
+  buttonId: string;
+  params?: Record<string, any>
+}
+
+const props = defineProps<MediaLibraryProps>();
 
 const emit = defineEmits(['onInsert'])
 
