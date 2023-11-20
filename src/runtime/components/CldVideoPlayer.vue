@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, Ref } from "vue";
+import { ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
 import { parseUrl } from "@cloudinary-util/util";
@@ -61,10 +61,10 @@ export type CldVideoPlayerProps = Pick<
   onPause?: Function;
   onPlay?: Function;
   onEnded?: Function;
-  playerRef?: Ref<CloudinaryVideoPlayer | null>;
+  playerRef?: { value: CloudinaryVideoPlayer | null };
   src: string;
   version?: string;
-  videoRef?: Ref<HTMLVideoElement | null>;
+  videoRef?: { value: HTMLVideoElement | null };
   quality?: string | number;
   width: string | number;
 };
@@ -131,9 +131,9 @@ playerTransformations.unshift({
 });
 
 const cloudinaryRef = ref<any>();
-const defaultVideoRef = ref() as Ref<HTMLVideoElement | null>;
+const defaultVideoRef = ref();
 const videoRef = props.videoRef || defaultVideoRef;
-const defaultPlayerRef = ref() as Ref<CloudinaryVideoPlayer | null>;
+const defaultPlayerRef = ref();
 const playerRef = props.playerRef || defaultPlayerRef;
 
 const playerId = id || `player-${publicId.replace("/", "-")}-${idRef.value}`;
