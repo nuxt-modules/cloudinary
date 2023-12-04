@@ -40,7 +40,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "docs": "cd docs && yarn dev",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "yarn run lint && yarn run test && yarn run prepack && changelogen --release --output=CHANGELOG.md && yarn publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
