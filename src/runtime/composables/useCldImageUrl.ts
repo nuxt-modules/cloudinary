@@ -10,24 +10,32 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
 
   if (!cldCloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
 
-  return {
-    url: constructCloudinaryUrl({
-      options: {
-        // Have to spread the options because otherwise getting the error about props being updated while they are readonly.
-        ...props.options
-      },
-      config: {
-        ...props.config,
-        cloud: {
-          cloudName: cldCloudName
-        }
-      },
+  let cldOptions: ConstructUrlProps = {
+    options: {
+      // Have to spread the options because otherwise getting the error about props being updated while they are readonly.
+      ...props.options
+    },
+    config: {
+      ...props.config,
+      cloud: {
+        cloudName: cldCloudName
+      }
+    },
+  }
+
+  if (useRuntimeConfig().public.cloudinary.analytics) {
+    cldOptions = {
+      ...cldOptions,
       analytics: Object.assign({
         sdkCode: 'D',
         sdkSemver: `${pkg.version.split('.')[0]}.0.0`,
         techVersion: `${nuxtPkg.version.split('.')[0]}.0.0`,
         product: 'B'
       }, props.analytics)
-    })
+    }
+  }
+
+  return {
+    url: constructCloudinaryUrl(cldOptions)
   }
 }
