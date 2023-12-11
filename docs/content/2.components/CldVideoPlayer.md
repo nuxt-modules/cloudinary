@@ -133,9 +133,17 @@ To customize the logo, the following options are available in the form of an obj
 
 The `playerRef` and `videoRef` props give you the ability to pass in your own ref to gain access to both the Player instance as well as the HTML video element on which the player is mounted.
 
-To do this, create a new Ref instance and pass that in as the value of the prop:
+To do this, create a new Ref instance and pass as ref to the `CldVideoPlayer` component:
 
 ```vue
-const myVideoRef = ref(); ...
-<CldVideoPlayer :videoRef="myVideoRef" ... />
+<script setup lang="ts">
+const cldVideoPlayerRef = ref();
+
+console.log(cldVideoPlayerRef)
+// will output { playerRef, videoRef }
+</script>
+
+<template>
+  <CldVideoPlayer ref="cldVideoPlayerRef" ... />
+</template>
 ```
