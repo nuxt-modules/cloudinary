@@ -326,7 +326,7 @@ function invokeInstanceMethod(method: string) {
     }
 
     if ( typeof widget?.value[method] === 'function' ) {
-      widget.value[method](widget.value);
+      widget.value[method]();
     }
   }
 
