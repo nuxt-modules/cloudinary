@@ -9,17 +9,28 @@ const mediaAssets = [
   { tag: "electric_car_360_product_gallery_demo", mediaType: "spin" },
 ];
 
-const buttonId = 'open-btn'
+const buttonId = "open-btn";
+
+const cldVideoRef = ref();
 </script>
 
 <template>
   <button :id="buttonId">Select Image or Video</button>
-  <CldMediaLibrary api-key="12345" :button-id="buttonId"/>
-  <CldProductGallery :media-assets="mediaAssets" cloud-name="demo" :button-id="buttonId" />
+  <CldMediaLibrary api-key="12345" :button-id="buttonId" />
+  <CldProductGallery
+    :media-assets="mediaAssets"
+    cloud-name="demo"
+    :button-id="buttonId"
+  />
   <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage src="cld-sample-2" twitter-title="test" />
   <!-- Usage of `CldVideoPlayer.vue` component -->
-  <CldVideoPlayer width="1620" height="1080" src="videos/mountain-stars" />
+  <CldVideoPlayer
+    width="1620"
+    height="1080"
+    src="videos/mountain-stars"
+    ref="cldVideoRef"
+  />
   <!-- Usage of `CldUploadWidget.vue` component -->
   <CldUploadWidget v-slot="{ open }" upload-preset="nuxt-cloudinary-unsigned">
     <button type="button" @click="open">Upload an Image</button>
