@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // This is working in dev playground but does not work in the published package
 // Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
-// import type { AssetOptions } from '@cloudinary-util/url-loader'
+// import type { AssetOptions } from "@cloudinary-util/url-loader";
 // import type { ConfigOptions } from "@cloudinary-util/url-loader";
 import { useCldImageUrl } from "../composables/useCldImageUrl";
 import { ref } from "vue";
@@ -45,13 +45,40 @@ interface AssetOptions {
   zoom?: string;
 }
 
+type ImageOptionsRecolorPrompt = string | Array<string>;
+
+interface ImageOptionsRecolor {
+  prompt?: ImageOptionsRecolorPrompt;
+  to?: string;
+  multiple?: boolean;
+}
+
 interface ImageOptionsZoomPan {
   loop: string | boolean;
   options: string;
 }
+
+type ImageOptionsRemovePrompt = string | Array<string>;
+
+interface ImageOptionsRemove {
+  prompt?: ImageOptionsRemovePrompt;
+  region?: [300, 200, 1900, 3500];
+  multiple?: boolean;
+  removeShadow?: boolean;
+}
+
+interface ImageOptionsGenerativeReplace {
+  to: string;
+  from: string;
+  preserveGeometry?: boolean;
+}
 interface ImageOptions extends AssetOptions {
   zoompan?: string | boolean | ImageOptionsZoomPan;
   fillBackground?: boolean | ImageOptionsFillBackground;
+  recolor?: ImageOptionsRecolorPrompt | ImageOptionsRecolor;
+  remove?: ImageOptionsRemovePrompt | ImageOptionsRemove;
+  replace?: Array<string | boolean> | ImageOptionsGenerativeReplace;
+  restore?: boolean;
 }
 
 export interface CldImageProps extends ImageOptions {
@@ -121,7 +148,7 @@ const transformUrl = () => {
   // overlays that may depend on the size to work properly
 
   if (options.width && widthResize && widthResize < options.width) {
-    options.widthResize = loaderOptions.width;
+    options.widthResize = loaderOptions?.width;
   }
 
   const { url } = useCldImageUrl({ options, config });
