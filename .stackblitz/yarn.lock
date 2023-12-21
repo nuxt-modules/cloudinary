@@ -479,18 +479,18 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary-util/url-loader@^3.10.0":
-  version "3.10.0"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.10.0.tgz#30dbed4d60968687c9161a60b246da62d42c3e33"
-  integrity sha512-RNp6WayU6e5ikA7yCRqNhp0lOwLl82vLco9EwpES2si6Hb+g9yEaeTYvobD44ISQeJUnPl6e1c/AEYVSjfzwrg==
+"@cloudinary-util/url-loader@^3.23.0":
+  version "3.23.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-3.23.0.tgz#694aee3b858f3a01d42953f55c17b4620973c4e9"
+  integrity sha512-Tp6TrAkOYkgT3CyIU4nXS4utLkYN9nquTQSNW6Qqmb7vA7Y1MaSRty+F2FHV84WETK9XQDCfdCn4B+SyH4sWWw==
   dependencies:
-    "@cloudinary-util/util" "2.2.1"
+    "@cloudinary-util/util" "2.3.0"
     "@cloudinary/url-gen" "^1.10.2"
 
-"@cloudinary-util/util@2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.2.1.tgz#c482d9321d37d921b347858a121c161b68782bd3"
-  integrity sha512-MEIqn5WtPP3mxSMTNNfpqlGS1UquAXcjmVdY/t/edD/ZWVjI85viBiOMIuF0W6n6UF5gTstLymfQNYx0YO/GZg==
+"@cloudinary-util/util@2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-2.3.0.tgz#8a2a7ad3d3f089c2fff08f53eaddd50e946048f1"
+  integrity sha512-0Gojd+ZRQjJQmlBEAa8Ua94amvx7uWHoUzVUEGi1S8bgF1wPcMqG07cSUGQfRwHsFQ/9XOesx76Df622E+CevA==
 
 "@cloudinary/transformation-builder-sdk@^1.2.7":
   version "1.2.9"
@@ -1162,12 +1162,12 @@
     vite-plugin-checker "^0.6.2"
     vue-bundle-renderer "^2.0.0"
 
-"@nuxtjs/cloudinary@^2.4.3":
-  version "2.4.3"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.4.3.tgz#8adb778f6c1c8dd4d45d48ec1b5a0e1ceebafc2e"
-  integrity sha512-sBXYjEAaCjjrfMPZZjcQzZ5CqTyJF+LLDX3H3DuRwyMzi56Epmcu0RmVXHMKT6eFs0azBovLo0cq2KG6PbOQfQ==
+"@nuxtjs/cloudinary@^2.5.0":
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.5.0.tgz#40cf1283cf33eacd54c18f98f84b79a6149a2b10"
+  integrity sha512-GvZWTkFNqT8vHU8ADscnmjEA052sKZz3eOk3wIVlJRFX9Wv8EhWEZt/wB85V2ooWlGIRBU48ZM5BbqMsrYWmJA==
   dependencies:
-    "@cloudinary-util/url-loader" "^3.10.0"
+    "@cloudinary-util/url-loader" "^3.23.0"
     "@nuxt/kit" "^3.5.0"
     "@unpic/vue" "^0.0.23"
     defu "^6.1.2"
