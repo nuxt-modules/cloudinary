@@ -210,6 +210,11 @@ const handleOnLoad = () => {
   }
 };
 
+defineExpose({
+  playerRef,
+  videoRef,
+});
+
 useHead({
   script: [
     {

@@ -11,6 +11,7 @@ export type ModuleOptions = {
   cloudName?: string;
   uploadPreset?: string;
   apiKey?: string;
+  analytics?: boolean;
 };
 
 export default defineNuxtModule<ModuleOptions>({
@@ -20,6 +21,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   defaults: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+    analytics: true
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
@@ -31,6 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
         uploadPreset:
           process.env.CLOUDINARY_UPLOAD_PRESET || options.uploadPreset,
         apiKey: process.env.CLOUDINARY_API_KEY || options.apiKey,
+        analytics: options.analytics
       }
     );
 

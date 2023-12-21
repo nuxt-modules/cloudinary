@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "2.4.3",
+  "version": "2.5.1",
   "description": "Cloudinary module for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -40,7 +40,7 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "docs": "cd docs && yarn dev",
-    "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
+    "dev:prepare": "nuxt-module-build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "release": "yarn run lint && yarn run test && yarn run prepack && changelogen --release --output=CHANGELOG.md && yarn publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
@@ -48,14 +48,14 @@
     "stackblitz": "cd .stackblitz && yarn && yarn dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^3.10.0",
+    "@cloudinary-util/url-loader": "^3.23.0",
     "@nuxt/kit": "^3.5.0",
     "@unpic/vue": "^0.0.23",
     "defu": "^6.1.2"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
-    "@nuxt/module-builder": "^0.3.1",
+    "@nuxt/module-builder": "^0.5.4",
     "@nuxt/schema": "^3.5.0",
     "@nuxt/test-utils": "^3.5.0",
     "changelogen": "^0.4.1",
