@@ -1,10 +1,10 @@
 <template>
   <CldImage
-    src="images/sneakers"
+    src="images/turtle"
     width="900"
     height="900"
     alt="Sample Product"
     crop="fill"
-    :replace="['shoelaces', 'shark']"
+    :replace="['turtle', 'shark']"
   />
 </template>
