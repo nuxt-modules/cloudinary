@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "description": "Cloudinary module for Nuxt: the docs.",
   "scripts": {
-    "dev": "nuxi dev",
-    "build": "nuxi build",
-    "generate": "nuxi build",
-    "preview": "nuxi preview"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "author": "NuxtCommunity",
   "license": "MIT",
   "homepage": "https://cloudinary.nuxtjs.org",
   "devDependencies": {
     "@nuxt-themes/docus": "^1.15.0",
-    "nuxt": "3.8.2"
+    "nuxt": "3.5.3"
   },
   "dependencies": {
     "@nuxtjs/cloudinary": "^2.5.1"
