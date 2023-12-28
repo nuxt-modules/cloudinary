@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt dev",
     "build": "nuxt build",
-    "generate": "NODE_OPTIONS=--max_old_space_size=8192 nuxt generate",
+    "generate": "NODE_OPTIONS=--max_old_space_size=16384 nuxt generate",
     "preview": "nuxt preview",
     "start": "nuxt start"
   },
