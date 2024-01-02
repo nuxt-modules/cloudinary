@@ -17,6 +17,6 @@
     "nuxt": "3.5.3"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^2.5.1"
+    "@nuxtjs/cloudinary": "^2.5.2"
   }
 }
