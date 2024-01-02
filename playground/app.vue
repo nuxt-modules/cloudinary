@@ -16,7 +16,11 @@ const cldVideoRef = ref();
 
 <template>
   <button :id="buttonId">Select Image or Video</button>
-  <CldMediaLibrary api-key="12345" :button-id="buttonId" />
+  <CldMediaLibrary
+    api-key="12345"
+    :button-id="buttonId"
+    style="height: 600px"
+  />
   <CldProductGallery
     :media-assets="mediaAssets"
     cloud-name="demo"

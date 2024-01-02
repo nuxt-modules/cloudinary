@@ -11,12 +11,12 @@ type MediaLibraryProps = {
   username?: string;
   useSaml?: boolean;
   buttonId: string;
-  params?: Record<string, any>
-}
+  params?: Record<string, any>;
+};
 
 const props = defineProps<MediaLibraryProps>();
 
-const emit = defineEmits(['onInsert'])
+const emit = defineEmits(["onInsert"]);
 
 const handleOnLoad = () => {
   if ("cloudinary" in window) {
@@ -26,21 +26,22 @@ const handleOnLoad = () => {
       Object.entries(props).filter((elem) => Boolean(elem[1]))
     );
 
-    cloudinaryRef.value.createMediaLibrary({
-      inline_container: '#widget_container',
-      cloud_name:
-        props.cloudName || useRuntimeConfig().public.cloudinary.cloudName,
-      api_key: props.apiKey || useRuntimeConfig().public.cloudinary.apiKey,
-      ...options,
-      ...props.params,
-    },
-    {
-    insertHandler: function (data: unknown) {
-      emit('onInsert', data)
-    }
-  },
-  document.getElementById(props.buttonId)
-  );
+    cloudinaryRef.value.createMediaLibrary(
+      {
+        inline_container: "#widget_container",
+        cloud_name:
+          props.cloudName || useRuntimeConfig().public.cloudinary.cloudName,
+        api_key: props.apiKey || useRuntimeConfig().public.cloudinary.apiKey,
+        ...options,
+        ...props.params,
+      },
+      {
+        insertHandler: function (data: unknown) {
+          emit("onInsert", data);
+        },
+      },
+      document.getElementById(props.buttonId)
+    );
   }
 };
 
@@ -60,7 +61,5 @@ useHead({
 </script>
 
 <template>
-  <div>
-    <div id="widget_container"></div>
-  </div>
+  <div id="widget_container" />
 </template>
