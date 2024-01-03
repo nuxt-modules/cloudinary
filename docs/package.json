@@ -18,5 +18,8 @@
   },
   "dependencies": {
     "@nuxtjs/cloudinary": "^2.5.2"
+  },
+  "resolutions": {
+    "nuxt": "3.5.3"
   }
 }
