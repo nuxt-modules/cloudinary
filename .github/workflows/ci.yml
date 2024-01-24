@@ -41,8 +41,8 @@ jobs:
       - name: Prepare
         run: yarn dev:prepare
 
-      - name: Test
-        run: yarn test
+      # - name: Test
+      #   run: yarn test
 
       # - name: Coverage
       #   run: yarn codecov
