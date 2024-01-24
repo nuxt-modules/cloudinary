@@ -32,4 +32,4 @@ The resulting HTML will be applied to the Head of the document:
 <meta content="https://res.cloudinary.com/nuxt-cloudinary/image/upload/c_fill,w_2400,h_1254,g_center/c_scale,w_1200/f_webp/q_auto/cld-sample-2?_a=BBDAACAD0" property="twitter:image">
 ```
 
-You can further take advantage of Cloudinary features like background removal and overlays by adding additional props. The CldOgImage component uses the same API as [CldImage](/components/CldImage), meaning you can use the same transformations and effects.
+You can further take advantage of Cloudinary features like background removal and overlays by adding additional props. The CldOgImage component uses the same API as [CldImage](/components/CldImage/usage), meaning you can use the same transformations and effects.
