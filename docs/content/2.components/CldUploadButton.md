@@ -1,5 +1,5 @@
-# CldUploadButton.vue
-
+---
+description: 
 ---
 
 The CldUploadButton creates a button element that uses an instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) to give you an easy way to add upload capabilities to your Nuxt app.

@@ -1,5 +1,5 @@
-# CldUploadWidget.vue
-
+---
+description: 
 ---
 
 The CldUploadWidget creates a new instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) giving you an easy way to add upload capabilities to your Nuxt app.
@@ -10,7 +10,7 @@ The CldUploadWidget will not render any UI by default. It will instead only rend
 
 There are two options when using the CldUploadWidget: signed and unsigned. These options allow you to control the amount of security and restrictions you place on uploads.
 
-::alert{type="info"}
+::callout{icon="i-heroicons-light-bulb"}
 To learn more about signed and unsigned upload, check out the [Cloudinary docs](https://cloudinary.com/documentation/upload_images#uploading_assets_to_the_cloud).
 ::
 
@@ -18,7 +18,7 @@ To learn more about signed and unsigned upload, check out the [Cloudinary docs](
 
 To give unsigned access for upload, provide an upload preset as part of the component configuration.
 
-::alert{type="warning"}
+::callout{icon="i-heroicons-exclamation-triangle-20-solid" color="amber"}
 Note: The upload preset requires that unsigned uploads are permitted.
 ::
 

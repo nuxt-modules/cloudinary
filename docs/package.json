@@ -1,25 +1,19 @@
 {
-  "name": "nuxt-cloudinary-docs",
-  "version": "1.0.0",
-  "description": "Cloudinary module for Nuxt: the docs.",
+  "name": "@nuxt-modules/cloudinary-docs",
+  "private": true,
   "scripts": {
-    "dev": "nuxt dev",
-    "build": "nuxt build",
-    "generate": "NODE_OPTIONS=--max_old_space_size=16384 nuxt generate",
-    "preview": "nuxt preview",
-    "start": "nuxt start"
-  },
-  "author": "NuxtCommunity",
-  "license": "MIT",
-  "homepage": "https://cloudinary.nuxtjs.org",
-  "devDependencies": {
-    "@nuxt-themes/docus": "^1.15.0",
-    "nuxt": "3.5.3"
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "generate": "nuxi generate",
+    "preview": "nuxi preview"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^2.5.2"
-  },
-  "resolutions": {
-    "nuxt": "3.5.3"
+    "@iconify-json/ph": "^1.1.10",
+    "@iconify-json/simple-icons": "^1.1.87",
+    "@nuxt/content": "^2.10.0",
+    "@nuxt/devtools": "1.0.5",
+    "@nuxt/ui-pro": "^0.6.1",
+    "@nuxtjs/cloudinary": "^2.5.2",
+    "nuxt": "^3.9.3"
   }
 }

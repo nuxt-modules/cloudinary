@@ -1,5 +1,5 @@
-# CldVideoPlayer.vue
-
+---
+description: 
 ---
 
 ## The usage
@@ -56,7 +56,7 @@ Or listening to player events for advanced interactions with:
 />
 ```
 
-::alert{type="info"}
+::callout{icon="i-heroicons-light-bulb"}
 Check the browser console after playing and pausing the video for logs that were added to the component.
 ::
 

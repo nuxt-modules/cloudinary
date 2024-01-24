@@ -1,5 +1,5 @@
-# CldMediaLibrary.vue
-
+---
+description: 
 ---
 
 The CldMediaLibrary creates a media gallery element that uses an instance of the [Cloudinary Media Library Widget](https://cloudinary.com/documentation/media_library_widget) to give you an easy way to add media librarry component to your Nuxt app.

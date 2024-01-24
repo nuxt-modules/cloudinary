@@ -1,5 +1,5 @@
-# CldOgImage.vue
-
+---
+description: 
 ---
 
 ## Usage
@@ -16,7 +16,7 @@ The basic required prop is `src`:
 />
 ```
 
-::alert{type="warning"}
+::callout{icon="i-heroicons-exclamation-triangle-20-solid" color="amber"}
 CldOgImage does not render an `<img>` tag, meaning it can't be visually embedded on a page. To see the output, please check out the raw HTML of your website
 ::
 

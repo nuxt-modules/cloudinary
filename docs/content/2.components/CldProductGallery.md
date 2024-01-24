@@ -1,5 +1,5 @@
-# CldProductGallery.vue
-
+---
+description: 
 ---
 
 The CldProductGallery creates a product gallery element that uses an instance of the [Cloudinary Product Gallery Widget](https://cloudinary.com/documentation/product_gallery_reference) to give you an easy way to add product gallery component to your Nuxt app.
