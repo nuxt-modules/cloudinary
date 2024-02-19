@@ -184,31 +184,30 @@ const isScriptLoading = ref(true);
 // either on page load or during the upload process. Read more about signed uploads at:
 // https://cloudinary.com/documentation/upload_widget#signed_uploads
 
-
 const instanceMethods = {
-    close,
-    destroy,
-    hide,
-    isDestroyed,
-    isMinimized,
-    isShowing,
-    minimize,
-    open,
-    show,
-    update,
-    'abort': onAbort,
-    'batch-cancelled': onBatchCancelled,
-    'display-changed': onDisplayChanged,
-    'publicid': onPublicId,
-    'queues-end': onQueuesEnd,
-    'queues-start': onQueuesStart,
-    'retry': onRetry,
-    'show-completed': onShowCompleted,
-    'source-changed': onSourceChanged,
-    'success': onSuccess,
-    'tags': onTags,
-    'upload-added': onUploadAdded,
-  }
+  close,
+  destroy,
+  hide,
+  isDestroyed,
+  isMinimized,
+  isShowing,
+  minimize,
+  open,
+  show,
+  update,
+  abort: onAbort,
+  "batch-cancelled": onBatchCancelled,
+  "display-changed": onDisplayChanged,
+  publicid: onPublicId,
+  "queues-end": onQueuesEnd,
+  "queues-start": onQueuesStart,
+  retry: onRetry,
+  "show-completed": onShowCompleted,
+  "source-changed": onSourceChanged,
+  success: onSuccess,
+  tags: onTags,
+  "upload-added": onUploadAdded,
+};
 
 const uploadOptions = {
   cloudName: useRuntimeConfig().public.cloudinary.cloudName,
@@ -216,7 +215,7 @@ const uploadOptions = {
     uploadPreset || useRuntimeConfig().public.cloudinary.uploadPreset,
   apiKey: useRuntimeConfig().public.cloudinary.apiKey,
   ...options,
-  ...instanceMethods
+  ...instanceMethods,
 };
 
 if (signed) {
@@ -284,6 +283,9 @@ function generateSignature(callback: Function, paramsToSign: object) {
   }
   fetch(signatureEndpoint, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify({
       paramsToSign,
     }),
@@ -315,58 +317,57 @@ function createWidget() {
       if (WIDGET_WATCHED_EVENTS.includes(uploadResult?.event)) {
         results.value = uploadResult;
       }
-
     }
   );
 }
 
 function invokeInstanceMethod(method: string) {
-    if (!widget.value) {
-      widget.value = createWidget();
-    }
-
-    if ( typeof widget?.value[method] === 'function' ) {
-      widget.value[method]();
-    }
+  if (!widget.value) {
+    widget.value = createWidget();
   }
 
-  function close() {
-    invokeInstanceMethod('close');
+  if (typeof widget?.value[method] === "function") {
+    widget.value[method]();
   }
+}
 
-  function destroy() {
-    invokeInstanceMethod('destroy');
-  }
+function close() {
+  invokeInstanceMethod("close");
+}
 
-  function hide() {
-    invokeInstanceMethod('hide');
-  }
+function destroy() {
+  invokeInstanceMethod("destroy");
+}
 
-  function isDestroyed() {
-    invokeInstanceMethod('isDestroyed');
-  }
+function hide() {
+  invokeInstanceMethod("hide");
+}
 
-  function isMinimized() {
-    invokeInstanceMethod('isMinimized');
-  }
+function isDestroyed() {
+  invokeInstanceMethod("isDestroyed");
+}
 
-  function isShowing() {
-    invokeInstanceMethod('isShowing');
-  }
+function isMinimized() {
+  invokeInstanceMethod("isMinimized");
+}
 
-  function minimize() {
-    invokeInstanceMethod('minimize');
-  }
+function isShowing() {
+  invokeInstanceMethod("isShowing");
+}
 
-  function show() {
-    invokeInstanceMethod('show');
-  }
+function minimize() {
+  invokeInstanceMethod("minimize");
+}
 
-  function update() {
-    invokeInstanceMethod('update');
-  }
+function show() {
+  invokeInstanceMethod("show");
+}
+
+function update() {
+  invokeInstanceMethod("update");
+}
 function open() {
-  invokeInstanceMethod('open');
+  invokeInstanceMethod("open");
 
   if (typeof onOpen === "function") {
     onOpen(widget.value);
