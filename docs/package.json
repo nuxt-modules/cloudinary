@@ -17,6 +17,6 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^2.5.2"
+    "@nuxtjs/cloudinary": "^2.6.0"
   }
 }
