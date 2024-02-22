@@ -87,6 +87,11 @@ provide("navigation", navigation);
     </template>
   </UHeader>
 
+  <CldOgImage
+    src="images/nuxt-cloudinary-social-background"
+    twitter-title="Nuxt Cloudinary Documentation"
+  />
+
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

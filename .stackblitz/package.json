@@ -11,6 +11,6 @@
     "nuxt": "^3.8.0"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^2.5.2"
+    "@nuxtjs/cloudinary": "^2.6.0"
   }
 }
