@@ -7,6 +7,7 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
   if (!props.options.src) console.error("`[@nuxtjs/cloudinary]`: Property `src` is missing")
 
   const cldCloudName = props.config?.cloud?.cloudName || useRuntimeConfig().public.cloudinary.cloudName
+  const config = props.config || useRuntimeConfig().public.cloudinary.config
 
   if (!cldCloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
 
@@ -16,7 +17,7 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
       ...props.options
     },
     config: {
-      ...props.config,
+      ...config,
       cloud: {
         cloudName: cldCloudName
       }

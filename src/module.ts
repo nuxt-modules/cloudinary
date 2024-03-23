@@ -6,12 +6,14 @@ import {
 } from "@nuxt/kit";
 import { fileURLToPath } from "url";
 import { defu } from "defu";
+import { CloudinaryConfigurationOptions } from "@cloudinary-util/url-loader";
 
 export type ModuleOptions = {
   cloudName?: string;
   uploadPreset?: string;
   apiKey?: string;
   analytics?: boolean;
+  config?: CloudinaryConfigurationOptions;
 };
 
 export default defineNuxtModule<ModuleOptions>({
@@ -33,7 +35,8 @@ export default defineNuxtModule<ModuleOptions>({
         uploadPreset:
           process.env.CLOUDINARY_UPLOAD_PRESET || options.uploadPreset,
         apiKey: process.env.CLOUDINARY_API_KEY || options.apiKey,
-        analytics: options.analytics
+        analytics: options.analytics,
+        config: options.config,
       }
     );
 
