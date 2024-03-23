@@ -476,6 +476,11 @@
   dependencies:
     mime "^3.0.0"
 
+"@cloudinary-util/types@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.0.1.tgz#1bbfc0cffaf5d543e13f9dd4864a9aebc6496394"
+  integrity sha512-aj/m3Sn5RSYKk6dAZJcjerKfVNrcCyL6v6pcDl4aNpQ3zSWMOvnIrzCidE9paaw1r+ZWonjNnhkA0anLdwRRfA==
+
 "@cloudinary-util/url-loader@^5.2.1":
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-5.2.1.tgz#d663520b1dbf924d5d319dfc7819f27e4c5acb22"
