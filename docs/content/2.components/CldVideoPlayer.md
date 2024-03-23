@@ -4,7 +4,7 @@ description:
 
 ## The usage
 
-The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player) giving you a full customizable experience for your player.
+The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player) giving you a full customizable experience for your player. It will inherit all global configuration via the `config` property.
 
 ## Basic Usage
 

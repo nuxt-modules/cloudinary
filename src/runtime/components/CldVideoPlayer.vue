@@ -68,7 +68,9 @@ export type CldVideoPlayerProps = Pick<
   videoRef?: { value: HTMLVideoElement | null };
   quality?: string | number;
   width: string | number;
-  pictureInPictureToggle: boolean;
+  pictureInPictureToggle?: boolean;
+  // Allow to pass any config like `otherCldVidPlayerOptions`
+  [key: string]: any;
 };
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -107,6 +109,7 @@ const {
   width,
   hideContextMenu,
   pictureInPictureToggle,
+  ...otherCldVidPlayerOptions
 } = props as CldVideoPlayerProps;
 
 const playerTransformations = Array.isArray(transformation)
@@ -195,6 +198,8 @@ const handleOnLoad = () => {
       ...logoOptions,
       hideContextMenu,
       pictureInPictureToggle,
+      ...useRuntimeConfig().public.cloudinary.config,
+      ...otherCldVidPlayerOptions,
     };
 
     if (typeof colors === "object") {
