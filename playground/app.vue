@@ -40,6 +40,7 @@ const cldVideoRef = ref();
     height="1080"
     src="videos/mountain-stars"
     :config="{ url: { cname: 'test' } }"
+    pictureInPictureToggle
   />
   <!-- Usage of `CldUploadWidget.vue` component -->
   <CldUploadWidget v-slot="{ open }" upload-preset="nuxt-cloudinary-unsigned">
