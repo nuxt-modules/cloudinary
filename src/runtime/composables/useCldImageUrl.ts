@@ -6,8 +6,16 @@ import pkg from '../../../package.json'
 export const useCldImageUrl = (props: ConstructUrlProps) => {
   if (!props.options.src) console.error("`[@nuxtjs/cloudinary]`: Property `src` is missing")
 
-  const cldCloudName = props.config?.cloud?.cloudName || useRuntimeConfig().public.cloudinary.cloudName
-  const config = props.config || useRuntimeConfig().public.cloudinary.config
+  const moduleConfig = useRuntimeConfig().public.cloudinary;
+
+  // There are a few ways to pass in the Cloud Name
+  // - Component/composable config prop
+  // - Top level module config
+  // - Top level module config cloud property
+  // While the top level module config is redundant, retaining it for convenience as most
+  // users won't need to pass in more advanced settings via the `cloud` property
+
+  const cldCloudName = props.config?.cloud?.cloudName || moduleConfig.cloud?.cloudName || moduleConfig?.cloudName;
 
   if (!cldCloudName) console.warn('`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing')
 
@@ -17,15 +25,17 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
       ...props.options
     },
     config: {
-      ...config,
+      url: moduleConfig.url,
       cloud: {
-        cloudName: cldCloudName
-      }
+        cloudName: cldCloudName,
+        ...moduleConfig.cloud
+      },
+      ...props.config,
     },
     analytics: false
   }
 
-  if (useRuntimeConfig().public.cloudinary.analytics) {
+  if (moduleConfig.analytics) {
     cldOptions = {
       ...cldOptions,
       analytics: Object.assign({

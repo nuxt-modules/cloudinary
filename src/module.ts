@@ -13,7 +13,8 @@ export type ModuleOptions = {
   uploadPreset?: string;
   apiKey?: string;
   analytics?: boolean;
-  config?: CloudinaryConfigurationOptions;
+  cloud?: ConfigOptions["cloud"];
+  url?: ConfigOptions["url"];
 };
 
 export default defineNuxtModule<ModuleOptions>({
@@ -36,7 +37,8 @@ export default defineNuxtModule<ModuleOptions>({
           process.env.CLOUDINARY_UPLOAD_PRESET || options.uploadPreset,
         apiKey: process.env.CLOUDINARY_API_KEY || options.apiKey,
         analytics: options.analytics,
-        config: options.config,
+        cloud: options.cloud,
+        url: options.url,
       }
     );
 
