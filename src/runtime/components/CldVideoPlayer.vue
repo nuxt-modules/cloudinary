@@ -20,6 +20,7 @@ export interface CloudinaryVideoPlayerOptions {
   secure?: boolean;
   transformation?: Array<object> | object;
   hideContextMenu?: boolean;
+  pictureInPictureToggle?: boolean;
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -67,6 +68,9 @@ export type CldVideoPlayerProps = Pick<
   videoRef?: { value: HTMLVideoElement | null };
   quality?: string | number;
   width: string | number;
+  pictureInPictureToggle?: boolean;
+  // Allow to pass any config like `otherCldVidPlayerOptions`
+  [key: string]: any;
 };
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -75,7 +79,7 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   logo: true,
   loop: false,
   muted: false,
-  version: "1.9.4",
+  version: "1.10.6",
   quality: "auto",
 });
 
@@ -104,6 +108,8 @@ const {
   quality,
   width,
   hideContextMenu,
+  pictureInPictureToggle,
+  ...otherCldVidPlayerOptions
 } = props as CldVideoPlayerProps;
 
 const playerTransformations = Array.isArray(transformation)
@@ -191,6 +197,9 @@ const handleOnLoad = () => {
       transformation: playerTransformations,
       ...logoOptions,
       hideContextMenu,
+      pictureInPictureToggle,
+      ...useRuntimeConfig().public.cloudinary.config,
+      ...otherCldVidPlayerOptions,
     };
 
     if (typeof colors === "object") {
@@ -230,7 +239,7 @@ useHead({
   link: [
     {
       href: `https://unpkg.com/cloudinary-video-player@${
-        version || "1.9.4"
+        version || "1.10.6"
       }/dist/cld-video-player.min.css`,
       rel: "stylesheet",
     },

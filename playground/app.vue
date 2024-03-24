@@ -15,9 +15,7 @@ const cldVideoRef = ref();
 </script>
 
 <template>
-  <button :id="buttonId">
-    Select Image or Video
-  </button>
+  <button :id="buttonId">Select Image or Video</button>
   <CldMediaLibrary
     api-key="12345"
     :button-id="buttonId"
@@ -29,28 +27,18 @@ const cldVideoRef = ref();
     :button-id="buttonId"
   />
   <!-- Usage of `CldOgImage.vue` component -->
-  <CldOgImage
-    src="cld-sample-2"
-    twitter-title="test"
-  />
+  <CldOgImage src="cld-sample-2" twitter-title="test" />
   <!-- Usage of `CldVideoPlayer.vue` component -->
   <CldVideoPlayer
     ref="cldVideoRef"
     width="1620"
     height="1080"
     src="videos/mountain-stars"
+    pictureInPictureToggle
   />
   <!-- Usage of `CldUploadWidget.vue` component -->
-  <CldUploadWidget
-    v-slot="{ open }"
-    upload-preset="nuxt-cloudinary-unsigned"
-  >
-    <button
-      type="button"
-      @click="open"
-    >
-      Upload an Image
-    </button>
+  <CldUploadWidget v-slot="{ open }" upload-preset="nuxt-cloudinary-unsigned">
+    <button type="button" @click="open">Upload an Image</button>
   </CldUploadWidget>
   <!-- Usage of `CldUploadButton.vue` component -->
   <CldUploadButton upload-preset="nuxt-cloudinary-unsigned">
