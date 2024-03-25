@@ -71,7 +71,7 @@ export type CldVideoPlayerProps = Pick<
   quality?: string | number;
   width: string | number;
   config?: ConfigOptions;
-  pictureInPictureToggle: boolean;
+  pictureInPictureToggle?: boolean;
 };
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {

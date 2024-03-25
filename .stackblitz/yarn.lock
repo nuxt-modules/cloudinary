@@ -484,10 +484,15 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary-util/url-loader@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-4.2.0.tgz#8d686666b5214db1daefd392a115e8a708f968d7"
-  integrity sha512-fpCFqFPAN/f9Gt//25qLXNDYwy5EcOudRzDPOrsEBH6aMwEdFaJuPxvLiP0IP5MCihKji/XDr9QJQ9Wa+amNSA==
+"@cloudinary-util/types@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.0.1.tgz#1bbfc0cffaf5d543e13f9dd4864a9aebc6496394"
+  integrity sha512-aj/m3Sn5RSYKk6dAZJcjerKfVNrcCyL6v6pcDl4aNpQ3zSWMOvnIrzCidE9paaw1r+ZWonjNnhkA0anLdwRRfA==
+
+"@cloudinary-util/url-loader@^5.2.1":
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-5.2.1.tgz#d663520b1dbf924d5d319dfc7819f27e4c5acb22"
+  integrity sha512-1GDPCnRYSGlnPqEdcvH/1h0puAYoF9tJazV/zNx3ptCN0PbwBWEw+ksZm6mCQF2cr9ofDE3B+C5YdPLLsvbuQQ==
   dependencies:
     "@cloudinary-util/util" "3.0.0"
     "@cloudinary/url-gen" "1.15.0"
@@ -1168,12 +1173,13 @@
     vite-plugin-checker "^0.6.2"
     vue-bundle-renderer "^2.0.0"
 
-"@nuxtjs/cloudinary@^2.6.0":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.6.0.tgz#ab27227e6877bef97ff1f3e7b34947f0e9942034"
-  integrity sha512-SU18YU0WUgLVECzjpMudfI5h2nVSlY73CPwKxR4p3TCX7lKzrXX02G7i7FDp7yZtOHD2a17UbFdD6a+KsKAetA==
+"@nuxtjs/cloudinary@^2.7.2":
+  version "2.7.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-2.7.2.tgz#74110eee3b7e4de159ae81baafa1437cfc5d2a6f"
+  integrity sha512-BreBrTM54X5PT7i7BiB9/VuFM4eKV7UhseKSgIRjCuWbf4AR2wCvXJV/FvW6ReYFx2JylhwWLbNWIcq9wT9FOA==
   dependencies:
-    "@cloudinary-util/url-loader" "^4.2.0"
+    "@cloudinary-util/types" "1.0.1"
+    "@cloudinary-util/url-loader" "^5.2.1"
     "@nuxt/kit" "^3.5.0"
     "@unpic/vue" "^0.0.42"
     defu "^6.1.2"
