@@ -39,6 +39,7 @@ const cldVideoRef = ref();
     width="1620"
     height="1080"
     src="videos/mountain-stars"
+    :config="{ url: { cname: 'test' } }"
   />
   <!-- Usage of `CldUploadWidget.vue` component -->
   <CldUploadWidget v-slot="{ open }" upload-preset="nuxt-cloudinary-unsigned">

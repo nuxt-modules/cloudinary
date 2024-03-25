@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
 import { parseUrl } from "@cloudinary-util/util";
+import { ConfigOptions } from "@cloudinary-util/url-loader";
 
 export interface CloudinaryVideoPlayer {
   on: Function;
@@ -20,7 +21,7 @@ export interface CloudinaryVideoPlayerOptions {
   secure?: boolean;
   transformation?: Array<object> | object;
   hideContextMenu?: boolean;
-  config?: Record<string, any>;
+  config?: ConfigOptions;
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -68,7 +69,7 @@ export type CldVideoPlayerProps = Pick<
   videoRef?: { value: HTMLVideoElement | null };
   quality?: string | number;
   width: string | number;
-  config: Record<string, any>;
+  config?: ConfigOptions;
 };
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
