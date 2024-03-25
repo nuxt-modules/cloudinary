@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
 import { parseUrl } from "@cloudinary-util/util";
+import { ConfigOptions } from "@cloudinary-util/url-loader";
 
 export interface CloudinaryVideoPlayer {
   on: Function;
@@ -20,6 +21,8 @@ export interface CloudinaryVideoPlayerOptions {
   secure?: boolean;
   transformation?: Array<object> | object;
   hideContextMenu?: boolean;
+  config?: ConfigOptions;
+  pictureInPictureToggle?: boolean;
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -67,6 +70,8 @@ export type CldVideoPlayerProps = Pick<
   videoRef?: { value: HTMLVideoElement | null };
   quality?: string | number;
   width: string | number;
+  config?: ConfigOptions;
+  pictureInPictureToggle?: boolean;
 };
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -75,7 +80,7 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   logo: true,
   loop: false,
   muted: false,
-  version: "1.9.4",
+  version: "1.10.6",
   quality: "auto",
 });
 
@@ -104,6 +109,8 @@ const {
   quality,
   width,
   hideContextMenu,
+  config,
+  pictureInPictureToggle,
 } = props as CldVideoPlayerProps;
 
 const playerTransformations = Array.isArray(transformation)
@@ -191,6 +198,10 @@ const handleOnLoad = () => {
       transformation: playerTransformations,
       ...logoOptions,
       hideContextMenu,
+      pictureInPictureToggle,
+      ...useRuntimeConfig().public.cloudinary.cloud,
+      ...useRuntimeConfig().public.cloudinary.url,
+      ...config,
     };
 
     if (typeof colors === "object") {
@@ -230,7 +241,7 @@ useHead({
   link: [
     {
       href: `https://unpkg.com/cloudinary-video-player@${
-        version || "1.9.4"
+        version || "1.10.6"
       }/dist/cld-video-player.min.css`,
       rel: "stylesheet",
     },

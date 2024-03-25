@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "2.6.0",
+  "version": "2.7.2",
   "description": "Cloudinary module for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -48,7 +48,8 @@
     "stackblitz": "cd .stackblitz && yarn && yarn dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^4.2.0",
+    "@cloudinary-util/url-loader": "^5.2.1",
+    "@cloudinary-util/types": "1.0.1",
     "@nuxt/kit": "^3.5.0",
     "@unpic/vue": "^0.0.42",
     "defu": "^6.1.2"

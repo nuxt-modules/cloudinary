@@ -1,19 +1,12 @@
 import { useRuntimeConfig } from '#imports'
-import { constructCloudinaryUrl, ConstructUrlProps } from '@cloudinary-util/url-loader'
+import { constructCloudinaryUrl, ConstructUrlProps, ConfigOptions, AnalyticsOptions, VideoOptions } from '@cloudinary-util/url-loader'
 import nuxtPkg from 'nuxt/package.json';
 import pkg from '../../../package.json'
 
-export const useCldImageUrl = (props: ConstructUrlProps) => {
+export const useCldVideoUrl = (props: { options: VideoOptions, config?: ConfigOptions, analytics?: AnalyticsOptions }) => {
   if (!props.options.src) console.error("`[@nuxtjs/cloudinary]`: Property `src` is missing")
 
   const moduleConfig = useRuntimeConfig().public.cloudinary;
-
-  // There are a few ways to pass in the Cloud Name
-  // - Component/composable config prop
-  // - Top level module config
-  // - Top level module config cloud property
-  // While the top level module config is redundant, retaining it for convenience as most
-  // users won't need to pass in more advanced settings via the `cloud` property
 
   const cldCloudName = props.config?.cloud?.cloudName || moduleConfig.cloud?.cloudName || moduleConfig?.cloudName;
 
@@ -21,6 +14,7 @@ export const useCldImageUrl = (props: ConstructUrlProps) => {
 
   let cldOptions: ConstructUrlProps = {
     options: {
+      assetType: 'video',
       // Have to spread the options because otherwise getting the error about props being updated while they are readonly.
       ...props.options
     },
