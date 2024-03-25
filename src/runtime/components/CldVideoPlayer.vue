@@ -198,8 +198,10 @@ const handleOnLoad = () => {
       transformation: playerTransformations,
       ...logoOptions,
       hideContextMenu,
-      ...config,
       pictureInPictureToggle,
+      ...useRuntimeConfig().public.cloudinary.cloud,
+      ...useRuntimeConfig().public.cloudinary.url,
+      ...config,
     };
 
     if (typeof colors === "object") {
