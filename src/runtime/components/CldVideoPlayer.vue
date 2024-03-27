@@ -3,7 +3,7 @@ import { ref } from "vue";
 import { useHead } from "@unhead/vue";
 import { useRuntimeConfig } from "#imports";
 import { parseUrl } from "@cloudinary-util/util";
-import { ConfigOptions } from "@cloudinary-util/url-loader";
+import type { ConfigOptions } from "@cloudinary-util/url-loader";
 
 export interface CloudinaryVideoPlayer {
   on: Function;
@@ -21,7 +21,6 @@ export interface CloudinaryVideoPlayerOptions {
   secure?: boolean;
   transformation?: Array<object> | object;
   hideContextMenu?: boolean;
-  config?: ConfigOptions;
   pictureInPictureToggle?: boolean;
 }
 
