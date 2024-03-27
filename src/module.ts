@@ -6,7 +6,7 @@ import {
 } from "@nuxt/kit";
 import { fileURLToPath } from "url";
 import { defu } from "defu";
-import { CloudinaryConfigurationOptions } from "@cloudinary-util/url-loader";
+import { ConfigOptions } from '@cloudinary-util/url-loader'
 
 export type ModuleOptions = {
   cloudName?: string;

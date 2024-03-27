@@ -3,6 +3,11 @@
 const { url } = useCldImageUrl({ options: { src: "/cld-sample-5.jpg" } });
 console.log(url);
 
+const { url: videoUrl } = useCldVideoUrl({
+  options: { src: "videos/mountain-stars" },
+});
+console.log(videoUrl);
+
 const mediaAssets = [
   { tag: "electric_car_product_gallery_demo" }, // by default mediaType: "image"
   { tag: "electric_car_product_gallery_demo", mediaType: "video" },
@@ -34,6 +39,7 @@ const cldVideoRef = ref();
     width="1620"
     height="1080"
     src="videos/mountain-stars"
+    :config="{ url: { cname: 'test' } }"
     pictureInPictureToggle
   />
   <!-- Usage of `CldUploadWidget.vue` component -->

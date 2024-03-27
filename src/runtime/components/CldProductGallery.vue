@@ -10,12 +10,12 @@ type MediaType = "image" | "video" | "spin";
 type ProductGalleryProps = {
   cloudName?: string;
   mediaAssets: {
-    tage: string;
+    tag: string;
     mediaType?: MediaType;
   }[];
   displayProps?: {
     mode: string;
-    columns: number
+    columns: number;
   }[];
   aspectRatio?: string;
   imageBreakpoint?: number;
@@ -29,8 +29,8 @@ type ProductGalleryProps = {
   transition?: string;
   zoom?: boolean;
   // Other params listed https://cloudinary.com/documentation/product_gallery_reference#widget_parameters
-  params?: Record<string, any>
-}
+  params?: Record<string, any>;
+};
 
 const props = defineProps<ProductGalleryProps>();
 
