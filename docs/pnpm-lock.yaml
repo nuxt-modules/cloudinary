@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxtjs/cloudinary':
-        specifier: ^2.7.2
-        version: 2.7.2(typescript@5.3.3)
+        specifier: ^2.7.3
+        version: 2.7.3(typescript@5.3.3)
     devDependencies:
       '@iconify-json/ph':
         specifier: ^1.1.10
@@ -1652,8 +1652,8 @@ packages:
       - vue-tsc
     dev: true
 
-  /@nuxtjs/cloudinary@2.7.2(typescript@5.3.3):
-    resolution: {integrity: sha512-BreBrTM54X5PT7i7BiB9/VuFM4eKV7UhseKSgIRjCuWbf4AR2wCvXJV/FvW6ReYFx2JylhwWLbNWIcq9wT9FOA==}
+  /@nuxtjs/cloudinary@2.7.3(typescript@5.3.3):
+    resolution: {integrity: sha512-8QeXLTb1/7nwSj+85bdubhMBONiW7fHMTidzAcWSEkj7w2hxpYrwnOLKoTOvPZgCZQBoVLb6C6hkpXHyD1I0Iw==}
     dependencies:
       '@cloudinary-util/types': 1.0.1
       '@cloudinary-util/url-loader': 5.2.1

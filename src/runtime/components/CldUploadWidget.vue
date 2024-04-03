@@ -143,7 +143,7 @@ function triggerOnIdle(callback: any) {
   return setTimeout(() => callback(), 1);
 }
 
-const WIDGET_WATCHED_EVENTS = ["success", "display-changed"];
+const WIDGET_WATCHED_EVENTS = ["success"];
 
 const props = defineProps<CldUploadWidgetProps>();
 

@@ -27,7 +27,15 @@ const buttonId = "open-btn";
     picture-in-picture-toggle
   />
   <!-- Usage of `CldUploadWidget.vue` component -->
-  <CldUploadWidget v-slot="{ open }" upload-preset="nuxt-cloudinary-unsigned">
+  <CldUploadWidget
+    v-slot="{ open }"
+    upload-preset="nuxt-cloudinary-unsigned"
+    :on-upload="
+      (result, w) => {
+        console.log(result, w);
+      }
+    "
+  >
     <button type="button" @click="open">Upload an Image</button>
   </CldUploadWidget>
   <!-- Usage of `CldUploadButton.vue` component -->
