@@ -12,7 +12,7 @@ export default defineNuxtConfig({
   },
 
   cloudinary: {
-    cloudName: 'nuxt-cloudinary'
+    cloudName: 'nuxt-cloudinary',
   },
 
   ui: {

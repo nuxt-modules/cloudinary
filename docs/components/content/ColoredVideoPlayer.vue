@@ -10,8 +10,8 @@
 
 <script setup lang="ts">
 const colors = {
-  accent: "#ff0000",
-  base: "#00ff00",
-  text: "#0000ff",
-};
+  accent: '#ff0000',
+  base: '#00ff00',
+  text: '#0000ff',
+}
 </script>

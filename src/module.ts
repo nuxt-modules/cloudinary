@@ -1,33 +1,33 @@
+import { fileURLToPath } from 'node:url'
 import {
   defineNuxtModule,
   createResolver,
   addImportsDir,
   addComponentsDir,
-} from "@nuxt/kit";
-import { fileURLToPath } from "url";
-import { defu } from "defu";
-import { ConfigOptions } from '@cloudinary-util/url-loader'
+} from '@nuxt/kit'
+import { defu } from 'defu'
+import type { ConfigOptions } from '@cloudinary-util/url-loader'
 
 export type ModuleOptions = {
-  cloudName?: string;
-  uploadPreset?: string;
-  apiKey?: string;
-  analytics?: boolean;
-  cloud?: ConfigOptions["cloud"];
-  url?: ConfigOptions["url"];
-};
+  cloudName?: string
+  uploadPreset?: string
+  apiKey?: string
+  analytics?: boolean
+  cloud?: ConfigOptions['cloud']
+  url?: ConfigOptions['url']
+}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: "@nuxtjs/cloudinary",
-    configKey: "cloudinary",
+    name: '@nuxtjs/cloudinary',
+    configKey: 'cloudinary',
   },
   defaults: {
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
-    analytics: true
+    analytics: true,
   },
   setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url);
+    const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.cloudinary = defu(
       nuxt.options.runtimeConfig.public.cloudinary,
@@ -39,25 +39,25 @@ export default defineNuxtModule<ModuleOptions>({
         analytics: options.analytics,
         cloud: options.cloud,
         url: options.url,
-      }
-    );
+      },
+    )
 
     if (!nuxt.options.runtimeConfig.public.cloudinary?.cloudName)
       console.warn(
-        "`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing"
-      );
+        '`[@nuxtjs/cloudinary]` Environment variable `CLOUDINARY_CLOUD_NAME` or property `cloudinary.cloudName` missing',
+      )
 
-    const runtimeDir = fileURLToPath(new URL("./runtime", import.meta.url));
-    nuxt.options.build.transpile.push(runtimeDir);
+    const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
+    nuxt.options.build.transpile.push(runtimeDir)
 
-    addImportsDir(resolver.resolve(runtimeDir, "composables"));
+    addImportsDir(resolver.resolve(runtimeDir, 'composables'))
     addComponentsDir({
-      path: resolver.resolve(runtimeDir, "components"),
+      path: resolver.resolve(runtimeDir, 'components'),
       pathPrefix: false,
-      prefix: "",
-      // @ts-ignore
+      prefix: '',
+      // @ts-expect-error
       level: 999,
       global: true,
-    });
+    })
   },
-});
+})

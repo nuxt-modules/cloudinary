@@ -1,16 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
-  colorMode: "dark",
-});
-const videoModalOpen = ref(false);
+  colorMode: 'dark',
+})
+const videoModalOpen = ref(false)
 
-const { data: page } = await useAsyncData("index", () =>
-  queryContent("/").findOne()
-);
+const { data: page } = await useAsyncData('index', () =>
+  queryContent('/').findOne(),
+)
 
-const { data: code } = await useAsyncData("code", () =>
-  queryContent("/code").findOne()
-);
+const { data: code } = await useAsyncData('code', () =>
+  queryContent('/code').findOne(),
+)
 
 useSeoMeta({
   title: page.value.title,
@@ -19,7 +19,7 @@ useSeoMeta({
   ogDescription: page.value.description,
   ogImage: page.value.cover,
   twitterImage: page.value.cover,
-});
+})
 </script>
 
 <template>
@@ -54,7 +54,10 @@ useSeoMeta({
         >
           What is Nuxt Cloudinary?
         </UButton>
-        <UModal v-model="videoModalOpen" :ui="{ width: 'sm:max-w-[560px]' }">
+        <UModal
+          v-model="videoModalOpen"
+          :ui="{ width: 'sm:max-w-[560px]' }"
+        >
           <div>
             <iframe
               width="100%"
@@ -70,7 +73,10 @@ useSeoMeta({
       </template>
     </ULandingHero>
 
-    <ULandingSection :title="page.features.title" style="padding-top: 0px">
+    <ULandingSection
+      :title="page.features.title"
+      style="padding-top: 0px"
+    >
       <UPageGrid>
         <ULandingCard
           v-for="(item, index) of page.features.items"
