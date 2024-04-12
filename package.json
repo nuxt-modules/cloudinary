@@ -48,8 +48,8 @@
     "stackblitz": "cd .stackblitz && yarn && yarn dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^5.2.1",
     "@cloudinary-util/types": "1.0.1",
+    "@cloudinary-util/url-loader": "^5.2.1",
     "@nuxt/kit": "^3.5.0",
     "@unpic/vue": "^0.0.42",
     "defu": "^6.1.2"
@@ -62,6 +62,7 @@
     "changelogen": "^0.4.1",
     "eslint": "^9.0.0",
     "nuxt": "^3.5.0",
+    "typescript": "^5.4.5",
     "vitest": "^0.31.0"
   },
   "stackblitz": {
