@@ -4,22 +4,22 @@ import { ref, watch } from 'vue'
 import { useRuntimeConfig } from '#imports'
 
 export interface CldUploadWidgetProps {
-  onClose?: Function
-  onError?: Function
-  onOpen?: Function
-  onUpload?: Function
-  onAbort?: Function
-  onBatchCancelled?: Function
-  onDisplayChanged?: Function
-  onPublicId?: Function
-  onQueuesEnd?: Function
-  onQueuesStart?: Function
-  onRetry?: Function
-  onShowCompleted?: Function
-  onSourceChanged?: Function
-  onSuccess?: Function
-  onTags?: Function
-  onUploadAdded?: Function
+  onClose?: (...args: any[]) => any
+  onError?: (...args: any[]) => any
+  onOpen?: (...args: any[]) => any
+  onUpload?: (...args: any[]) => any
+  onAbort?: (...args: any[]) => any
+  onBatchCancelled?: (...args: any[]) => any
+  onDisplayChanged?: (...args: any[]) => any
+  onPublicId?: (...args: any[]) => any
+  onQueuesEnd?: (...args: any[]) => any
+  onQueuesStart?: (...args: any[]) => any
+  onRetry?: (...args: any[]) => any
+  onShowCompleted?: (...args: any[]) => any
+  onSourceChanged?: (...args: any[]) => any
+  onSuccess?: (...args: any[]) => any
+  onTags?: (...args: any[]) => any
+  onUploadAdded?: (...args: any[]) => any
   options?: CldUploadWidgetPropsOptions
   signatureEndpoint?: URL | RequestInfo
   uploadPreset?: string
@@ -80,7 +80,7 @@ export interface CldUploadWidgetPropsOptions {
   publicId?: string
   resourceType?: string
   tags?: Array<string>
-  uploadSignature?: string | Function
+  uploadSignature?: string | ((...args: any[]) => any)
   uploadSignatureTimestamp?: number
 
   // Client Side
@@ -116,12 +116,12 @@ export interface CldUploadWidgetPropsOptions {
   // Advanced
 
   autoMinimize?: boolean
-  getTags?: Function
-  getUploadPresets?: Function
+  getTags?: (...args: any[]) => any
+  getUploadPresets?: (...args: any[]) => any
   inlineContainer?: any // string or DOM element
   language?: string
-  preBatch?: Function
-  prepareUploadParams?: Function
+  preBatch?: (...args: any[]) => any
+  prepareUploadParams?: (...args: any[]) => any
   queueViewPosition?: string
   showAdvancedOptions?: boolean
   showCompletedButton?: boolean
@@ -276,7 +276,7 @@ function handleOnLoad() {
  * @description Makes a request to an endpoint to sign Cloudinary parameters as part of widget creation
  */
 
-function generateSignature(callback: Function, paramsToSign: object) {
+function generateSignature(callback: (...args: any[]) => any, paramsToSign: object) {
   if (typeof signatureEndpoint === 'undefined') {
     throw new TypeError('Failed to generate signature: signatureEndpoint undefined.')
   }

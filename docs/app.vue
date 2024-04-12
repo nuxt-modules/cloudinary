@@ -38,7 +38,7 @@ provide('navigation', navigation)
 <template>
   <UHeader :links="links">
     <template #logo>
-      <Logo />
+      <TheLogo />
     </template>
 
     <template #right>

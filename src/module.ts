@@ -55,8 +55,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve(runtimeDir, 'components'),
       pathPrefix: false,
       prefix: '',
-      // @ts-expect-error
-      level: 999,
+      priority: 999,
       global: true,
     })
   },

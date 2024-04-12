@@ -12,4 +12,8 @@ export default createConfigForNuxt({
       './docs',
     ],
   },
+}).append({
+  rules: {
+    '@typescript-eslint/no-explicit-any': 'off',
+  },
 })

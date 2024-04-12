@@ -6,7 +6,7 @@ import type { ConfigOptions } from '@cloudinary-util/url-loader'
 import { useRuntimeConfig } from '#imports'
 
 export interface CloudinaryVideoPlayer {
-  on: Function
+  on: (...args: any[]) => any
 }
 
 export interface CloudinaryVideoPlayerOptions {
@@ -58,12 +58,12 @@ export type CldVideoPlayerProps = Pick<
   height: string | number
   id?: string
   logo?: boolean | CldVideoPlayerPropsLogo
-  onDataLoad?: Function
-  onError?: Function
-  onMetadataLoad?: Function
-  onPause?: Function
-  onPlay?: Function
-  onEnded?: Function
+  onDataLoad?: (...args: any[]) => any
+  onError?: (...args: any[]) => any
+  onMetadataLoad?: (...args: any[]) => any
+  onPause?: (...args: any[]) => any
+  onPlay?: (...args: any[]) => any
+  onEnded?: (...args: any[]) => any
   playerRef?: { value: CloudinaryVideoPlayer | null }
   src: string
   version?: string
@@ -151,7 +151,7 @@ if (className) {
   playerClassName = `${playerClassName} ${className}`
 }
 
-const events: Record<string, Function | undefined> = {
+const events: Record<string, ((...args: any[]) => any) | undefined> = {
   error: onError,
   loadeddata: onDataLoad,
   loadedmetadata: onMetadataLoad,

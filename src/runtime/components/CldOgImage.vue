@@ -88,20 +88,20 @@ const options = {
   widthResize: props.width || OG_IMAGE_WIDTH_RESIZE,
 }
 
-let width
+let _width
   = typeof options.width === 'string' ? Number.parseInt(options.width) : options.width
-let height
+let _height
   = typeof options.height === 'string'
     ? Number.parseInt(options.height)
     : options.height
 
 // Resize the height based on the widthResize property
 
-if (typeof height === 'number' && typeof width === 'number') {
-  height = (OG_IMAGE_WIDTH_RESIZE / width) * height
+if (typeof _height === 'number' && typeof _width === 'number') {
+  _height = (OG_IMAGE_WIDTH_RESIZE / _width) * _height
 }
 
-width = OG_IMAGE_WIDTH_RESIZE
+_width = OG_IMAGE_WIDTH_RESIZE
 
 // Render the final URLs. We use two different format versions to deliver
 // webp for Twitter as it supports it (and we can control with tags) where
@@ -141,12 +141,12 @@ const computedTwitterTitle = computed(
     <Meta
       key="og-image-width"
       property="og:image:width"
-      :content="width.toString()"
+      :content="_width.toString()"
     />
     <Meta
       key="og-image-height"
       property="og:image:height"
-      :content="height.toString()"
+      :content="_height.toString()"
     />
     <Meta
       v-if="alt"
