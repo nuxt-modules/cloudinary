@@ -6,6 +6,7 @@
 import { useCldImageUrl } from "../composables/useCldImageUrl";
 import { ref } from "vue";
 import { Image } from "@unpic/vue";
+import type { ConstructUrlProps } from "@cloudinary-util/url-loader";
 
 interface AssetOptionsResize {
   crop?: string;
@@ -113,7 +114,7 @@ const props = defineProps<CldImageProps>();
 // eslint-disable-next-line vue/no-setup-props-destructure
 const { config, loaderOptions, ...options } = props;
 
-const { url } = useCldImageUrl({ options, config });
+const { url } = useCldImageUrl({ options, config } as ConstructUrlProps);
 
 const transformUrl = () => {
   const options = {
@@ -151,7 +152,7 @@ const transformUrl = () => {
     options.widthResize = loaderOptions?.width;
   }
 
-  const { url } = useCldImageUrl({ options, config });
+  const { url } = useCldImageUrl({ options, config } as ConstructUrlProps);
 
   return url;
 };

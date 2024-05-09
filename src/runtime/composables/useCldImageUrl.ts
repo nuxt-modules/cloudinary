@@ -1,5 +1,5 @@
 import { useRuntimeConfig } from '#imports'
-import { constructCloudinaryUrl, ConstructUrlProps } from '@cloudinary-util/url-loader'
+import { constructCloudinaryUrl, type ConstructUrlProps } from '@cloudinary-util/url-loader'
 import nuxtPkg from 'nuxt/package.json';
 import pkg from '../../../package.json'
 
