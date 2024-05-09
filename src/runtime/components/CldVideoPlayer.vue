@@ -80,7 +80,7 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   logo: true,
   loop: false,
   muted: false,
-  version: "1.10.6",
+  version: "1.11.1",
   quality: "auto",
 });
 
@@ -244,7 +244,7 @@ useHead({
   link: [
     {
       href: `https://unpkg.com/cloudinary-video-player@${
-        version || "1.10.6"
+        version || "1.11.1"
       }/dist/cld-video-player.min.css`,
       rel: "stylesheet",
     },
