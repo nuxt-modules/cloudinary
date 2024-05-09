@@ -2,6 +2,7 @@
 import { useHead } from "@unhead/vue";
 import { ref, watch } from "vue";
 import { useRuntimeConfig } from "#imports";
+import { type ConfigOptions } from "@cloudinary-util/url-loader";
 
 export interface CldUploadWidgetProps {
   onClose?: Function;
@@ -23,6 +24,7 @@ export interface CldUploadWidgetProps {
   options?: CldUploadWidgetPropsOptions;
   signatureEndpoint?: URL | RequestInfo;
   uploadPreset?: string;
+  config?: ConfigOptions;
 }
 
 // Parameters sourced from:
@@ -168,6 +170,7 @@ const {
   onSuccess,
   onTags,
   onUploadAdded,
+  config,
 } = props;
 
 const cloudinary = ref();
@@ -216,6 +219,7 @@ const uploadOptions = {
   apiKey: useRuntimeConfig().public.cloudinary.apiKey,
   ...options,
   ...instanceMethods,
+  ...config,
 };
 
 if (signed) {
