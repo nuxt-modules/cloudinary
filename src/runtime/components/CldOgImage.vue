@@ -144,12 +144,12 @@ const computedTwitterTitle = computed(
     <Meta
       key="og-image-width"
       property="og:image:width"
-      :content="width.toString()"
+      :content="imageWidth.toString()"
     />
     <Meta
       key="og-image-height"
       property="og:image:height"
-      :content="height.toString()"
+      :content="imageHeight.toString()"
     />
     <Meta
       v-if="alt"
