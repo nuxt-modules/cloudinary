@@ -1,30 +1,46 @@
 <script setup lang="ts">
-import { useHead } from "@unhead/vue";
-import { ref, watch } from "vue";
-import { useRuntimeConfig } from "#imports";
-import { type ConfigOptions } from "@cloudinary-util/url-loader";
+import { useHead } from '@unhead/vue'
+import { ref, watch } from 'vue'
+import { type ConfigOptions } from '@cloudinary-util/url-loader'
+import { useRuntimeConfig } from '#imports'
 
 export interface CldUploadWidgetProps {
-  onClose?: Function;
-  onError?: Function;
-  onOpen?: Function;
-  onUpload?: Function;
-  onAbort?: Function;
-  onBatchCancelled?: Function;
-  onDisplayChanged?: Function;
-  onPublicId?: Function;
-  onQueuesEnd?: Function;
-  onQueuesStart?: Function;
-  onRetry?: Function;
-  onShowCompleted?: Function;
-  onSourceChanged?: Function;
-  onSuccess?: Function;
-  onTags?: Function;
-  onUploadAdded?: Function;
-  options?: CldUploadWidgetPropsOptions;
-  signatureEndpoint?: URL | RequestInfo;
-  uploadPreset?: string;
-  config?: ConfigOptions;
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onClose?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onError?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onOpen?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onUpload?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onAbort?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onBatchCancelled?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onDisplayChanged?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onPublicId?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onQueuesEnd?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onQueuesStart?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onRetry?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onShowCompleted?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onSourceChanged?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onSuccess?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onTags?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  onUploadAdded?: Function
+  options?: CldUploadWidgetPropsOptions
+  signatureEndpoint?: URL | RequestInfo
+  uploadPreset?: string
+  config?: ConfigOptions
 }
 
 // Parameters sourced from:
@@ -34,122 +50,126 @@ export interface CldUploadWidgetPropsOptions {
   // Widget
 
   encryption?: {
-    key: string;
-    iv: string;
-  };
-  defaultSource?: string;
-  maxFiles?: number;
-  multiple?: boolean;
+    key: string
+    iv: string
+  }
+  defaultSource?: string
+  maxFiles?: number
+  multiple?: boolean
   sources?: Array<
-    | "camera"
-    | "dropbox"
-    | "facebook"
-    | "gettyimages"
-    | "google_drive"
-    | "image_search"
-    | "instagram"
-    | "istock"
-    | "local"
-    | "shutterstock"
-    | "unsplash"
-    | "url"
-  >;
+    | 'camera'
+    | 'dropbox'
+    | 'facebook'
+    | 'gettyimages'
+    | 'google_drive'
+    | 'image_search'
+    | 'instagram'
+    | 'istock'
+    | 'local'
+    | 'shutterstock'
+    | 'unsplash'
+    | 'url'
+  >
 
   // Cropping
 
-  cropping?: boolean;
-  croppingAspectRatio?: number;
-  croppingCoordinatesMode?: string;
-  croppingDefaultSelectionRatio?: number;
-  croppingShowBackButton?: boolean;
-  croppingShowDimensions?: boolean;
-  showSkipCropButton?: boolean;
+  cropping?: boolean
+  croppingAspectRatio?: number
+  croppingCoordinatesMode?: string
+  croppingDefaultSelectionRatio?: number
+  croppingShowBackButton?: boolean
+  croppingShowDimensions?: boolean
+  showSkipCropButton?: boolean
 
   // Sources
 
-  dropboxAppKey?: string;
-  facebookAppId?: string;
-  googleApiKey?: string;
-  googleDriveClientId?: string;
-  instagramClientId?: string;
-  searchByRights?: boolean;
-  searchBySites?: Array<string>;
+  dropboxAppKey?: string
+  facebookAppId?: string
+  googleApiKey?: string
+  googleDriveClientId?: string
+  instagramClientId?: string
+  searchByRights?: boolean
+  searchBySites?: Array<string>
 
   // Upload
 
-  context?: object;
-  folder?: string;
-  publicId?: string;
-  resourceType?: string;
-  tags?: Array<string>;
-  uploadSignature?: string | Function;
-  uploadSignatureTimestamp?: number;
+  context?: object
+  folder?: string
+  publicId?: string
+  resourceType?: string
+  tags?: Array<string>
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  uploadSignature?: string | Function
+  uploadSignatureTimestamp?: number
 
   // Client Side
 
-  clientAllowedFormats?: Array<string>;
-  croppingValidateDimensions?: boolean;
-  maxChunkSize?: number;
-  maxImageFileSize?: number;
-  maxImageHeight?: number;
-  maxImageWidth?: number;
-  maxFileSize?: number;
-  maxRawFileSize?: number;
-  maxVideoFileSize?: number;
-  minImageHeight?: number;
-  minImageWidth?: number;
-  validateMaxWidthHeight?: boolean;
+  clientAllowedFormats?: Array<string>
+  croppingValidateDimensions?: boolean
+  maxChunkSize?: number
+  maxImageFileSize?: number
+  maxImageHeight?: number
+  maxImageWidth?: number
+  maxFileSize?: number
+  maxRawFileSize?: number
+  maxVideoFileSize?: number
+  minImageHeight?: number
+  minImageWidth?: number
+  validateMaxWidthHeight?: boolean
 
   // Containing Page
 
-  fieldName?: string;
-  form?: string;
-  thumbnails?: string;
-  thumbnailTransformation?: string | Array<object>;
+  fieldName?: string
+  form?: string
+  thumbnails?: string
+  thumbnailTransformation?: string | Array<object>
 
   // Customization
 
-  buttonCaption?: string;
-  buttonClass?: string;
-  text?: object;
-  theme?: string;
-  styles?: object;
+  buttonCaption?: string
+  buttonClass?: string
+  text?: object
+  theme?: string
+  styles?: object
 
   // Advanced
 
-  autoMinimize?: boolean;
-  getTags?: Function;
-  getUploadPresets?: Function;
-  inlineContainer?: any; // string or DOM element
-  language?: string;
-  preBatch?: Function;
-  prepareUploadParams?: Function;
-  queueViewPosition?: string;
-  showAdvancedOptions?: boolean;
-  showCompletedButton?: boolean;
-  showInsecurePreview?: boolean;
-  showPoweredBy?: boolean;
-  showUploadMoreButton?: boolean;
-  singleUploadAutoClose?: boolean;
+  autoMinimize?: boolean
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  getTags?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  getUploadPresets?: Function
+  inlineContainer?: any // string or DOM element
+  language?: string
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  preBatch?: Function
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  prepareUploadParams?: Function
+  queueViewPosition?: string
+  showAdvancedOptions?: boolean
+  showCompletedButton?: boolean
+  showInsecurePreview?: boolean
+  showPoweredBy?: boolean
+  showUploadMoreButton?: boolean
+  singleUploadAutoClose?: boolean
 }
 
 export interface CldUploadWidgetResults {
-  event: string;
-  info: string;
+  event: string
+  info: string
 }
 
 function triggerOnIdle(callback: any) {
-  if (window && "requestIdleCallback" in window) {
-    return requestIdleCallback(callback);
+  if (window && 'requestIdleCallback' in window) {
+    return requestIdleCallback(callback)
   }
-  return setTimeout(() => callback(), 1);
+  return setTimeout(() => callback(), 1)
 }
 
-const WIDGET_WATCHED_EVENTS = ["success"];
+const WIDGET_WATCHED_EVENTS = ['success']
 
-const props = defineProps<CldUploadWidgetProps>();
+const props = defineProps<CldUploadWidgetProps>()
 
-// eslint-disable-next-line vue/no-setup-props-destructure
 const {
   onClose,
   onError,
@@ -171,16 +191,16 @@ const {
   onTags,
   onUploadAdded,
   config,
-} = props;
+} = props
 
-const cloudinary = ref();
-const widget = ref();
+const cloudinary = ref()
+const widget = ref()
 
-const signed = !!signatureEndpoint;
+const signed = !!signatureEndpoint
 
-const error = ref(undefined);
-const results = ref<CldUploadWidgetResults | undefined>(undefined);
-const isScriptLoading = ref(true);
+const error = ref(undefined)
+const results = ref<CldUploadWidgetResults | undefined>(undefined)
+const isScriptLoading = ref(true)
 
 // When creating a signed upload, you need to provide both your Cloudinary API Key
 // as well as a signature generator function that will sign any paramters
@@ -198,19 +218,19 @@ const instanceMethods = {
   open,
   show,
   update,
-  abort: onAbort,
-  "batch-cancelled": onBatchCancelled,
-  "display-changed": onDisplayChanged,
-  publicid: onPublicId,
-  "queues-end": onQueuesEnd,
-  "queues-start": onQueuesStart,
-  retry: onRetry,
-  "show-completed": onShowCompleted,
-  "source-changed": onSourceChanged,
-  success: onSuccess,
-  tags: onTags,
-  "upload-added": onUploadAdded,
-};
+  'abort': onAbort,
+  'batch-cancelled': onBatchCancelled,
+  'display-changed': onDisplayChanged,
+  'publicid': onPublicId,
+  'queues-end': onQueuesEnd,
+  'queues-start': onQueuesStart,
+  'retry': onRetry,
+  'show-completed': onShowCompleted,
+  'source-changed': onSourceChanged,
+  'success': onSuccess,
+  'tags': onTags,
+  'upload-added': onUploadAdded,
+}
 
 const uploadOptions = {
   cloudName: useRuntimeConfig().public.cloudinary.cloudName,
@@ -220,40 +240,40 @@ const uploadOptions = {
   ...options,
   ...instanceMethods,
   ...config,
-};
+}
 
 if (signed) {
-  uploadOptions.uploadSignature = generateSignature;
+  uploadOptions.uploadSignature = generateSignature
 
   if (!uploadOptions.apiKey) {
-    console.warn(`Missing dependency: Signed Upload requires an API key`);
+    console.warn(`Missing dependency: Signed Upload requires an API key`)
   }
 }
 
 // Handle result states and callbacks
 
 watch(results, () => {
-  if (typeof results.value === "undefined") return;
+  if (typeof results.value === 'undefined') return
 
-  const isSuccess = results.value?.event === "success";
-  const isClosed =
-    results.value?.event === "display-changed" &&
-    results.value.info === "hidden";
+  const isSuccess = results.value?.event === 'success'
+  const isClosed
+    = results.value?.event === 'display-changed'
+    && results.value.info === 'hidden'
 
-  if (isSuccess && typeof onUpload === "function") {
-    onUpload(results, widget.value);
+  if (isSuccess && typeof onUpload === 'function') {
+    onUpload(results, widget.value)
   }
 
-  if (isClosed && typeof onClose === "function") {
-    onClose(widget.value);
+  if (isClosed && typeof onClose === 'function') {
+    onClose(widget.value)
   }
-});
+})
 
 watch(error, () => {
-  if (error.value && typeof onError === "function") {
-    onError(error, widget.value);
+  if (error.value && typeof onError === 'function') {
+    onError(error, widget.value)
   }
-});
+})
 
 /**
  * handleOnLoad
@@ -261,9 +281,9 @@ watch(error, () => {
  */
 
 function handleOnLoad() {
-  isScriptLoading.value = false;
+  isScriptLoading.value = false
   if (!cloudinary.value) {
-    cloudinary.value = (window as any).cloudinary;
+    cloudinary.value = (window as any).cloudinary
   }
 
   // To help improve load time of the widget on first instance, use requestIdleCallback
@@ -271,9 +291,9 @@ function handleOnLoad() {
 
   triggerOnIdle(() => {
     if (!widget.value) {
-      widget.value = createWidget();
+      widget.value = createWidget()
     }
-  });
+  })
 }
 
 /**
@@ -281,23 +301,26 @@ function handleOnLoad() {
  * @description Makes a request to an endpoint to sign Cloudinary parameters as part of widget creation
  */
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 function generateSignature(callback: Function, paramsToSign: object) {
-  if (typeof signatureEndpoint === "undefined") {
-    throw Error("Failed to generate signature: signatureEndpoint undefined.");
+  if (typeof signatureEndpoint === 'undefined') {
+    throw new TypeError(
+      'Failed to generate signature: signatureEndpoint undefined.',
+    )
   }
   fetch(signatureEndpoint, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       paramsToSign,
     }),
   })
-    .then((r) => r.json())
+    .then(r => r.json())
     .then(({ signature }) => {
-      callback(signature);
-    });
+      callback(signature)
+    })
 }
 
 /**
@@ -314,67 +337,67 @@ function createWidget() {
       // create a separate handler such as onEvent and trigger it on
       // ever occurrence
 
-      if (typeof uploadError !== "undefined") {
-        error.value = uploadError;
+      if (typeof uploadError !== 'undefined') {
+        error.value = uploadError
       }
 
       if (WIDGET_WATCHED_EVENTS.includes(uploadResult?.event)) {
-        results.value = uploadResult;
+        results.value = uploadResult
       }
-    }
-  );
+    },
+  )
 }
 
 function invokeInstanceMethod(method: string) {
   if (!widget.value) {
-    widget.value = createWidget();
+    widget.value = createWidget()
   }
 
-  if (typeof widget?.value[method] === "function") {
-    widget.value[method]();
+  if (typeof widget?.value[method] === 'function') {
+    widget.value[method]()
   }
 }
 
 function close() {
-  invokeInstanceMethod("close");
+  invokeInstanceMethod('close')
 }
 
 function destroy() {
-  invokeInstanceMethod("destroy");
+  invokeInstanceMethod('destroy')
 }
 
 function hide() {
-  invokeInstanceMethod("hide");
+  invokeInstanceMethod('hide')
 }
 
 function isDestroyed() {
-  invokeInstanceMethod("isDestroyed");
+  invokeInstanceMethod('isDestroyed')
 }
 
 function isMinimized() {
-  invokeInstanceMethod("isMinimized");
+  invokeInstanceMethod('isMinimized')
 }
 
 function isShowing() {
-  invokeInstanceMethod("isShowing");
+  invokeInstanceMethod('isShowing')
 }
 
 function minimize() {
-  invokeInstanceMethod("minimize");
+  invokeInstanceMethod('minimize')
 }
 
 function show() {
-  invokeInstanceMethod("show");
+  invokeInstanceMethod('show')
 }
 
 function update() {
-  invokeInstanceMethod("update");
+  invokeInstanceMethod('update')
 }
 function open() {
-  invokeInstanceMethod("open");
+  invokeInstanceMethod('open')
 
-  if (typeof onOpen === "function") {
-    onOpen(widget.value);
+  if (typeof onOpen === 'function') {
+    onOpen(widget.value)
   }
 }
 
@@ -382,15 +405,15 @@ useHead({
   script: [
     {
       id: `cloudinary-uploadwidget-${Math.floor(Math.random() * 100)}`,
-      src: "https://widget.cloudinary.com/v2.0/global/all.js",
+      src: 'https://widget.cloudinary.com/v2.0/global/all.js',
       onload: handleOnLoad,
-      onerror: (e) =>
+      onerror: e =>
         console.error(
-          `Failed to load Cloudinary Upload Widget: ${(e as any).message}`
+          `Failed to load Cloudinary Upload Widget: ${(e as any).message}`,
         ),
     },
   ],
-});
+})
 </script>
 
 <template>

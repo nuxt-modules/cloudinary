@@ -1,13 +1,13 @@
 <script setup>
-const title = "Playground";
-const description =
-  "Play online with our interactive Nuxt Cloudinary playground.";
+const title = 'Playground'
+const description
+  = 'Play online with our interactive Nuxt Cloudinary playground.'
 useSeoMeta({
-  titleTemplate: "%s - Nuxt Cloudinary",
+  titleTemplate: '%s - Nuxt Cloudinary',
   title,
-  ogTitle: "Nuxt Cloudinary Playground",
+  ogTitle: 'Nuxt Cloudinary Playground',
   description,
-});
+})
 </script>
 
 <template>

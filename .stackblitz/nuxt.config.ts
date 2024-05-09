@@ -2,6 +2,6 @@
 export default defineNuxtConfig({
   modules: ['@nuxtjs/cloudinary'],
   cloudinary: {
-    cloudName: 'nuxt-cloudinary'
-  }
-});
+    cloudName: 'nuxt-cloudinary',
+  },
+})

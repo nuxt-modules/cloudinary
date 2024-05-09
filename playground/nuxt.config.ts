@@ -3,6 +3,6 @@ export default defineNuxtConfig({
   cloudinary: {
     cloudName: 'nuxt-cloudinary',
     url: {},
-    cloud: {}
-  }
+    cloud: {},
+  },
 })
