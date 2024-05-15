@@ -33,21 +33,19 @@ const cldVideoRef = ref()
     cloud-name="demo"
     :button-id="buttonId"
   />
-  <!-- Usage of `CldOgImage.vue` component -->
   <CldOgImage
     src="cld-sample-2"
     twitter-title="test"
   />
-  <!-- Usage of `CldVideoPlayer.vue` component -->
   <CldVideoPlayer
     ref="cldVideoRef"
     width="1620"
     height="1080"
-    src="videos/mountain-stars"
+    src="videos/dog-running-snow"
+    chapters
     :config="{ url: { cname: 'test' } }"
     picture-in-picture-toggle
   />
-  <!-- Usage of `CldUploadWidget.vue` component -->
   <CldUploadWidget
     v-slot="{ open }"
     upload-preset="nuxt-cloudinary-unsigned"
@@ -59,11 +57,9 @@ const cldVideoRef = ref()
       Upload an Image
     </button>
   </CldUploadWidget>
-  <!-- Usage of `CldUploadButton.vue` component -->
   <CldUploadButton upload-preset="nuxt-cloudinary-unsigned">
     Upload
   </CldUploadButton>
-  <!-- Usage of `CldImage.vue` component -->
   <CldImage
     src="cld-sample-5"
     width="987"
