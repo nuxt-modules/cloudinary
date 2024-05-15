@@ -15,6 +15,7 @@ export const useCldVideoUrl = (props: { options: VideoOptions, config?: ConfigOp
   let cldOptions: ConstructUrlProps = {
     options: {
       assetType: 'video',
+      format: 'auto:video',
       // Have to spread the options because otherwise getting the error about props being updated while they are readonly.
       ...props.options,
     },
