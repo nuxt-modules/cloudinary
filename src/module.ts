@@ -55,7 +55,7 @@ export default defineNuxtModule<ModuleOptions>({
       path: resolver.resolve(runtimeDir, 'components'),
       pathPrefix: false,
       prefix: '',
-      level: 999,
+      priority: 999,
       global: true,
     })
   },
