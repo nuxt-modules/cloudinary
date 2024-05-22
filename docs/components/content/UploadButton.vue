@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
-const resource = ref();
+import { ref } from 'vue'
+
+const resource = ref()
 </script>
 
 <template>

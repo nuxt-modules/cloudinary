@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "2.7.3",
+  "version": "3.0.0-rc.1",
   "description": "Cloudinary module for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -48,21 +48,22 @@
     "stackblitz": "cd .stackblitz && yarn && yarn dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^5.2.1",
-    "@cloudinary-util/types": "1.0.1",
-    "@nuxt/kit": "^3.5.0",
-    "@unpic/vue": "^0.0.42",
-    "defu": "^6.1.2"
+    "@cloudinary-util/url-loader": "^5.2.2",
+    "@cloudinary-util/types": "1.0.2",
+    "@nuxt/kit": "^3.11.2",
+    "@unpic/vue": "^0.0.48",
+    "defu": "^6.1.4"
   },
   "devDependencies": {
-    "@nuxt/eslint-config": "^0.1.1",
-    "@nuxt/module-builder": "^0.5.4",
-    "@nuxt/schema": "^3.5.0",
-    "@nuxt/test-utils": "^3.5.0",
-    "changelogen": "^0.4.1",
-    "eslint": "^8.34.0",
-    "nuxt": "^3.5.0",
-    "vitest": "^0.31.0"
+    "@nuxt/eslint-config": "^0.3.10",
+    "@nuxt/module-builder": "^0.5.5",
+    "@nuxt/schema": "^3.11.2",
+    "@nuxt/test-utils": "^3.12.0",
+    "changelogen": "^0.5.5",
+    "eslint": "^9.0.0",
+    "nuxt": "^3.11.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.4.0"
   },
   "stackblitz": {
     "installDependencies": false,

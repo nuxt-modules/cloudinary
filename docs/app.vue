@@ -1,38 +1,38 @@
 <script setup>
 useServerSeoMeta({
-  ogSiteName: "Nuxt Cloudinary",
-  twitterCard: "summary_large_image",
-});
+  ogSiteName: 'Nuxt Cloudinary',
+  twitterCard: 'summary_large_image',
+})
 useHead({
   htmlAttrs: {
-    lang: "en",
+    lang: 'en',
   },
-});
+})
 const links = [
   {
-    label: "Documentation",
-    to: "/getting-started",
+    label: 'Documentation',
+    to: '/getting-started',
   },
   {
-    label: "Playground",
-    to: "/playground",
+    label: 'Playground',
+    to: '/playground',
   },
   {
-    label: "Releases",
-    to: "https://github.com/nuxt-modules/cloudinary/releases",
-    target: "_blank",
+    label: 'Releases',
+    to: 'https://github.com/nuxt-modules/cloudinary/releases',
+    target: '_blank',
   },
-];
-const { data: files } = useLazyFetch("/api/search.json", {
+]
+const { data: files } = useLazyFetch('/api/search.json', {
   default: () => [],
   server: false,
-});
-const { data: navigation } = await useAsyncData("navigation", () =>
-  fetchContentNavigation()
-);
+})
+const { data: navigation } = await useAsyncData('navigation', () =>
+  fetchContentNavigation(),
+)
 
 // Provide
-provide("navigation", navigation);
+provide('navigation', navigation)
 </script>
 
 <template>
@@ -77,8 +77,14 @@ provide("navigation", navigation);
       />
     </template>
     <!-- Mobile panel -->
-    <template v-if="$route.path !== '/'" #panel>
-      <LazyUDocsSearchButton size="md" class="mb-4 w-full" />
+    <template
+      v-if="$route.path !== '/'"
+      #panel
+    >
+      <LazyUDocsSearchButton
+        size="md"
+        class="mb-4 w-full"
+      />
       <LazyUNavigationTree
         :links="mapContentNavigation(navigation)"
         default-open
@@ -104,8 +110,7 @@ provide("navigation", navigation);
           to="https://github.com/nuxt-modules/Cloudinary"
           target="_blank"
           class="underline"
-          >MIT License</NuxtLink
-        >
+        >MIT License</NuxtLink>
       </span>
     </template>
     <template #right>
@@ -145,6 +150,10 @@ provide("navigation", navigation);
     </template>
   </UFooter>
   <ClientOnly>
-    <LazyUDocsSearch :files="files" :navigation="navigation" :links="links" />
+    <LazyUDocsSearch
+      :files="files"
+      :navigation="navigation"
+      :links="links"
+    />
   </ClientOnly>
 </template>
