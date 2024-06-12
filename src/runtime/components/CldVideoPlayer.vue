@@ -91,8 +91,6 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   quality: 'auto',
 })
 
-const idRef = ref(Math.ceil(Math.random() * 100000))
-
 const {
   autoPlay,
   className,
@@ -151,7 +149,7 @@ const videoRef = props.videoRef || defaultVideoRef
 const defaultPlayerRef = ref()
 const playerRef = props.playerRef || defaultPlayerRef
 
-const playerId = id || `player-${publicId.replace('/', '-')}-${idRef.value}`
+const playerId = id || `player-${publicId.replace('/', '-')}`
 let playerClassName = 'cld-video-player cld-fluid'
 
 if (className) {
@@ -242,7 +240,7 @@ defineExpose({
 useHead({
   script: [
     {
-      id: `cloudinary-videoplayer-${Math.floor(Math.random() * 100)}`,
+      id: 'cloudinary-videoplayer',
       src: `https://unpkg.com/cloudinary-video-player@${version}/dist/cld-video-player.min.js`,
       onload: handleOnLoad,
       onerror: e =>
