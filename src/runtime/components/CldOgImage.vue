@@ -125,7 +125,10 @@ const { url: twitterImageUrl } = useCldImageUrl({
 } as ConstructUrlProps)
 
 const computedTwitterTitle = computed(
-  () => props.twitterTitle || (currentRoute.value.meta?.title as string) || ' ',
+  () =>
+    props.twitterTitle
+    || (currentRoute.value.meta?.title as string)
+    || 'nuxt-cloudinary-og-image',
 )
 </script>
 
