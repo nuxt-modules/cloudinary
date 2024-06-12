@@ -17,6 +17,12 @@ const mediaAssets = [
 const buttonId = 'open-btn'
 
 const cldVideoRef = ref()
+
+const chapters = {
+  0: 'Chapter 1',
+  6: 'Chapter 2',
+  9: 'Chapter 3',
+}
 </script>
 
 <template>
@@ -42,9 +48,10 @@ const cldVideoRef = ref()
     width="1620"
     height="1080"
     src="videos/dog-running-snow"
-    chapters
     :config="{ url: { cname: 'test' } }"
     picture-in-picture-toggle
+    chapters-button
+    :chapters="chapters"
   />
   <CldUploadWidget
     v-slot="{ open }"

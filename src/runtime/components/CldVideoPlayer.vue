@@ -24,6 +24,8 @@ export interface CloudinaryVideoPlayerOptions {
   hideContextMenu?: boolean
   config?: ConfigOptions
   pictureInPictureToggle?: boolean
+  chapters?: Record<string | number, string> | boolean
+  chaptersButton?: boolean
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -79,6 +81,8 @@ export type CldVideoPlayerProps = Pick<
   width: string | number
   config?: ConfigOptions
   pictureInPictureToggle?: boolean
+  chapters?: Record<string | number, string> | boolean
+  chaptersButton?: boolean
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -116,6 +120,8 @@ const {
   hideContextMenu,
   config,
   pictureInPictureToggle,
+  chapters,
+  chaptersButton,
 } = props as CldVideoPlayerProps
 
 const playerTransformations = Array.isArray(transformation)
@@ -210,6 +216,8 @@ const handleOnLoad = () => {
       ...logoOptions,
       hideContextMenu,
       pictureInPictureToggle,
+      chapters,
+      chaptersButton,
       ...useRuntimeConfig().public.cloudinary.cloud,
       ...useRuntimeConfig().public.cloudinary.url,
       ...config,
