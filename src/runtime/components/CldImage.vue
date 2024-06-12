@@ -8,11 +8,6 @@ import { Image } from '@unpic/vue'
 import type { ConstructUrlProps } from '@cloudinary-util/url-loader'
 import { useCldImageUrl } from '../composables/useCldImageUrl'
 
-interface AssetOptionsResize {
-  crop?: string | object
-  width?: number | string
-}
-
 interface ImageOptionsFillBackground {
   crop?: string
   gravity?: string
@@ -33,7 +28,6 @@ interface AssetOptions {
   rawTransformations?: string[]
   removeBackground?: boolean
   sanitize?: boolean
-  resize?: AssetOptionsResize
   seoSuffix?: string
   src: string
   text?: any
@@ -42,7 +36,6 @@ interface AssetOptions {
   underlays?: Array<any>
   version?: number | string
   width?: string | number
-  widthResize?: string | number
   zoom?: string
 }
 
@@ -128,31 +121,6 @@ const transformUrl = () => {
     = typeof options.height === 'string'
       ? Number.parseInt(options.height)
       : options.height
-
-  let widthResize
-
-  if (
-    typeof loaderOptions?.width === 'number'
-    && typeof options.width === 'number'
-    && loaderOptions.width !== options.width
-  ) {
-    widthResize = loaderOptions.width
-  }
-  else if (
-    typeof loaderOptions?.width === 'number'
-    && typeof options?.width !== 'number'
-  ) {
-    widthResize = loaderOptions.width
-    options.width = widthResize
-  }
-
-  // If we have a resize width that's smaller than the user-defined width, we want to give the
-  // ability to perform a final resize on the image without impacting any of the effects like text
-  // overlays that may depend on the size to work properly
-
-  if (options.width && widthResize && widthResize < options.width) {
-    options.widthResize = loaderOptions?.width
-  }
 
   const { url } = useCldImageUrl({ options, config } as ConstructUrlProps)
 
