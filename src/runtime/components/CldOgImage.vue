@@ -120,7 +120,7 @@ const computedTwitterTitle = computed(
   () =>
     props.twitterTitle
     || (currentRoute.value.meta?.title as string)
-    || 'nuxt-cloudinary-og-image',
+    || 'Learn More',
 )
 </script>
 
