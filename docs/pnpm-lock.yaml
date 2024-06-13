@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxtjs/cloudinary':
-        specifier: ^3.0.0-rc.2
-        version: 3.0.0-rc.2(typescript@5.4.5)
+        specifier: ^3.0.0-rc.3
+        version: 3.0.0-rc.3(typescript@5.4.5)
     devDependencies:
       '@iconify-json/ph':
         specifier: ^1.1.10
@@ -1010,16 +1010,21 @@ packages:
     resolution: {integrity: sha512-j3xUfN4uMFDMSvoQeOMxqKYsGZovlRFr8niOQXfcqoHp7NVBiJm8oy6y2HDGQhxH63irmFt8VtzJEnYwGYsGXg==}
     dev: false
 
-  /@cloudinary-util/url-loader@5.2.2:
-    resolution: {integrity: sha512-gwoBuyoJBriUvmX3jk6Q1k5NdziloEhIp/4InLB6yBNe88K7bVbR/V8dJRhba0ZvlYDOOPjIiJLAa5J7xAnUlw==}
+  /@cloudinary-util/types@1.0.5:
+    resolution: {integrity: sha512-QySi6Q138yg/qrD7f6yscH9T+/8VwUfF9AiwFPMS89uI5wnSG9nhC+93a/8iUpgk9ujTDVqE8+TqYAbxvF0BMA==}
+    dev: false
+
+  /@cloudinary-util/url-loader@5.3.1:
+    resolution: {integrity: sha512-cYgnazu7cLjRaajGmhyVfMxjrOz4EaSQsWK1/utV4K5kknUUhu8vUovGunDQJbEGmBWB/TUt7zmwpdUAQ+pe4g==}
     dependencies:
-      '@cloudinary-util/util': 3.0.0
+      '@cloudinary-util/types': 1.0.5
+      '@cloudinary-util/util': 3.0.2
       '@cloudinary/url-gen': 1.15.0
       zod: 3.22.4
     dev: false
 
-  /@cloudinary-util/util@3.0.0:
-    resolution: {integrity: sha512-o6cJsN49OIelLcSkqUf4WzgefpePDFsAaeQfJbpcKhVdtvmWv71K0oZwMXuX62IY1OolqIg0etMiHtWZPhvPNA==}
+  /@cloudinary-util/util@3.0.2:
+    resolution: {integrity: sha512-EMmspJLVFn9hX92DaK/yuSzSUXF/BJ88crzN8vT1qCaJMMWKapGNo2HZ6YNgG69PP/Jngdk0mTINDU+GP3A1CA==}
     dev: false
 
   /@cloudinary/transformation-builder-sdk@1.10.1:
@@ -2634,11 +2639,11 @@ packages:
       - vue-tsc
     dev: true
 
-  /@nuxtjs/cloudinary@3.0.0-rc.2(typescript@5.4.5):
-    resolution: {integrity: sha512-2HSVQ/z6rfph4B2vDmRJ5CkwwgFBdwCoHD3crCvTpeCvAjZD4Mxqa9e+Xc5FPbwl87x4j9zHu0xUfrhRnxx+rg==}
+  /@nuxtjs/cloudinary@3.0.0-rc.3(typescript@5.4.5):
+    resolution: {integrity: sha512-ZkiMwb8dpFLf9aYEtBZlqjpabw3mrlb2SaJ/8blzMHMgxCz9/ExEjV1IJ70qkNJ2LkeUJdebt+uBE1PL51yObg==}
     dependencies:
       '@cloudinary-util/types': 1.0.2
-      '@cloudinary-util/url-loader': 5.2.2
+      '@cloudinary-util/url-loader': 5.3.1
       '@nuxt/kit': 3.12.1
       '@unpic/vue': 0.0.48(typescript@5.4.5)
       defu: 6.1.4
