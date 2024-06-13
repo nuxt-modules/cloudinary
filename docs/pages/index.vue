@@ -13,12 +13,12 @@ const { data: code } = await useAsyncData('code', () =>
 )
 
 useSeoMeta({
-  title: page.value.title,
-  ogTitle: page.value.title,
-  description: page.value.description,
-  ogDescription: page.value.description,
-  ogImage: page.value.cover,
-  twitterImage: page.value.cover,
+  title: page.value?.title,
+  ogTitle: page.value?.title,
+  description: page.value?.description,
+  ogDescription: page.value?.description,
+  ogImage: page.value?.cover,
+  twitterImage: page.value?.cover,
 })
 </script>
 
@@ -34,10 +34,10 @@ useSeoMeta({
       </div>
       <template #title>
         <!-- eslint-disable vue/no-v-html -->
-        <span v-html="page.hero?.title" />
+        <span v-html="page?.hero?.title" />
       </template>
       <template #description>
-        {{ page.hero?.description }}
+        {{ page?.hero?.description }}
       </template>
       <template #links>
         <UButton
@@ -45,7 +45,7 @@ useSeoMeta({
           icon="i-ph-rocket-launch-duotone"
           size="xl"
         >
-          {{ page.hero?.button }}
+          {{ page?.hero?.button }}
         </UButton>
         <UButton
           size="xl"
@@ -75,12 +75,12 @@ useSeoMeta({
     </ULandingHero>
 
     <ULandingSection
-      :title="page.features.title"
+      :title="page?.features.title"
       style="padding-top: 0px"
     >
       <UPageGrid>
         <ULandingCard
-          v-for="(item, index) of page.features.items"
+          v-for="(item, index) of page?.features.items"
           :key="index"
           v-bind="item"
         />
