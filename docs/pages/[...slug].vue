@@ -8,8 +8,6 @@ const { data: page } = await useAsyncData(`docs-${route.path}`, () =>
   queryContent(route.path).findOne(),
 )
 
-console.log('page', page)
-
 const { data: surround } = await useAsyncData(
   `docs-${route.path}-surround`,
   () => {
