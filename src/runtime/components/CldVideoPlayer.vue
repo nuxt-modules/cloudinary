@@ -2,7 +2,11 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { parseUrl } from '@cloudinary-util/util'
-import { type ConfigOptions } from '@cloudinary-util/url-loader'
+import {
+  getVideoPlayerOptions,
+  type ConfigOptions,
+  type GetVideoPlayerOptions,
+} from '@cloudinary-util/url-loader'
 import { useRuntimeConfig } from '#imports'
 
 export interface CloudinaryVideoPlayer {
@@ -96,16 +100,9 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
 })
 
 const {
-  autoPlay,
   className,
-  colors,
-  controls,
-  fontFace,
   height,
   id,
-  logo,
-  loop,
-  muted,
   onDataLoad,
   onError,
   onMetadataLoad,
@@ -117,11 +114,7 @@ const {
   version,
   quality,
   width,
-  hideContextMenu,
   config,
-  pictureInPictureToggle,
-  chapters,
-  chaptersButton,
 } = props as CldVideoPlayerProps
 
 const playerTransformations = Array.isArray(transformation)
@@ -186,46 +179,21 @@ const handleOnLoad = () => {
   if ('cloudinary' in window) {
     cloudinaryRef.value = window.cloudinary
 
-    let logoOptions: CloudinaryVideoPlayerOptionsLogo = {}
-
-    if (typeof logo === 'boolean') {
-      logoOptions.showLogo = logo
-    }
-    else if (typeof logo === 'object') {
-      logoOptions = {
-        ...logoOptions,
-        showLogo: true,
-        logoImageUrl: logo.imageUrl,
-        logoOnclickUrl: logo.onClickUrl,
-      }
-    }
-
-    const playerOptions: CloudinaryVideoPlayerOptions = {
-      autoplayMode: autoPlay,
-      cloud_name: useRuntimeConfig().public.cloudinary.cloudName,
-      controls,
-      fontFace: fontFace || '',
-      loop,
-      muted,
-      publicId,
-      secure: true,
-      width,
-      height,
-      aspectRatio: `${width}:${height}`,
-      transformation: playerTransformations,
-      ...logoOptions,
-      hideContextMenu,
-      pictureInPictureToggle,
-      chapters,
-      chaptersButton,
-      ...useRuntimeConfig().public.cloudinary.cloud,
-      ...useRuntimeConfig().public.cloudinary.url,
-      ...config,
-    }
-
-    if (typeof colors === 'object') {
-      playerOptions.colors = colors
-    }
+    const playerOptions = getVideoPlayerOptions(
+      {
+        ...props,
+        colors: props.colors || {},
+        fontFace: props.fontFace || '',
+      } as GetVideoPlayerOptions,
+      {
+        cloud: {
+          cloudName: useRuntimeConfig().public.cloudinary.cloudName,
+        },
+        ...useRuntimeConfig().public.cloudinary.cloud,
+        ...useRuntimeConfig().public.cloudinary.url,
+        ...config,
+      },
+    )
 
     playerRef.value = cloudinaryRef.value.videoPlayer(
       videoRef.value,

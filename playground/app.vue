@@ -23,6 +23,12 @@ const chapters = {
   6: 'Chapter 2',
   9: 'Chapter 3',
 }
+
+const colors = {
+  accent: '#ff0000',
+  base: '#00ff00',
+  text: '#0000ff',
+}
 </script>
 
 <template>
@@ -52,6 +58,7 @@ const chapters = {
     picture-in-picture-toggle
     chapters-button
     :chapters="chapters"
+    :colors="colors"
   />
   <CldUploadWidget
     v-slot="{ open }"
