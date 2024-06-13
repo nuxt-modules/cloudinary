@@ -14,7 +14,7 @@ The basic required props include `width`, `height`, and `src`:
 <CldVideoPlayer width="1920" height="1080" src="<Public ID>" />
 ```
 
-:cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080"}
+:cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080" id="1"}
 
 ## Customization
 
@@ -75,7 +75,7 @@ Picture-in-picture helps your viewers continue their multitasking agenda and mai
 />
 ```
 
-:cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080" pictureInPictureToggle}
+:cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080" pictureInPictureToggle id="4"}
 
 ## Chapters
 

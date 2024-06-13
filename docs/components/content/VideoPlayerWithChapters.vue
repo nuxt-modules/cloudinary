@@ -8,6 +8,7 @@ const chapters = {
 
 <template>
   <CldVideoPlayer
+    id="5"
     width="1620"
     height="1080"
     src="videos/dog-running-snow"

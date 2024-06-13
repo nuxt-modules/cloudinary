@@ -1,5 +1,6 @@
 <template>
   <CldVideoPlayer
+    id="2"
     width="1620"
     height="1080"
     src="videos/mountain-stars"

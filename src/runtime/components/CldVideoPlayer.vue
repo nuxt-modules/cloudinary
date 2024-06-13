@@ -216,7 +216,7 @@ defineExpose({
 useHead({
   script: [
     {
-      id: 'cloudinary-videoplayer',
+      id: `cloudinary-videoplayer-${playerId}`,
       src: `https://unpkg.com/cloudinary-video-player@${version}/dist/cld-video-player.min.js`,
       onload: handleOnLoad,
       onerror: e =>
