@@ -26,13 +26,15 @@ const { data: surround } = await useAsyncData(
 
 useSeoMeta({
   titleTemplate: '%s - Nuxt Cloudinary',
-  title: page.value.title,
-  ogTitle: `${page.value.title} - Nuxt Cloudinary`,
-  description: page.value.description,
-  ogDescription: page.value.description,
+  title: page.value?.title,
+  ogTitle: `${page.value?.title} - Nuxt Cloudinary`,
+  description: page.value?.description,
+  ogDescription: page.value?.description,
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() =>
+  page?.value ? findPageHeadline(page.value) : 'Nuxt Cloudinary Headline',
+)
 const communityLinks = computed(() => [
   {
     icon: 'i-ph-pen-duotone',
@@ -70,9 +72,9 @@ const communityLinks = computed(() => [
 <template>
   <UPage>
     <UPageHeader
-      :title="page.title"
-      :description="page.description"
-      :links="page.links"
+      :title="page?.title"
+      :description="page?.description"
+      :links="page?.links"
       :headline="headline"
     />
 
@@ -81,7 +83,7 @@ const communityLinks = computed(() => [
       class="pb-0"
     >
       <ContentRenderer
-        v-if="page.body"
+        v-if="page?.body"
         :value="page"
       />
       <hr
@@ -92,7 +94,7 @@ const communityLinks = computed(() => [
     </UPageBody>
 
     <template
-      v-if="page.body?.toc?.links?.length"
+      v-if="page?.body?.toc?.links?.length"
       #right
     >
       <UDocsToc :links="page.body.toc.links">
