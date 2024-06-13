@@ -2,7 +2,11 @@
 import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { parseUrl } from '@cloudinary-util/util'
-import { type ConfigOptions } from '@cloudinary-util/url-loader'
+import {
+  getVideoPlayerOptions,
+  type ConfigOptions,
+  type GetVideoPlayerOptions,
+} from '@cloudinary-util/url-loader'
 import { useRuntimeConfig } from '#imports'
 
 export interface CloudinaryVideoPlayer {
@@ -24,6 +28,8 @@ export interface CloudinaryVideoPlayerOptions {
   hideContextMenu?: boolean
   config?: ConfigOptions
   pictureInPictureToggle?: boolean
+  chapters?: Record<string | number, string> | boolean
+  chaptersButton?: boolean
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -79,6 +85,8 @@ export type CldVideoPlayerProps = Pick<
   width: string | number
   config?: ConfigOptions
   pictureInPictureToggle?: boolean
+  chapters?: Record<string | number, string> | boolean
+  chaptersButton?: boolean
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -91,19 +99,10 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   quality: 'auto',
 })
 
-const idRef = ref(Math.ceil(Math.random() * 100000))
-
 const {
-  autoPlay,
   className,
-  colors,
-  controls,
-  fontFace,
   height,
   id,
-  logo,
-  loop,
-  muted,
   onDataLoad,
   onError,
   onMetadataLoad,
@@ -115,9 +114,7 @@ const {
   version,
   quality,
   width,
-  hideContextMenu,
   config,
-  pictureInPictureToggle,
 } = props as CldVideoPlayerProps
 
 const playerTransformations = Array.isArray(transformation)
@@ -151,7 +148,7 @@ const videoRef = props.videoRef || defaultVideoRef
 const defaultPlayerRef = ref()
 const playerRef = props.playerRef || defaultPlayerRef
 
-const playerId = id || `player-${publicId.replace('/', '-')}-${idRef.value}`
+const playerId = id || `player-${publicId.replace('/', '-')}`
 let playerClassName = 'cld-video-player cld-fluid'
 
 if (className) {
@@ -182,44 +179,21 @@ const handleOnLoad = () => {
   if ('cloudinary' in window) {
     cloudinaryRef.value = window.cloudinary
 
-    let logoOptions: CloudinaryVideoPlayerOptionsLogo = {}
-
-    if (typeof logo === 'boolean') {
-      logoOptions.showLogo = logo
-    }
-    else if (typeof logo === 'object') {
-      logoOptions = {
-        ...logoOptions,
-        showLogo: true,
-        logoImageUrl: logo.imageUrl,
-        logoOnclickUrl: logo.onClickUrl,
-      }
-    }
-
-    const playerOptions: CloudinaryVideoPlayerOptions = {
-      autoplayMode: autoPlay,
-      cloud_name: useRuntimeConfig().public.cloudinary.cloudName,
-      controls,
-      fontFace: fontFace || '',
-      loop,
-      muted,
-      publicId,
-      secure: true,
-      width,
-      height,
-      aspectRatio: `${width}:${height}`,
-      transformation: playerTransformations,
-      ...logoOptions,
-      hideContextMenu,
-      pictureInPictureToggle,
-      ...useRuntimeConfig().public.cloudinary.cloud,
-      ...useRuntimeConfig().public.cloudinary.url,
-      ...config,
-    }
-
-    if (typeof colors === 'object') {
-      playerOptions.colors = colors
-    }
+    const playerOptions = getVideoPlayerOptions(
+      {
+        ...props,
+        colors: props.colors || {},
+        fontFace: props.fontFace || '',
+      } as GetVideoPlayerOptions,
+      {
+        cloud: {
+          cloudName: useRuntimeConfig().public.cloudinary.cloudName,
+        },
+        ...useRuntimeConfig().public.cloudinary.cloud,
+        ...useRuntimeConfig().public.cloudinary.url,
+        ...config,
+      },
+    )
 
     playerRef.value = cloudinaryRef.value.videoPlayer(
       videoRef.value,
@@ -242,7 +216,7 @@ defineExpose({
 useHead({
   script: [
     {
-      id: `cloudinary-videoplayer-${Math.floor(Math.random() * 100)}`,
+      id: 'cloudinary-videoplayer',
       src: `https://unpkg.com/cloudinary-video-player@${version}/dist/cld-video-player.min.js`,
       onload: handleOnLoad,
       onerror: e =>

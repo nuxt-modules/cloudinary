@@ -11,13 +11,6 @@ const OG_IMAGE_HEIGHT = 1254
 
 const { currentRoute } = useRouter()
 
-// Same story as with CldImage.vue component. Cannot use imported types for props
-// Come back to this after https://github.com/nuxt/nuxt/issues/20936 is fixed
-interface AssetOptionsResize {
-  crop?: string
-  width?: number | string
-}
-
 interface AssetOptions {
   assetType?: string
   crop?: string
@@ -32,7 +25,6 @@ interface AssetOptions {
   rawTransformations?: string[]
   removeBackground?: boolean
   sanitize?: boolean
-  resize?: AssetOptionsResize
   seoSuffix?: string
   src: string
   text?: any
@@ -125,7 +117,10 @@ const { url: twitterImageUrl } = useCldImageUrl({
 } as ConstructUrlProps)
 
 const computedTwitterTitle = computed(
-  () => props.twitterTitle || (currentRoute.value.meta?.title as string) || ' ',
+  () =>
+    props.twitterTitle
+    || (currentRoute.value.meta?.title as string)
+    || 'Learn More',
 )
 </script>
 
