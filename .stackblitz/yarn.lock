@@ -1163,10 +1163,10 @@
     vite-plugin-checker "^0.6.4"
     vue-bundle-renderer "^2.0.0"
 
-"@nuxtjs/cloudinary@^3.0.0-rc.1":
-  version "3.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-3.0.0-rc.1.tgz#2e6ff256fde72c517724345474cb5d024605bcd6"
-  integrity sha512-X/Dd2pjhaRHH+VaOBQZ1X1YQTbp5qg38GplvLiXvCkuml8BQ5j9y1LTRhAakRsZavV5FRvS2aNYCu6CHxR/p3Q==
+"@nuxtjs/cloudinary@^3.0.0-rc.2":
+  version "3.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-3.0.0-rc.2.tgz#02eca91f0cfe5c26f437a98e15f89c086539720d"
+  integrity sha512-2HSVQ/z6rfph4B2vDmRJ5CkwwgFBdwCoHD3crCvTpeCvAjZD4Mxqa9e+Xc5FPbwl87x4j9zHu0xUfrhRnxx+rg==
   dependencies:
     "@cloudinary-util/types" "1.0.2"
     "@cloudinary-util/url-loader" "^5.2.2"
