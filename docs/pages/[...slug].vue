@@ -26,10 +26,10 @@ const { data: surround } = await useAsyncData(
 
 useSeoMeta({
   titleTemplate: '%s - Nuxt Cloudinary',
-  title: page.value?.title,
-  ogTitle: `${page.value?.title} - Nuxt Cloudinary`,
-  description: page.value?.description,
-  ogDescription: page.value?.description,
+  title: page?.value?.title,
+  ogTitle: `${page?.value?.title} - Nuxt Cloudinary`,
+  description: page?.value?.description,
+  ogDescription: page?.value?.description,
 })
 
 const headline = computed(() =>
