@@ -16,6 +16,10 @@ The basic required props include `width`, `height`, and `src`:
 
 :cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080" id="1"}
 
+::callout{icon="i-heroicons-exclamation-triangle-20-solid" color="amber"}
+Note: If you wish to display several video players with the same media on the same page (as we did in the documentation below), make sure to pass unique `id` property.
+::
+
 ## Customization
 
 You can further take advantage of features like customizing your player:
