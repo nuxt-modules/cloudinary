@@ -88,6 +88,7 @@ export type CldVideoPlayerProps = Pick<
   pictureInPictureToggle?: boolean
   chapters?: Record<string | number, string> | boolean
   chaptersButton?: boolean
+  disableRemotePlayback?: boolean
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
