@@ -137,6 +137,7 @@ Adding a button to select chapters (you can pass `chapters` prop as a boolean if
 | pictureInPictureToogle | boolean        | -          | Enable Picture in Picture mode                                                                                                                                                   | true                                               |
 | chaptersButton         | boolean        | -          | Enable Chapters button                                                                                                                                                           | true                                               |
 | chapters               | object/boolean | -          | Chapters configuration                                                                                                                                                           | { 0: 'Chapter 1', 6: 'Chapter 2', 9: 'Chapter 3' } |
+| disableRemotePlayback  | boolean        | -          | Indicate if media element may have a remote playback UI                                                                                                                          | true                                               |
 
 ## Colors Prop
 
