@@ -1,5 +1,5 @@
 ---
-description: 
+description:
 ---
 
 The CldUploadWidget creates a new instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) giving you an easy way to add upload capabilities to your Nuxt app.
@@ -68,12 +68,13 @@ To use the above, create a Node-based API route, add the snippet, and use that e
 
 ## General Props
 
-| Prop Name         | Type     | Example                            |
-| ----------------- | -------- | ---------------------------------- |
-| children          | function | `{ (options) => {} }`              |
-| options           | object   | `{ encryption: {...} }`            |
-| signatureEndpoint | string   | `"/api/sign-cloudinary-params.js"` |
-| uploadPreset      | string   | `"my-upload-preset"`               |
+| Prop Name         | Type   | Example                            |
+| ----------------- | ------ | ---------------------------------- |
+| options           | object | `{ encryption: {...} }`            |
+| signatureEndpoint | string | `"/api/sign-cloudinary-params.js"` |
+| uploadPreset      | string | `"my-upload-preset"`               |
+| config            | object | `{ cloud: {}, url: {} }`           |
+| tags              | array  | `['music', 'sad']`                 |
 
 ## Event Props
 

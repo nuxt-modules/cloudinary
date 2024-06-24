@@ -41,6 +41,7 @@ export interface CldUploadWidgetProps {
   signatureEndpoint?: URL | RequestInfo
   uploadPreset?: string
   config?: ConfigOptions
+  tags?: Array<string>
 }
 
 // Parameters sourced from:
@@ -248,6 +249,14 @@ if (signed) {
   if (!uploadOptions.apiKey) {
     console.warn(`Missing dependency: Signed Upload requires an API key`)
   }
+}
+
+if (props.tags?.length) {
+  uploadOptions.showAdvancedOptions = true
+
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  uploadOptions.getTags = (cb: Function, prefix: string) =>
+    cb(prefix ? props.tags?.filter(t => !t.indexOf(prefix)) : props.tags)
 }
 
 // Handle result states and callbacks
