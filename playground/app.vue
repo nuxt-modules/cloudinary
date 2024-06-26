@@ -63,6 +63,7 @@ const colors = {
   <CldUploadWidget
     v-slot="{ open }"
     upload-preset="nuxt-cloudinary-unsigned"
+    :tags="['sad', 'music']"
   >
     <button
       type="button"

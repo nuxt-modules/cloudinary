@@ -30,6 +30,7 @@ export interface CloudinaryVideoPlayerOptions {
   pictureInPictureToggle?: boolean
   chapters?: Record<string | number, string> | boolean
   chaptersButton?: boolean
+  disableRemotePlayback?: boolean
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -87,6 +88,7 @@ export type CldVideoPlayerProps = Pick<
   pictureInPictureToggle?: boolean
   chapters?: Record<string | number, string> | boolean
   chaptersButton?: boolean
+  disableRemotePlayback?: boolean
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
@@ -244,6 +246,7 @@ useHead({
       :class="playerClassName"
       :width="width"
       :height="height"
+      :disableRemotePlayback="disableRemotePlayback"
     />
   </div>
 </template>
