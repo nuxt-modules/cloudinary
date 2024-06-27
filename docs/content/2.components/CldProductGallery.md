@@ -2,7 +2,7 @@
 description: 
 ---
 
-The CldProductGallery creates a product gallery element that uses an instance of the [Cloudinary Product Gallery Widget](https://cloudinary.com/documentation/product_gallery_reference) to give you an easy way to add product gallery component to your Nuxt app.
+The CldProductGallery creates a product gallery element that uses an instance of the [Cloudinary Product Gallery Widget](https://cloudinary.com/documentation/product_gallery_reference?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) to give you an easy way to add product gallery component to your Nuxt app.
 
 ## Basic Usage
 
@@ -42,7 +42,7 @@ CldProductGallery accepts several customization props listed below:
 | zoom             | boolean | `false`                                                              |
 | params           | object  | `{}`                                                                 |
 
-For all other available props checkout [Cloudinary Product Gallery Docs](https://cloudinary.com/documentation/product_gallery_reference#widget_parameters) and make sure to pass them to the component as `params` like following:
+For all other available props checkout [Cloudinary Product Gallery Docs](https://cloudinary.com/documentation/product_gallery_reference#widget_parameters?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) and make sure to pass them to the component as `params` like following:
 
 ```vue
 <script setup lang="ts">

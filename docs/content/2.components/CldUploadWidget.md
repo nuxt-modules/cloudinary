@@ -2,7 +2,7 @@
 description:
 ---
 
-The CldUploadWidget creates a new instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) giving you an easy way to add upload capabilities to your Nuxt app.
+The CldUploadWidget creates a new instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) giving you an easy way to add upload capabilities to your Nuxt app.
 
 ## Basic Usage
 
@@ -11,7 +11,7 @@ The CldUploadWidget will not render any UI by default. It will instead only rend
 There are two options when using the CldUploadWidget: signed and unsigned. These options allow you to control the amount of security and restrictions you place on uploads.
 
 ::callout{icon="i-heroicons-light-bulb"}
-To learn more about signed and unsigned upload, check out the [Cloudinary docs](https://cloudinary.com/documentation/upload_images#uploading_assets_to_the_cloud).
+To learn more about signed and unsigned upload, check out the [Cloudinary docs](https://cloudinary.com/documentation/upload_images#uploading_assets_to_the_cloud?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary).
 ::
 
 ### Unsigned
@@ -97,7 +97,7 @@ To use the above, create a Node-based API route, add the snippet, and use that e
 | onTags           | function | `(result, options) => { }` |
 | onUploadAdded    | function | `(result, options) => { }` |
 
-To learn more about the event callbacks and when they trigger, see: https://cloudinary.com/documentation/upload_widget_reference#events
+To learn more about the event callbacks and when they trigger, [see](https://cloudinary.com/documentation/upload_widget_reference#events?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary)
 
 ### Callback Options
 

@@ -2,7 +2,7 @@
 description: 
 ---
 
-The CldMediaLibrary creates a media gallery element that uses an instance of the [Cloudinary Media Library Widget](https://cloudinary.com/documentation/media_library_widget) to give you an easy way to add media librarry component to your Nuxt app.
+The CldMediaLibrary creates a media gallery element that uses an instance of the [Cloudinary Media Library Widget](https://cloudinary.com/documentation/media_library_widget?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) to give you an easy way to add media librarry component to your Nuxt app.
 
 ## Basic Usage
 
@@ -35,7 +35,7 @@ CldMediaLibrary accepts several customization props listed below:
 | useSaml   | boolean | `false`    |
 | params    | object  | `{}`       |
 
-For all other available props checkout [Cloudinary Media Gallery Docs](https://cloudinary.com/documentation/media_library_widget#2_set_the_configuration_options) and make sure to pass them to the component as `params` like following:
+For all other available props checkout [Cloudinary Media Gallery Docs](https://cloudinary.com/documentation/media_library_widget#2_set_the_configuration_options?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) and make sure to pass them to the component as `params` like following:
 
 ```vue
 <script setup lang="ts">

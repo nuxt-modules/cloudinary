@@ -4,7 +4,7 @@ description:
 
 ## The usage
 
-The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player) giving you a full customizable experience for your player.
+The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) giving you a full customizable experience for your player.
 
 ## Basic Usage
 
@@ -83,7 +83,7 @@ Picture-in-picture helps your viewers continue their multitasking agenda and mai
 
 ## Chapters
 
-Adding a button to select chapters (you can pass `chapters` prop as a boolean if the video already has chapters as explained [here](https://cloudinary.com/documentation/video_player_customization#video_chapters)).
+Adding a button to select chapters (you can pass `chapters` prop as a boolean if the video already has chapters as explained [here](https://cloudinary.com/documentation/video_player_customization#video_chapters?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary)).
 
 ```html
 <script setup lang="ts">
@@ -111,7 +111,7 @@ Adding a button to select chapters (you can pass `chapters` prop as a boolean if
 
 | Prop Name              | Type           | Default    | Description                                                                                                                                                                      | Example                                            |
 | ---------------------- | -------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| autoPlay               | string         | `"never"`  | When, if, should the video automatically play. See `autoplayMode` in [Video Player docs](https://cloudinary.com/documentation/video_player_api_reference#constructor_parameters) | `"on-scroll"`                                      |
+| autoPlay               | string         | `"never"`  | When, if, should the video automatically play. See `autoplayMode` in [Video Player docs](https://cloudinary.com/documentation/video_player_api_reference#constructor_parameters?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) | `"on-scroll"`                                      |
 | className              | string         | -          | Additional class names added to the video container                                                                                                                              | `"my-video-player"`                                |
 | colors                 | object         | See below  | Player chrome colors                                                                                                                                                             | See Colors Below                                   |
 | controls               | boolean        | `true`     | Show player controls                                                                                                                                                             | `true`                                             |
@@ -149,7 +149,7 @@ The `colors` prop takes an object that can control what colors are used in the p
 | base      | string | `"#000000"` | Player controls bar, information bar, central play button, and right-click context menu. |
 | text      | string | `"#FFFFFF"` | All the text and icons that are present within the video player UI.                      |
 
-Learn more about the color scheme options and how they're used [on the Cloudinary docs](https://cloudinary.com/documentation/video_player_customization#color_scheme).
+Learn more about the color scheme options and how they're used [on the Cloudinary docs](https://cloudinary.com/documentation/video_player_customization#color_scheme?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary).
 
 ## Event Props
 

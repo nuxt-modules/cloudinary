@@ -2,7 +2,7 @@
 description: 
 ---
 
-The CldUploadButton creates a button element that uses an instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget) to give you an easy way to add upload capabilities to your Nuxt app.
+The CldUploadButton creates a button element that uses an instance of the [Cloudinary Upload Widget](https://cloudinary.com/documentation/upload_widget?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) to give you an easy way to add upload capabilities to your Nuxt app.
 
 The CldUploadButton component wraps the [CldUploadWidget](/components/clduploadwidget) component providing a pre-defined UI (a button). The same concepts apply, including having the option of using Signed or Unsigned uploads.
 

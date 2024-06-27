@@ -32,7 +32,7 @@ features:
       target: '_blank'
     - title: 'Cloudinary URL Loader'
       icon: 'i-simple-icons-cloudinary'
-      to: 'https://cloudinary.com'
+      to: 'https://cloudinary.com?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary'
       target: '_blank'
     - title: 'Optimized images in modern formats'
       icon: 'i-heroicons-photo'
