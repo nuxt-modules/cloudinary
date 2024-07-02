@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@nuxtjs/cloudinary':
-        specifier: ^3.0.0
-        version: 3.0.0(typescript@5.4.5)
+        specifier: ^3.0.1
+        version: 3.0.1(typescript@5.4.5)
     devDependencies:
       '@iconify-json/ph':
         specifier: ^1.1.10
@@ -1556,6 +1556,7 @@ packages:
       - magicast
       - rollup
       - supports-color
+    dev: true
 
   /@nuxt/kit@3.12.2:
     resolution: {integrity: sha512-5kOqEzfc3FsAncjK2je7vuq4/QsR5ypViTnop52mlFLf0Ku1NMCrWCSWYowAh4P0yqTACMAZYa+HdRZHscU84g==}
@@ -1585,7 +1586,6 @@ packages:
       - magicast
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/schema@3.12.1:
     resolution: {integrity: sha512-yPgZVczd0vKhG73E7N61+EZHZTjtCvh2LKVhvT7c69zLBnPPqJNK1oJfqsKUCOOHSm1o1rTG8Xaibp91q2I49w==}
@@ -1606,6 +1606,7 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
+    dev: true
 
   /@nuxt/schema@3.12.2:
     resolution: {integrity: sha512-IRBuOEPOIe1CANKnO2OUiqZ1Hp/0htPkLaigK7WT6ef/SdIFZUd68Tqqejqy2AFrbgU9G80k3U7eg2XUdaiQlQ==}
@@ -1626,7 +1627,6 @@ packages:
     transitivePeerDependencies:
       - rollup
       - supports-color
-    dev: true
 
   /@nuxt/telemetry@2.5.4:
     resolution: {integrity: sha512-KH6wxzsNys69daSO0xUv0LEBAfhwwjK1M+0Cdi1/vxmifCslMIY7lN11B4eywSfscbyVPAYJvANyc7XiVPImBQ==}
@@ -1804,12 +1804,12 @@ packages:
       - vue-tsc
     dev: true
 
-  /@nuxtjs/cloudinary@3.0.0(typescript@5.4.5):
-    resolution: {integrity: sha512-FvFNjAQHeRJxRXH7395gUZq60HUdfwHNuy48xGOdJbfo8A7rcv643AFFuXGrXqKtF5IB8KXZhL/XoVAjnIDuLA==}
+  /@nuxtjs/cloudinary@3.0.1(typescript@5.4.5):
+    resolution: {integrity: sha512-PCmo4m7d4Tiybn0bIPOEf+Bv3xk3BF8w7YgV9BfE7RxuqQBYEk+zR249Mb6ezOZ8PMzr5pYzmL3b5nudpn09Gg==}
     dependencies:
       '@cloudinary-util/types': 1.0.2
       '@cloudinary-util/url-loader': 5.3.1
-      '@nuxt/kit': 3.12.1(magicast@0.3.4)
+      '@nuxt/kit': 3.12.2
       '@unpic/vue': 0.0.48(typescript@5.4.5)
       defu: 6.1.4
     transitivePeerDependencies:

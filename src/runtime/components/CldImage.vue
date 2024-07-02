@@ -166,6 +166,7 @@ const pollForProcessingImage = async (options: Event): Promise<boolean> => {
     :width="width"
     :height="height"
     v-bind="$attrs"
+    :alt="alt"
     :priority="priority"
     cdn="cloudinary"
     :transformer="transformUrl"
