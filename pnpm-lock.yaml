@@ -6,11 +6,11 @@ settings:
 
 dependencies:
   '@cloudinary-util/types':
-    specifier: 1.0.2
-    version: 1.0.2
+    specifier: 1.2.0
+    version: 1.2.0
   '@cloudinary-util/url-loader':
-    specifier: ^5.3.1
-    version: 5.3.1
+    specifier: ^5.6.0
+    version: 5.6.0
   '@nuxt/kit':
     specifier: ^3.11.2
     version: 3.11.2(rollup@3.29.4)
@@ -427,25 +427,25 @@ packages:
       mime: 3.0.0
     dev: true
 
-  /@cloudinary-util/types@1.0.2:
-    resolution: {integrity: sha512-j3xUfN4uMFDMSvoQeOMxqKYsGZovlRFr8niOQXfcqoHp7NVBiJm8oy6y2HDGQhxH63irmFt8VtzJEnYwGYsGXg==}
+  /@cloudinary-util/types@1.2.0:
+    resolution: {integrity: sha512-2Mo5juB1HV+GmVLq2+bU0Yg5FB6r+csbHyDN6njc0AqkEkp+AW+Q6kYbbTYkT7zk3x9tBWfKn3lfR7wUCwowJw==}
     dev: false
 
-  /@cloudinary-util/types@1.0.5:
-    resolution: {integrity: sha512-QySi6Q138yg/qrD7f6yscH9T+/8VwUfF9AiwFPMS89uI5wnSG9nhC+93a/8iUpgk9ujTDVqE8+TqYAbxvF0BMA==}
+  /@cloudinary-util/types@1.2.0-beta.1:
+    resolution: {integrity: sha512-zdMPqadGhRWwSZQcgsUoouJhr2Dnpc4p1ytGLtnEmVFNvwDhYMR6ER3xLP5FoSNzPx10SoWfNl6UWQKInkk+iQ==}
     dev: false
 
-  /@cloudinary-util/url-loader@5.3.1:
-    resolution: {integrity: sha512-cYgnazu7cLjRaajGmhyVfMxjrOz4EaSQsWK1/utV4K5kknUUhu8vUovGunDQJbEGmBWB/TUt7zmwpdUAQ+pe4g==}
+  /@cloudinary-util/url-loader@5.6.0:
+    resolution: {integrity: sha512-oWTXaaBralKLfk9tD2fWaTfwflx9Acug6L3GO72sLPxIssg+SyeNDiIrNwIFRx6SkFR74bWWNqjp2yu135gaDQ==}
     dependencies:
-      '@cloudinary-util/types': 1.0.5
-      '@cloudinary-util/util': 3.0.2
+      '@cloudinary-util/types': 1.2.0-beta.1
+      '@cloudinary-util/util': 3.2.0
       '@cloudinary/url-gen': 1.15.0
       zod: 3.22.4
     dev: false
 
-  /@cloudinary-util/util@3.0.2:
-    resolution: {integrity: sha512-EMmspJLVFn9hX92DaK/yuSzSUXF/BJ88crzN8vT1qCaJMMWKapGNo2HZ6YNgG69PP/Jngdk0mTINDU+GP3A1CA==}
+  /@cloudinary-util/util@3.2.0:
+    resolution: {integrity: sha512-VJBqAT3W0HQ9kyMagv+EzXkM/VYR9Ks01ewGxsS8T8b2N0NZFPAhYKeU2H9fOXSl6BVrD6aVYjJZAoT8pfQIyA==}
     dev: false
 
   /@cloudinary/transformation-builder-sdk@1.13.3:

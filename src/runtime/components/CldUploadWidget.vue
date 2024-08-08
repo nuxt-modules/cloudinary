@@ -1,7 +1,14 @@
 <script setup lang="ts">
 import { useHead } from '@unhead/vue'
 import { ref, watch } from 'vue'
-import { type ConfigOptions } from '@cloudinary-util/url-loader'
+import {
+  type ConfigOptions,
+  generateSignatureCallback,
+  generateUploadWidgetResultCallback,
+  getUploadWidgetOptions,
+  UPLOAD_WIDGET_EVENTS,
+} from '@cloudinary-util/url-loader'
+import type { CloudinaryUploadWidgetResults } from '@cloudinary-util/types'
 import { useRuntimeConfig } from '#imports'
 
 export interface CldUploadWidgetProps {
@@ -167,8 +174,6 @@ function triggerOnIdle(callback: any) {
   return setTimeout(() => callback(), 1)
 }
 
-const WIDGET_WATCHED_EVENTS = ['success']
-
 const props = defineProps<CldUploadWidgetProps>()
 
 const {
@@ -197,10 +202,8 @@ const {
 const cloudinary = ref()
 const widget = ref()
 
-const signed = !!signatureEndpoint
-
-const error = ref(undefined)
-const results = ref<CldUploadWidgetResults | undefined>(undefined)
+const error = ref()
+const results = ref<CloudinaryUploadWidgetResults>()
 const isScriptLoading = ref(true)
 
 // When creating a signed upload, you need to provide both your Cloudinary API Key
@@ -233,23 +236,72 @@ const instanceMethods = {
   'upload-added': onUploadAdded,
 }
 
-const uploadOptions = {
-  cloudName: useRuntimeConfig().public.cloudinary.cloudName,
-  uploadPreset:
-    uploadPreset || useRuntimeConfig().public.cloudinary.uploadPreset,
-  apiKey: useRuntimeConfig().public.cloudinary.apiKey,
-  ...options,
-  ...instanceMethods,
-  ...config,
-}
+const uploadSignature
+  = signatureEndpoint
+  && generateSignatureCallback({
+    signatureEndpoint: String(signatureEndpoint),
+    fetch,
+  })
 
-if (signed) {
-  uploadOptions.uploadSignature = generateSignature
+const uploadOptions = getUploadWidgetOptions(
+  {
+    uploadPreset:
+      uploadPreset || useRuntimeConfig().public.cloudinary.uploadPreset,
+    apiKey: useRuntimeConfig().public.cloudinary.apiKey,
+    uploadSignature,
+    ...options,
+  },
+  {
+    cloud: {
+      cloudName: useRuntimeConfig().public.cloudinary.cloudName,
+    },
+    ...options,
+    ...instanceMethods,
+    ...config,
+  },
+)
 
-  if (!uploadOptions.apiKey) {
-    console.warn(`Missing dependency: Signed Upload requires an API key`)
-  }
-}
+const resultsCallback = generateUploadWidgetResultCallback({
+  onError: (uploadError) => {
+    error.value = uploadError
+
+    if (typeof onError === 'function') {
+      onError(uploadError, {
+        widget: widget.value.current,
+        ...instanceMethods,
+      })
+    }
+  },
+  onResult: (uploadResult) => {
+    if (typeof uploadResult?.event !== 'string') return
+
+    results.value = uploadResult
+
+    const widgetEvent = UPLOAD_WIDGET_EVENTS[
+      uploadResult.event
+    ] as keyof typeof props
+
+    if (
+      typeof widgetEvent === 'string'
+      && typeof props[widgetEvent] === 'function'
+    ) {
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      const callback = props[widgetEvent] as Function
+      callback(uploadResult, {
+        widget: widget.value.current,
+        ...instanceMethods,
+      })
+    }
+
+    const widgetEventAction = `${widgetEvent}Action` as keyof typeof props
+
+    if (widgetEventAction && typeof props[widgetEventAction] === 'function') {
+      // eslint-disable-next-line @typescript-eslint/ban-types
+      const action = props[widgetEventAction] as Function
+      action(uploadResult)
+    }
+  },
+})
 
 if (props.tags?.length) {
   uploadOptions.showAdvancedOptions = true
@@ -306,55 +358,12 @@ function handleOnLoad() {
 }
 
 /**
- * generateSignature
- * @description Makes a request to an endpoint to sign Cloudinary parameters as part of widget creation
- */
-
-// eslint-disable-next-line @typescript-eslint/ban-types
-function generateSignature(callback: Function, paramsToSign: object) {
-  if (typeof signatureEndpoint === 'undefined') {
-    throw new TypeError(
-      'Failed to generate signature: signatureEndpoint undefined.',
-    )
-  }
-  fetch(signatureEndpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      paramsToSign,
-    }),
-  })
-    .then(r => r.json())
-    .then(({ signature }) => {
-      callback(signature)
-    })
-}
-
-/**
  * createWidget
  * @description Creates a new instance of the Cloudinary widget and stores in a ref
  */
 
 function createWidget() {
-  return cloudinary.value?.createUploadWidget(
-    uploadOptions,
-    (uploadError: any, uploadResult: any) => {
-      // The callback is a bit more chatty than failed or success so
-      // only trigger when one of those are the case. You can additionally
-      // create a separate handler such as onEvent and trigger it on
-      // ever occurrence
-
-      if (typeof uploadError !== 'undefined') {
-        error.value = uploadError
-      }
-
-      if (WIDGET_WATCHED_EVENTS.includes(uploadResult?.event)) {
-        results.value = uploadResult
-      }
-    },
-  )
+  return cloudinary.value.createUploadWidget(uploadOptions, resultsCallback)
 }
 
 function invokeInstanceMethod(method: string) {
