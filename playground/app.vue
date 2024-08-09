@@ -84,6 +84,7 @@ const colors = {
     priority
     sizes="(max-width: 600px) 480px,
          800px"
+    :replace-background="{ prompt: 'fish tank', seed: 3 }"
   />
   <CldImage
     src="cld-sample-5"

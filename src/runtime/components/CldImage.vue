@@ -73,6 +73,7 @@ interface ImageOptions extends AssetOptions {
   remove?: ImageOptionsRemovePrompt | ImageOptionsRemove
   replace?: Array<string | boolean> | ImageOptionsGenerativeReplace
   restore?: boolean
+  replaceBackground?: boolean | string | { prompt: string, seed: number }
 }
 
 export interface CldImageProps extends ImageOptions {
