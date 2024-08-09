@@ -569,30 +569,30 @@
   dependencies:
     mime "^3.0.0"
 
-"@cloudinary-util/types@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.0.2.tgz#3ebc14f01f3c113183ad47cc5a9c69e65d06f762"
-  integrity sha512-j3xUfN4uMFDMSvoQeOMxqKYsGZovlRFr8niOQXfcqoHp7NVBiJm8oy6y2HDGQhxH63irmFt8VtzJEnYwGYsGXg==
+"@cloudinary-util/types@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.2.0.tgz#c67ee4c4948236327872239165bf798eeeb899c5"
+  integrity sha512-2Mo5juB1HV+GmVLq2+bU0Yg5FB6r+csbHyDN6njc0AqkEkp+AW+Q6kYbbTYkT7zk3x9tBWfKn3lfR7wUCwowJw==
 
-"@cloudinary-util/types@1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.0.5.tgz#0325881338b3c390b4ad27f5484e95cdb0c4f9b7"
-  integrity sha512-QySi6Q138yg/qrD7f6yscH9T+/8VwUfF9AiwFPMS89uI5wnSG9nhC+93a/8iUpgk9ujTDVqE8+TqYAbxvF0BMA==
+"@cloudinary-util/types@1.2.0-beta.1":
+  version "1.2.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/types/-/types-1.2.0-beta.1.tgz#ba3461e97a26ba8d9d0d733dd983f504a3db0303"
+  integrity sha512-zdMPqadGhRWwSZQcgsUoouJhr2Dnpc4p1ytGLtnEmVFNvwDhYMR6ER3xLP5FoSNzPx10SoWfNl6UWQKInkk+iQ==
 
-"@cloudinary-util/url-loader@^5.3.1":
-  version "5.3.1"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-5.3.1.tgz#2898ea4f75a968a5857046d54bd589f228d04848"
-  integrity sha512-cYgnazu7cLjRaajGmhyVfMxjrOz4EaSQsWK1/utV4K5kknUUhu8vUovGunDQJbEGmBWB/TUt7zmwpdUAQ+pe4g==
+"@cloudinary-util/url-loader@^5.6.0":
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/url-loader/-/url-loader-5.6.0.tgz#778c9b09faa02edd19702e742c931ce9927a7790"
+  integrity sha512-oWTXaaBralKLfk9tD2fWaTfwflx9Acug6L3GO72sLPxIssg+SyeNDiIrNwIFRx6SkFR74bWWNqjp2yu135gaDQ==
   dependencies:
-    "@cloudinary-util/types" "1.0.5"
-    "@cloudinary-util/util" "3.0.2"
+    "@cloudinary-util/types" "1.2.0-beta.1"
+    "@cloudinary-util/util" "3.2.0"
     "@cloudinary/url-gen" "1.15.0"
     zod "^3.22.4"
 
-"@cloudinary-util/util@3.0.2":
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-3.0.2.tgz#a86334eeec9912cf90054f5688a7d10fca9fe952"
-  integrity sha512-EMmspJLVFn9hX92DaK/yuSzSUXF/BJ88crzN8vT1qCaJMMWKapGNo2HZ6YNgG69PP/Jngdk0mTINDU+GP3A1CA==
+"@cloudinary-util/util@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@cloudinary-util/util/-/util-3.2.0.tgz#cdfb15ca0f04063203109ffbf3a5bc6de7f94c2b"
+  integrity sha512-VJBqAT3W0HQ9kyMagv+EzXkM/VYR9Ks01ewGxsS8T8b2N0NZFPAhYKeU2H9fOXSl6BVrD6aVYjJZAoT8pfQIyA==
 
 "@cloudinary/transformation-builder-sdk@^1.10.0":
   version "1.12.0"
@@ -1169,13 +1169,13 @@
     vite-plugin-checker "^0.6.4"
     vue-bundle-renderer "^2.0.0"
 
-"@nuxtjs/cloudinary@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-3.0.1.tgz#3678c6ba77d5d5f8a0d442915bb26da0b13a33da"
-  integrity sha512-PCmo4m7d4Tiybn0bIPOEf+Bv3xk3BF8w7YgV9BfE7RxuqQBYEk+zR249Mb6ezOZ8PMzr5pYzmL3b5nudpn09Gg==
+"@nuxtjs/cloudinary@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/cloudinary/-/cloudinary-3.1.0.tgz#d2a0261fd751f9c9bebe31556e5fbbe001aa5dc7"
+  integrity sha512-RTMVY34dIwiYsyfNsIDuN/LgJ5A/kt5XCWO0fLOjDCA6oW822HrxIwIkxRM8zd8T4VoVKIzZvyiXZNXMfKaoZw==
   dependencies:
-    "@cloudinary-util/types" "1.0.2"
-    "@cloudinary-util/url-loader" "^5.3.1"
+    "@cloudinary-util/types" "1.2.0"
+    "@cloudinary-util/url-loader" "^5.6.0"
     "@nuxt/kit" "^3.11.2"
     "@unpic/vue" "^0.0.48"
     defu "^6.1.4"
