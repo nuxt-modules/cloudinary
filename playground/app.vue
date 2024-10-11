@@ -1,40 +1,38 @@
 <script lang="ts" setup>
 // Usage of `useCldImageUrl` composable
-const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
-console.log(url)
+const { url } = useCldImageUrl({ options: { src: "/cld-sample-5.jpg" } });
+console.log(url);
 
 const { url: videoUrl } = useCldVideoUrl({
-  options: { src: 'videos/mountain-stars' },
-})
-console.log(videoUrl)
+  options: { src: "videos/mountain-stars" },
+});
+console.log(videoUrl);
 
 const mediaAssets = [
-  { tag: 'electric_car_product_gallery_demo' }, // by default mediaType: "image"
-  { tag: 'electric_car_product_gallery_demo', mediaType: 'video' },
-  { tag: 'electric_car_360_product_gallery_demo', mediaType: 'spin' },
-]
+  { tag: "electric_car_product_gallery_demo" }, // by default mediaType: "image"
+  { tag: "electric_car_product_gallery_demo", mediaType: "video" },
+  { tag: "electric_car_360_product_gallery_demo", mediaType: "spin" },
+];
 
-const buttonId = 'open-btn'
+const buttonId = "open-btn";
 
-const cldVideoRef = ref()
+const cldVideoRef = ref();
 
 const chapters = {
-  0: 'Chapter 1',
-  6: 'Chapter 2',
-  9: 'Chapter 3',
-}
+  0: "Chapter 1",
+  6: "Chapter 2",
+  9: "Chapter 3",
+};
 
 const colors = {
-  accent: '#ff0000',
-  base: '#00ff00',
-  text: '#0000ff',
-}
+  accent: "#ff0000",
+  base: "#00ff00",
+  text: "#0000ff",
+};
 </script>
 
 <template>
-  <button :id="buttonId">
-    Select Image or Video
-  </button>
+  <button :id="buttonId">Select Image or Video</button>
   <CldMediaLibrary
     api-key="12345"
     :button-id="buttonId"
@@ -45,11 +43,13 @@ const colors = {
     cloud-name="demo"
     :button-id="buttonId"
   />
-  <CldOgImage
-    src="cld-sample-2"
-    twitter-title="test"
-  />
+  <CldOgImage src="cld-sample-2" twitter-title="test" />
   <CldVideoPlayer
+    auto-play
+    autoplay-mode="on-scroll"
+    loop
+    muted
+    playsinline
     ref="cldVideoRef"
     width="1620"
     height="1080"
@@ -65,12 +65,7 @@ const colors = {
     upload-preset="nuxt-cloudinary-unsigned"
     :tags="['sad', 'music']"
   >
-    <button
-      type="button"
-      @click="open"
-    >
-      Upload an Image
-    </button>
+    <button type="button" @click="open">Upload an Image</button>
   </CldUploadWidget>
   <CldUploadButton upload-preset="nuxt-cloudinary-unsigned">
     Upload
