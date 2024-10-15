@@ -254,6 +254,7 @@ const uploadOptions = getUploadWidgetOptions(
   {
     cloud: {
       cloudName: useRuntimeConfig().public.cloudinary.cloudName,
+      apiKey: useRuntimeConfig().public.cloudinary.apiKey,
     },
     ...options,
     ...instanceMethods,
