@@ -15,7 +15,9 @@ export interface CloudinaryVideoPlayer {
 }
 
 export interface CloudinaryVideoPlayerOptions {
-  autoplayMode?: string
+  autoPlay?: boolean
+  autoplayMode?: 'never' | 'always' | 'on-scroll'
+  playsinline?: boolean
   cloud_name?: string
   colors?: CloudinaryVideoPlayerOptionsColors
   controls?: boolean
@@ -61,7 +63,9 @@ export type CldVideoPlayerProps = Pick<
   | 'transformation'
   | 'hideContextMenu'
 > & {
-  autoPlay?: string
+  autoPlay?: boolean
+  autoplayMode?: 'never' | 'always' | 'on-scroll'
+  playsinline?: boolean
   className?: string
   height: string | number
   id?: string
@@ -92,7 +96,9 @@ export type CldVideoPlayerProps = Pick<
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
-  autoPlay: 'never',
+  autoPlay: false,
+  autoplayMode: 'always',
+  playsinline: false,
   controls: true,
   logo: true,
   loop: false,

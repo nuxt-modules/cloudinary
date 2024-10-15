@@ -51,6 +51,11 @@ const colors = {
   />
   <CldVideoPlayer
     ref="cldVideoRef"
+    auto-play
+    autoplay-mode="on-scroll"
+    loop
+    muted
+    playsinline
     width="1620"
     height="1080"
     src="videos/dog-running-snow"
