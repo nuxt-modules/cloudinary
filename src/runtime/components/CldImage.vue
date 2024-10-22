@@ -4,7 +4,6 @@
 // import type { AssetOptions } from "@cloudinary-util/url-loader";
 // import type { ConfigOptions } from "@cloudinary-util/url-loader";
 import { ref } from 'vue'
-import { Image } from '@unpic/vue'
 import type { ConstructUrlProps } from '@cloudinary-util/url-loader'
 import { useCldImageUrl } from '../composables/useCldImageUrl'
 
@@ -105,9 +104,7 @@ export interface CldImageProps extends ImageOptions {
 
 const props = defineProps<CldImageProps>()
 
-const { config, loaderOptions, ...options } = props
-
-const { url } = useCldImageUrl({ options, config } as ConstructUrlProps)
+const { config } = props
 
 const transformUrl = () => {
   const options = {
@@ -130,14 +127,18 @@ const transformUrl = () => {
 
 const imgKey = ref('image-key')
 
-const handleError = async (payload: Event) => {
+const handleError = async (payload: string | Event) => {
   const result = await pollForProcessingImage(payload)
 
   if (result) imgKey.value = `${imgKey.value}-${Math.random()}`
 }
 
-const pollForProcessingImage = async (options: Event): Promise<boolean> => {
-  const { src } = options.target as EventTarget & { src: string }
+const pollForProcessingImage = async (
+  options: string | Event,
+): Promise<boolean> => {
+  const {
+    target: { src },
+  } = options as Event & { target: { src: string } }
   try {
     await new Promise((resolve, reject) => {
       fetch(src).then((res) => {
@@ -160,17 +161,16 @@ const pollForProcessingImage = async (options: Event): Promise<boolean> => {
 </script>
 
 <template>
-  <Image
+  <NuxtImg
     :key="imgKey"
-    :src="url"
-    :layout="layout || 'constrained'"
+    :src="transformUrl()"
     :width="width"
     :height="height"
     v-bind="$attrs"
     :alt="alt"
-    :priority="priority"
+    :loading="priority || loading === 'lazy' ? 'lazy' : 'eager'"
+    :fetchpriority="priority || fetchPriority === 'high' ? 'high' : 'low'"
     cdn="cloudinary"
-    :transformer="transformUrl"
     @error="handleError"
   />
 </template>
