@@ -4,6 +4,7 @@ import {
   createResolver,
   addImportsDir,
   addComponentsDir,
+  installModule,
 } from '@nuxt/kit'
 import { defu } from 'defu'
 import type { ConfigOptions } from '@cloudinary-util/url-loader'
@@ -26,7 +27,7 @@ export default defineNuxtModule<ModuleOptions>({
     cloudName: process.env.CLOUDINARY_CLOUD_NAME,
     analytics: true,
   },
-  setup(options, nuxt) {
+  async setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.cloudinary = defu(
@@ -58,5 +59,6 @@ export default defineNuxtModule<ModuleOptions>({
       priority: 999,
       global: true,
     })
+    await installModule('@nuxt/image')
   },
 })

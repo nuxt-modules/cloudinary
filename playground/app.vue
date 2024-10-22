@@ -48,6 +48,9 @@ const colors = {
   <CldOgImage
     src="cld-sample-2"
     twitter-title="test"
+    width="1620"
+    height="1080"
+    alt="Sample Product"
   />
   <CldVideoPlayer
     ref="cldVideoRef"
@@ -76,15 +79,12 @@ const colors = {
     Upload
   </CldUploadButton>
   <CldImage
-    src="cld-sample-5"
-    width="987"
-    height="987"
+    src="/images/sneakers"
+    width="900"
+    height="900"
     alt="Sample Product"
     crop="fill"
     priority
-    sizes="(max-width: 600px) 480px,
-         800px"
-    :replace-background="{ prompt: 'fish tank', seed: 3 }"
   />
   <CldImage
     src="cld-sample-5"
