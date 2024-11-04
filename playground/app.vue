@@ -121,7 +121,12 @@ const onError = (
     width="987"
     height="987"
     alt="Sample Product"
-    crop="fill"
+    :crop="{
+      type: 'thumb',
+      width: 600,
+      height: 600,
+      source: true,
+    }"
     :overlays="[
       {
         position: {
