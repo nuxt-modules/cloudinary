@@ -48,7 +48,7 @@ const handleOnLoad = () => {
 useHead({
   script: [
     {
-      id: `cloudinary-media-library-${Math.floor(Math.random() * 100)}`,
+      id: 'cloudinary-media-library',
       src: `https://media-library.cloudinary.com/global/all.js`,
       onload: handleOnLoad,
       onerror: e =>

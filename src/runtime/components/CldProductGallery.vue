@@ -5,7 +5,7 @@ import { useRuntimeConfig } from '#imports'
 
 const cloudinaryRef = ref()
 
-type MediaType = 'image' | 'video' | 'spin'
+export type MediaType = 'image' | 'video' | 'spin'
 
 type ProductGalleryProps = {
   cloudName?: string

@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-// Usage of `useCldImageUrl` composable
+import type {
+  CloudinaryUploadWidgetError,
+  CloudinaryUploadWidgetResults,
+} from '@cloudinary-util/types'
+import type { MediaType } from '../src/runtime/components/CldProductGallery.vue'
+
 const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
 console.log(url)
 
@@ -8,7 +13,7 @@ const { url: videoUrl } = useCldVideoUrl({
 })
 console.log(videoUrl)
 
-const mediaAssets = [
+const mediaAssets: { tag: string, mediaType?: MediaType }[] = [
   { tag: 'electric_car_product_gallery_demo' }, // by default mediaType: "image"
   { tag: 'electric_car_product_gallery_demo', mediaType: 'video' },
   { tag: 'electric_car_360_product_gallery_demo', mediaType: 'spin' },
@@ -29,6 +34,17 @@ const colors = {
   base: '#00ff00',
   text: '#0000ff',
 }
+
+const onResult = (results: CloudinaryUploadWidgetResults) => {
+  console.log('results', results)
+}
+const onError = (
+  error: CloudinaryUploadWidgetError,
+  results: CloudinaryUploadWidgetResults,
+) => {
+  console.log('error', error)
+  console.log('results', results)
+}
 </script>
 
 <template>
@@ -48,6 +64,9 @@ const colors = {
   <CldOgImage
     src="cld-sample-2"
     twitter-title="test"
+    width="987"
+    height="987"
+    alt="twitter-title"
   />
   <CldVideoPlayer
     ref="cldVideoRef"
@@ -69,6 +88,8 @@ const colors = {
     v-slot="{ open }"
     upload-preset="nuxt-cloudinary-unsigned"
     :tags="['sad', 'music']"
+    :on-error="onError"
+    :on-result="onResult"
   >
     <button
       type="button"
@@ -77,7 +98,11 @@ const colors = {
       Upload an Image
     </button>
   </CldUploadWidget>
-  <CldUploadButton upload-preset="nuxt-cloudinary-unsigned">
+  <CldUploadButton
+    upload-preset="nuxt-cloudinary-unsigned"
+    :on-error="onError"
+    :on-result="onResult"
+  >
     Upload
   </CldUploadButton>
   <CldImage
