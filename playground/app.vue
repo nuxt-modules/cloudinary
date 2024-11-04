@@ -115,6 +115,12 @@ const onError = (
     sizes="(max-width: 600px) 480px,
          800px"
     :replace-background="{ prompt: 'fish tank', seed: 3 }"
+    :extract="{
+      prompt: 'space jellyfish',
+      multiple: true,
+      mode: 'mask',
+      invert: true,
+    }"
   />
   <CldImage
     src="cld-sample-5"
