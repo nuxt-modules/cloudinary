@@ -6,6 +6,7 @@ import type {
   ImageOptions,
   ConfigOptions,
 } from '@cloudinary-util/url-loader'
+import { pollForProcessingImage } from '@cloudinary-util/util'
 import { useCldImageUrl } from '../composables/useCldImageUrl'
 
 export interface CldImageProps extends ImageOptions {
@@ -50,31 +51,10 @@ const transformUrl = () => {
 const imgKey = ref('image-key')
 
 const handleError = async (payload: Event) => {
-  const result = await pollForProcessingImage(payload)
+  const eventPayload = payload.target as EventTarget & { src: string }
+  const result = await pollForProcessingImage(eventPayload)
 
   if (result) imgKey.value = `${imgKey.value}-${Math.random()}`
-}
-
-const pollForProcessingImage = async (options: Event): Promise<boolean> => {
-  const { src } = options.target as EventTarget & { src: string }
-  try {
-    await new Promise((resolve, reject) => {
-      fetch(src).then((res) => {
-        if (!res.ok) {
-          reject(res)
-          return
-        }
-        resolve(res)
-      })
-    })
-  }
-  catch (e: any) {
-    if (e.status === 423) {
-      return await pollForProcessingImage(options)
-    }
-    return false
-  }
-  return true
 }
 </script>
 
