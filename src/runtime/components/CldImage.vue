@@ -54,7 +54,16 @@ const handleError = async (payload: Event) => {
   const eventPayload = payload.target as EventTarget & { src: string }
   const result = await pollForProcessingImage(eventPayload)
 
-  if (result) imgKey.value = `${imgKey.value}-${Math.random()}`
+  if (
+    typeof result.error === 'string'
+    && process.env.NODE_ENV === 'development'
+  ) {
+    console.error(
+      `[CldImage] Failed to load image ${props.src}: ${result.error}`,
+    )
+  }
+
+  if (result.success) imgKey.value = `${imgKey.value}-${Math.random()}`
 }
 </script>
 
