@@ -134,6 +134,21 @@ be loaded from as well as any customization of that track.
 </template>
 ```
 
+## Raw Transformations
+
+It is a common thing to add custom video transformations like fading effect in and out which can be done like following:
+
+```html
+<template>
+  <CldVideoPlayer
+    width="600"
+    height="600"
+    src="<Cloudinary URL>"
+    :transformation="{ raw_transformation: 'e_fade:2000,e_fade:-2000' }"
+  />
+</template>
+```
+
 Learn more on the [Video Player Reference](https://cloudinary.com/documentation/video_player_api_reference#text_tracks) or
 the [Subtitles and Captions guide](https://cloudinary.com/documentation/video_player_customization#subtitles_and_captions).
 
