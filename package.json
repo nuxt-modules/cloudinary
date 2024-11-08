@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Cloudinary module for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -45,11 +45,11 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "stackblitz": "cd .stackblitz && yarn && yarn dev"
+    "stackblitz": "cd .stackblitz && pnpm install && pnpm run dev"
   },
   "dependencies": {
-    "@cloudinary-util/url-loader": "^5.6.0",
-    "@cloudinary-util/types": "1.2.0",
+    "@cloudinary-util/url-loader": "^6.0.0",
+    "@cloudinary-util/types": "2.0.0-beta.1",
     "@nuxt/kit": "^3.11.2",
     "@unpic/vue": "^0.0.48",
     "defu": "^6.1.4"
@@ -68,5 +68,6 @@
   "stackblitz": {
     "installDependencies": false,
     "startCommand": "yarn stackblitz"
-  }
+  },
+  "packageManager": "pnpm@8.11.0+sha512.9df87c16c98db27b4e051d787e67f2207ec47e809ccb07bf7b5ec4acdcd1613355839a38d0b900144923d6a7057700b74d2a0ccb1558beb241647a1206a9a7ab"
 }

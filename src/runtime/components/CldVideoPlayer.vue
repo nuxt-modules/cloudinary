@@ -9,28 +9,18 @@ import {
 } from '@cloudinary-util/url-loader'
 import { useRuntimeConfig } from '#imports'
 
-export interface CloudinaryVideoPlayer {
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  on: Function
-}
+type HandleEventFunction = (event: {
+  player: CldVideoPlayerProps['videoRef']
+  video: CldVideoPlayerProps['videoRef']
+}) => object
 
-export interface CloudinaryVideoPlayerOptions {
-  autoplayMode?: string
-  cloud_name?: string
-  colors?: CloudinaryVideoPlayerOptionsColors
-  controls?: boolean
-  fontFace?: string
-  loop?: boolean
-  muted?: boolean
-  publicId: string
-  secure?: boolean
-  transformation?: Array<object> | object
-  hideContextMenu?: boolean
-  config?: ConfigOptions
-  pictureInPictureToggle?: boolean
-  chapters?: Record<string | number, string> | boolean
-  chaptersButton?: boolean
-  disableRemotePlayback?: boolean
+type CallbackFunction = (
+  key: string,
+  handleEvent: HandleEventFunction
+) => object
+
+export interface CloudinaryVideoPlayer {
+  on: CallbackFunction
 }
 
 export interface CloudinaryVideoPlayerOptionsColors {
@@ -39,50 +29,22 @@ export interface CloudinaryVideoPlayerOptionsColors {
   text?: string
 }
 
-export interface CloudinaryVideoPlayerOptionsLogo {
-  logoImageUrl?: string
-  logoOnclickUrl?: string
-  showLogo?: boolean
-}
-
-export interface CldVideoPlayerPropsLogo {
-  imageUrl?: CloudinaryVideoPlayerOptionsLogo['logoImageUrl']
-  logo?: boolean
-  onClickUrl?: CloudinaryVideoPlayerOptionsLogo['logoOnclickUrl']
-}
-
-export type CldVideoPlayerProps = Pick<
-  CloudinaryVideoPlayerOptions,
-  | 'colors'
-  | 'controls'
-  | 'fontFace'
-  | 'loop'
-  | 'muted'
-  | 'transformation'
-  | 'hideContextMenu'
-> & {
-  autoPlay?: string
+export type CldVideoPlayerProps = GetVideoPlayerOptions & {
+  autoPlay?: boolean
+  autoplayMode?: 'never' | 'always' | 'on-scroll'
   className?: string
+  colors?: CloudinaryVideoPlayerOptionsColors
   height: string | number
   id?: string
-  logo?: boolean | CldVideoPlayerPropsLogo
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onDataLoad?: Function
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onError?: Function
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onMetadataLoad?: Function
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onPause?: Function
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onPlay?: Function
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  onEnded?: Function
+  onDataLoad?: HandleEventFunction
+  onError?: HandleEventFunction
+  onMetadataLoad?: HandleEventFunction
+  onPause?: HandleEventFunction
+  onPlay?: HandleEventFunction
+  onEnded?: HandleEventFunction
   playerRef?: { value: CloudinaryVideoPlayer | null }
-  src: string
   version?: string
   videoRef?: { value: HTMLVideoElement | null }
-  quality?: string | number
   width: string | number
   config?: ConfigOptions
   pictureInPictureToggle?: boolean
@@ -92,7 +54,9 @@ export type CldVideoPlayerProps = Pick<
 }
 
 const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
-  autoPlay: 'never',
+  autoPlay: false,
+  autoplayMode: 'always',
+  playsinline: false,
   controls: true,
   logo: true,
   loop: false,
@@ -117,22 +81,22 @@ const {
   quality,
   width,
   config,
-} = props as CldVideoPlayerProps
+} = props
 
 const playerTransformations = Array.isArray(transformation)
   ? transformation
   : [transformation]
 
-let publicId = src
+let localPublicId = src
 
 // If the publicId/src is a URL, attempt to parse it as a Cloudinary URL
 // to get the public ID alone
 
-if (publicId.startsWith('http')) {
+if (localPublicId.startsWith('http')) {
   try {
     const parts = parseUrl(src)
     if (typeof parts?.publicId === 'string') {
-      publicId = parts?.publicId
+      localPublicId = parts?.publicId
     }
   }
   catch (e) {
@@ -150,15 +114,14 @@ const videoRef = props.videoRef || defaultVideoRef
 const defaultPlayerRef = ref()
 const playerRef = props.playerRef || defaultPlayerRef
 
-const playerId = id || `player-${publicId.replace('/', '-')}`
+const playerId = id || `player-${localPublicId.replace('/', '-')}`
 let playerClassName = 'cld-video-player cld-fluid'
 
 if (className) {
   playerClassName = `${playerClassName} ${className}`
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-const events: Record<string, Function | undefined> = {
+const events: Record<string, HandleEventFunction | undefined> = {
   error: onError,
   loadeddata: onDataLoad,
   loadedmetadata: onMetadataLoad,
@@ -186,6 +149,9 @@ const handleOnLoad = () => {
         ...props,
         colors: props.colors || {},
         fontFace: props.fontFace || '',
+        publicId: localPublicId,
+        playedEventPercents: props.playedEventPercents || [25, 50, 75, 100],
+        playedEventTimes: props.playedEventTimes || [],
       } as GetVideoPlayerOptions,
       {
         cloud: {
@@ -199,7 +165,7 @@ const handleOnLoad = () => {
 
     playerRef.value = cloudinaryRef.value.videoPlayer(
       videoRef.value,
-      playerOptions,
+      JSON.parse(JSON.stringify(playerOptions)),
     )
 
     Object.keys(events).forEach((key) => {

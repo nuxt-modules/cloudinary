@@ -1,5 +1,10 @@
 <script lang="ts" setup>
-// Usage of `useCldImageUrl` composable
+import type {
+  CloudinaryUploadWidgetError,
+  CloudinaryUploadWidgetResults,
+} from '@cloudinary-util/types'
+import type { MediaType } from '../src/runtime/components/CldProductGallery.vue'
+
 const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
 console.log(url)
 
@@ -8,38 +13,84 @@ const { url: videoUrl } = useCldVideoUrl({
 })
 console.log(videoUrl)
 
-const mediaAssets = [
+const mediaAssets: { tag: string, mediaType?: MediaType }[] = [
   { tag: 'electric_car_product_gallery_demo' }, // by default mediaType: "image"
   { tag: 'electric_car_product_gallery_demo', mediaType: 'video' },
   { tag: 'electric_car_360_product_gallery_demo', mediaType: 'spin' },
 ]
 
 const buttonId = 'open-btn'
+
+const cldVideoRef = ref()
+
+const chapters = {
+  0: 'Chapter 1',
+  6: 'Chapter 2',
+  9: 'Chapter 3',
+}
+
+const colors = {
+  accent: '#ff0000',
+  base: '#00ff00',
+  text: '#0000ff',
+}
+
+const onResult = (results: CloudinaryUploadWidgetResults) => {
+  console.log('results', results)
+}
+const onError = (
+  error: CloudinaryUploadWidgetError,
+  results: CloudinaryUploadWidgetResults,
+) => {
+  console.log('error', error)
+  console.log('results', results)
+}
 </script>
 
 <template>
-  <!-- Usage of `CldImage.vue` component -->
-  <CldImage
-    src="cld-sample-5"
+  <button :id="buttonId">
+    Select Image or Video
+  </button>
+  <CldMediaLibrary
+    api-key="12345"
+    :button-id="buttonId"
+    style="height: 600px"
+  />
+  <CldProductGallery
+    :media-assets="mediaAssets"
+    cloud-name="demo"
+    :button-id="buttonId"
+  />
+  <CldOgImage
+    src="cld-sample-2"
+    twitter-title="test"
     width="987"
     height="987"
-    alt="Sample Product"
+    alt="twitter-title"
   />
   <CldVideoPlayer
+    ref="cldVideoRef"
+    auto-play
+    autoplay-mode="on-scroll"
+    loop
+    muted
+    playsinline
     width="1620"
     height="1080"
-    src="videos/mountain-stars"
+    src="videos/dog-running-snow"
+    :config="{ url: { cname: 'test' } }"
     picture-in-picture-toggle
+    chapters-button
+    :chapters="chapters"
+    :colors="colors"
+    :transformation="{ raw_transformation: 'e_fade:2000,e_fade:-2000' }"
   />
-  <!-- Usage of `CldUploadWidget.vue` component -->
   <CldUploadWidget
     v-slot="{ open }"
     upload-preset="nuxt-cloudinary-unsigned"
-    :on-upload="
-      (result, w) => {
-        console.log(result, w);
-      }
-    "
+    :tags="['sad', 'music']"
+    :on-error="onError"
+    :on-result="onResult"
   >
     <button
       type="button"
@@ -48,23 +99,41 @@ const buttonId = 'open-btn'
       Upload an Image
     </button>
   </CldUploadWidget>
-  <!-- Usage of `CldUploadButton.vue` component -->
-  <CldUploadButton upload-preset="nuxt-cloudinary-unsigned">
+  <CldUploadButton
+    upload-preset="nuxt-cloudinary-unsigned"
+    :on-error="onError"
+    :on-result="onResult"
+  >
     Upload
   </CldUploadButton>
-  <p>CldOgImage is here. Inspect the html meta to see the result</p>
-  <CldOgImage
-    src="cld-sample-2"
-    twitter-title="test"
-    width="300"
-    height="300"
-    alt="test"
+  <CldImage
+    src="cld-sample-5"
+    width="987"
+    height="987"
+    alt="Sample Product"
+    crop="fill"
+    priority
+    sizes="(max-width: 600px) 480px,
+         800px"
+    :replace-background="{ prompt: 'fish tank', seed: 3 }"
+    :extract="{
+      prompt: 'space jellyfish',
+      multiple: true,
+      mode: 'mask',
+      invert: true,
+    }"
   />
   <CldImage
     src="cld-sample-5"
     width="987"
     height="987"
     alt="Sample Product"
+    :crop="{
+      type: 'thumb',
+      width: 600,
+      height: 600,
+      source: true,
+    }"
     :overlays="[
       {
         position: {
@@ -101,19 +170,5 @@ const buttonId = 'open-btn'
         },
       },
     ]"
-  />
-
-  <button :id="buttonId">
-    Select Image or Video
-  </button>
-  <CldMediaLibrary
-    api-key="12345"
-    :button-id="buttonId"
-    style="height: 600px"
-  />
-  <CldProductGallery
-    :media-assets="mediaAssets"
-    cloud-name="demo"
-    :button-id="buttonId"
   />
 </template>
