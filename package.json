@@ -1,6 +1,6 @@
 {
   "name": "@nuxtjs/cloudinary",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Cloudinary module for Nuxt",
   "license": "MIT",
   "type": "module",
@@ -45,7 +45,7 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "stackblitz": "cd .stackblitz && yarn && yarn dev"
+    "stackblitz": "cd .stackblitz && pnpm install && pnpm run dev"
   },
   "dependencies": {
     "@cloudinary-util/url-loader": "^6.0.0",
