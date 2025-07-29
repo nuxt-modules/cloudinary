@@ -4,7 +4,7 @@ description:
 
 ## Usage
 
-The CldOgImage give you the ability to use the same CldImage API to easily generate Open Graph images (or social cards) inside of Nuxt.
+The CldOgImage gives you the ability to use the same CldImage API to easily generate Open Graph images (or social cards) inside of Nuxt.
 
 ## Basic Usage
 

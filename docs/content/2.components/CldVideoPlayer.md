@@ -2,9 +2,9 @@
 description:
 ---
 
-## The usage
+## Usage
 
-The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) giving you a full customizable experience for your player.
+The CldVideoPlayer component helps to embed Cloudinary videos using the [Cloudinary Video Player](https://cloudinary.com/documentation/cloudinary_video_player?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) giving you a fully customizable experience for your player.
 
 ## Basic Usage
 
@@ -17,7 +17,7 @@ The basic required props include `width`, `height`, and `src`:
 :cld-video-player{src="videos/mountain-stars" width="900" height="900" style="aspect-ratio: 1620 / 1080" id="1"}
 
 ::callout{icon="i-heroicons-exclamation-triangle-20-solid" color="amber"}
-Note: If you wish to display several video players with the same media on the same page (as we did in the documentation below), make sure to pass unique `id` property.
+Note: If you wish to display several video players with the same media on the same page (as we did in the documentation below), make sure to pass a unique `id` property.
 ::
 
 ## Customization
@@ -75,7 +75,7 @@ Picture-in-picture helps your viewers continue their multitasking agenda and mai
   width="600"
   height="600"
   src="<Cloudinary URL>"
-  pictureInPictureToogle
+  pictureInPictureToggle
 />
 ```
 
@@ -181,7 +181,7 @@ the [Subtitles and Captions guide](https://cloudinary.com/documentation/video_pl
 | version                | string         | `"1.10.6"` | Cloudinary Video Player version                                                                                                                                                                                                                                 | `"1.9.4"`                                          |
 | videoRef               | Ref            | -          | React ref to access video element                                                                                                                                                                                                                               | See Refs Below                                     |
 | width                  | string/number  | -          | **Required**: Player width                                                                                                                                                                                                                                      | `1920`                                             |
-| pictureInPictureToogle | boolean        | -          | Enable Picture in Picture mode                                                                                                                                                                                                                                  | true                                               |
+| pictureInPictureToggle | boolean        | -          | Enable Picture in Picture mode                                                                                                                                                                                                                                  | true                                               |
 | chaptersButton         | boolean        | -          | Enable Chapters button                                                                                                                                                                                                                                          | true                                               |
 | chapters               | object/boolean | -          | Chapters configuration                                                                                                                                                                                                                                          | { 0: 'Chapter 1', 6: 'Chapter 2', 9: 'Chapter 3' } |
 | disableRemotePlayback  | boolean        | -          | Indicate if media element may have a remote playback UI                                                                                                                                                                                                         | true                                               |
