@@ -38,7 +38,7 @@ Signing upload requests requires passing in an endpoint to the component.
 
 You can do this by creating a serverless function that reads the parameters as the body and returns an object with the signature.
 
-Use the following to generate an signed upload widget:
+Use the following to generate a signed upload widget:
 
 ```html
 <CldUploadWidget

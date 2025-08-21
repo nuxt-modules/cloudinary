@@ -42,7 +42,7 @@ CldProductGallery accepts several customization props listed below:
 | zoom             | boolean | `false`                                                              |
 | params           | object  | `{}`                                                                 |
 
-For all other available props checkout [Cloudinary Product Gallery Docs](https://cloudinary.com/documentation/product_gallery_reference#widget_parameters?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) and make sure to pass them to the component as `params` like following:
+For all other available props check out [Cloudinary Product Gallery Docs](https://cloudinary.com/documentation/product_gallery_reference#widget_parameters?utm_campaign=devx_nuxtcloudinary&utm_medium=referral&utm_source=nuxtcloudinary) and make sure to pass them to the component as `params` like following:
 
 ```vue
 <script setup lang="ts">
