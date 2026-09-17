@@ -9,7 +9,7 @@ import type {
 import { pollForProcessingImage } from '@cloudinary-util/util'
 import { useCldImageUrl } from '../composables/useCldImageUrl'
 
-export interface CldImageProps extends ImageOptions {
+export type CldImageProps = ImageOptions & {
   loading?: 'eager' | 'lazy'
   fetchPriority?: 'high' | 'low' | 'auto'
   // Adding below as required props to promote good patterns in developing images

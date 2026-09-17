@@ -11,4 +11,7 @@ const { url } = useCldImageUrl({ options: { src: '/cld-sample-5.jpg' } })
     crop="fill"
   />
   <p>{{ url }}</p>
+  <CldUploadWidget upload-preset="test-preset">
+    <span>Upload</span>
+  </CldUploadWidget>
 </template>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
 import { ref } from 'vue'
-import { useRuntimeConfig } from '#imports'
+import { useHead, useRuntimeConfig } from '#imports'
 
 const cloudinaryRef = ref()
 
