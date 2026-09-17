@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useHead } from '@unhead/vue'
 import { parseUrl } from '@cloudinary-util/util'
 import {
   getVideoPlayerOptions,
   type ConfigOptions,
   type GetVideoPlayerOptions,
 } from '@cloudinary-util/url-loader'
-import { useRuntimeConfig } from '#imports'
+import { useHead, useRuntimeConfig } from '#imports'
 
 type HandleEventFunction = (event: {
   player: CldVideoPlayerProps['videoRef']
@@ -16,7 +15,7 @@ type HandleEventFunction = (event: {
 
 type CallbackFunction = (
   key: string,
-  handleEvent: HandleEventFunction
+  handleEvent: HandleEventFunction,
 ) => object
 
 export interface CloudinaryVideoPlayer {
@@ -61,7 +60,7 @@ const props = withDefaults(defineProps<CldVideoPlayerProps>(), {
   logo: true,
   loop: false,
   muted: false,
-  version: '1.11.1',
+  version: '4.1.0',
   quality: 'auto',
 })
 
@@ -196,7 +195,7 @@ useHead({
   link: [
     {
       href: `https://unpkg.com/cloudinary-video-player@${
-        version || '1.11.1'
+        version || '4.1.0'
       }/dist/cld-video-player.min.css`,
       rel: 'stylesheet',
     },

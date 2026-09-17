@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useHead } from '@unhead/vue'
 import { ref, watch } from 'vue'
 import {
   type ConfigOptions,
@@ -12,10 +11,9 @@ import {
 } from '@cloudinary-util/url-loader'
 import type { CloudinaryUploadWidgetResults } from '@cloudinary-util/types'
 import { triggerOnIdle } from '../util/triggerOnIdle'
-import { useRuntimeConfig } from '#imports'
+import { useHead, useRuntimeConfig } from '#imports'
 
-export interface CldUploadWidgetProps
-  extends GenerateUploadWidgetResultCallback {
+export type CldUploadWidgetProps = Partial<GenerateUploadWidgetResultCallback> & {
   options?: GetUploadWidgetOptions
   signatureEndpoint?: URL | RequestInfo
   uploadPreset?: string
@@ -25,7 +23,7 @@ export interface CldUploadWidgetProps
 
 type UploadActionFunction = (
   results: CloudinaryUploadWidgetResults,
-  data?: any
+  data?: any,
 ) => object
 type CallbackFunction = (data?: string[]) => object
 
@@ -93,10 +91,10 @@ const instanceMethods = {
 
 const uploadSignature
   = signatureEndpoint
-  && generateSignatureCallback({
-    signatureEndpoint: String(signatureEndpoint),
-    fetch,
-  })
+    && generateSignatureCallback({
+      signatureEndpoint: String(signatureEndpoint),
+      fetch,
+    })
 
 const uploadOptions = getUploadWidgetOptions(
   {
@@ -169,7 +167,7 @@ watch(results, () => {
   const isSuccess = results.value?.event === 'success'
   const isClosed
     = results.value?.event === 'display-changed'
-    && results.value.info === 'hidden'
+      && results.value.info === 'hidden'
 
   if (isSuccess && typeof onUpload === 'function') {
     onUpload(results.value)

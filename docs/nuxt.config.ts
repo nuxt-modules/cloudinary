@@ -11,10 +11,6 @@ export default defineNuxtConfig({
     preference: 'dark',
   },
 
-  cloudinary: {
-    cloudName: 'nuxt-cloudinary',
-  },
-
   ui: {
     icons: ['heroicons', 'simple-icons', 'ph'],
   },
@@ -35,6 +31,10 @@ export default defineNuxtConfig({
           comp.global = 'sync'
       }
     },
+  },
+
+  cloudinary: {
+    cloudName: 'nuxt-cloudinary',
   },
 
   // devtools: {
