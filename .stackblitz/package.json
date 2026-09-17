@@ -8,9 +8,9 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "^3.11.2"
+    "nuxt": "^4.5.2"
   },
   "dependencies": {
-    "@nuxtjs/cloudinary": "^4.0.0"
+    "@nuxtjs/cloudinary": "^4.1.0"
   }
 }
